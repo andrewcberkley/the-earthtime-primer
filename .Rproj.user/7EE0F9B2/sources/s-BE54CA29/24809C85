@@ -1,9 +1,9 @@
 {
     "id": "24809C85",
-    "path": "~/the-earthtime-primer/index.Rmd",
+    "path": "C:/Users/ABERK/Box/The_Definitive_ABERK_Data_Science_Folder/the-earthtime-primer/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "2942792837",
+    "hash": "2389774210",
     "contents": "",
     "dirty": false,
     "created": 1635540172813.0,
@@ -11,14 +11,16 @@
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "2,26",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1635540165,
+    "lastKnownWriteTime": 1635762476,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1635540165,
+    "last_content_update": 1635762476414,
     "read_only": false,
     "read_only_alternatives": []
 }
