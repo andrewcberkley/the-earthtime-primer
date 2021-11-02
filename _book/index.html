@@ -161,9 +161,9 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#premise"><i class="fa fa-check"></i><b>0.1</b> Premise</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#documentation-structure"><i class="fa fa-check"></i><b>0.2</b> Documentation Structure</a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i><b>0.3</b> Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#premise"><i class="fa fa-check"></i>Premise</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#documentation-structure"><i class="fa fa-check"></i>Documentation Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>1</b> Hello bookdown</a>
 <ul>
@@ -223,16 +223,17 @@ div.csl-indent {
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>This is the online version of EarthTime documentation, a reference tool currently under development and intended for Forum staff, members of the CMU CREATE Lab and extended community, and/or anyone else that has an interest in creating and sharing narratives that examine complex global topics through data visualization instead of traditional prose using this unique storytelling tool. I’ve been fortunate enough to play a small role collaborating with the CREATE Lab on EarthTime since 2018 from the World Economic Forum’s side and with my pending departure from the Forum, the ultimate aim of this work is to not only formally archive the information that is stuck in my head into a form that is more widely accessible, but I also hope this document is able to convey the excitement and joy that I’ve been lucky enough to experience whilst a collaborator on this project. It is my hope that others can find the same excitement and joy in using data to help communities across the globe—either in Davos, Pittsburgh, or somewhere in between—examine major environmental, social, and political phenomenon across time, across space, and between each other.
-- Andrew C. Berkley, 2021</p>
-<div id="premise" class="section level2" number="0.1">
-<h2><span class="header-section-number">0.1</span> Premise</h2>
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
+<p>This is the online version of EarthTime documentation, a reference tool currently under development and intended for Forum staff, members of the CMU CREATE Lab and extended community, and/or anyone else that has an interest in creating and sharing narratives that examine complex global topics through data visualization instead of traditional prose using this unique storytelling tool. I’ve been fortunate enough to play a small role collaborating with the CREATE Lab on EarthTime since 2018 from the World Economic Forum’s side and with my pending departure from the Forum, the ultimate aim of this work is to not only formally archive the information that is stuck in my head into a form that is more widely accessible, but I also hope this document is able to convey the excitement and joy that I’ve been lucky enough to experience whilst a collaborator on this project. It is my hope that others can find the same excitement and joy in using data to help communities across the globe—either in Davos, Pittsburgh, or somewhere in between—examine major environmental, social, and political phenomenon across time, across space, and between each other.</p>
+<p>Sincerely,</p>
+<p>Andrew C. Berkley, 2021</p>
+<div id="premise" class="section level2 unnumbered">
+<h2>Premise</h2>
+<p>Both the CREATE Lab at Carnegie Mellon University and the World Economic Forum recognize that progress happens by bringing together people from all walks of life—ranging from government and business, to civil society and academia—who have the drive and the will to make positive change. As our world has become increasingly complex, people are increasingly seeking out ways to make sense of societal shifts at both a local and global level. While people try to make sense of new phenomenon by just using data, data alone struggles to capture and bear witness to the key issues of our time. The EarthTime project is an interface that attempts to create powerful narratives by connecting the dots, using facts, conveying a sense of empathy, and using data all at once.</p>
+<p>Using large spatial and temporal datasets, the fact-based narratives of created alongside experts within this project have successfully broken through language and culture barriers, forged common ground across diverse viewpoints, and to create the sense of unity needed to have meaningful discourse about how to best chart our future together more meaningfully.</p>
+<p>The aim of this document is to introduce readers and guide readers as they begin to explore how best to create data narratives for the interactive, web-based version of EarthTime. In doing so, we recognize that some of these stories will be ones of decline, but hopefully as a tool it can be used to demonstrate our collective power to effect change.</p>
 </div>
-<div id="documentation-structure" class="section level2" number="0.2">
-<h2><span class="header-section-number">0.2</span> Documentation Structure</h2>
+<div id="documentation-structure" class="section level2 unnumbered">
+<h2>Documentation Structure</h2>
 <ol style="list-style-type: decimal">
 <li><p>This document opens with a brief history of the EarthTime project. This section starts with the history of the CREATE Lab at Carnegie Mellon University where EarthTime was first conceived and goes onto detail EarthTime’s journey from the original time-lapse project proposed as a collaboration between Google’s Earth Engine team, Carnegie Mellon University’s CREATE Lab, and TIME Magazine all the way to its presence as the Global Situation Space at the World Economic Forum’s Annual Meetings in Davos, Switzerland, as well as its continued use on the Forum’s Strategic Intelligence platform.</p></li>
 <li><p>The next section of this document goes onto discuss the basics of EarthTime in what is referred to as the “Explore” view that one would find when visiting the main EarthTime website. It also suggests a few prerequisites for computer hardware that one is expected to have to successful run EarthTime in a browser.</p></li>
@@ -250,8 +251,8 @@ div.csl-indent {
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
 <p>To render this example to PDF as a <code>bookdown::pdf_book</code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
 </div>
-<div id="acknowledgements" class="section level2" number="0.3">
-<h2><span class="header-section-number">0.3</span> Acknowledgements</h2>
+<div id="acknowledgements" class="section level2 unnumbered">
+<h2>Acknowledgements</h2>
 <p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book,” or from the R console:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
 
@@ -317,20 +318,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

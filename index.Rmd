@@ -16,17 +16,20 @@ github-repo: andrewcberkley/EarthTimeR
 # Preface {-}
 
 This is the online version of EarthTime documentation, a reference tool currently under development and intended for Forum staff, members of the CMU CREATE Lab and extended community, and/or anyone else that has an interest in creating and sharing narratives that examine complex global topics through data visualization instead of traditional prose using this unique storytelling tool. I’ve been fortunate enough to play a small role collaborating with the CREATE Lab on EarthTime since 2018 from the World Economic Forum’s side and with my pending departure from the Forum, the ultimate aim of this work is to not only formally archive the information that is stuck in my head into a form that is more widely accessible, but I also hope this document is able to convey the excitement and joy that I’ve been lucky enough to experience whilst a collaborator on this project. It is my hope that others can find the same excitement and joy in using data to help communities across the globe—either in Davos, Pittsburgh, or somewhere in between—examine major environmental, social, and political phenomenon across time, across space, and between each other. 
-- Andrew C. Berkley, 2021
 
-## Premise 
+Sincerely,
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+Andrew C. Berkley, 2021
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+## Premise {-}
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+Both the CREATE Lab at Carnegie Mellon University and the World Economic Forum recognize that progress happens by bringing together people from all walks of life—ranging from government and business, to civil society and academia—who have the drive and the will to make positive change. As our world has become increasingly complex, people are increasingly seeking out ways to make sense of societal shifts at both a local and global level. While people try to make sense of new phenomenon by just using data, data alone struggles to capture and bear witness to the key issues of our time. The EarthTime project is an interface that attempts to create powerful narratives by connecting the dots, using facts, conveying a sense of empathy, and using data all at once. 
 
-## Documentation Structure
+Using large spatial and temporal datasets, the fact-based narratives of created alongside experts within this project have successfully broken through language and culture barriers, forged common ground across diverse viewpoints, and to create the sense of unity needed to have meaningful discourse about how to best chart our future together more meaningfully.
+
+The aim of this document is to introduce readers and guide readers as they begin to explore how best to create data narratives for the interactive, web-based version of EarthTime. In doing so, we recognize that some of these stories will be ones of decline, but hopefully as a tool it can be used to demonstrate our collective power to effect change.
+
+## Documentation Structure {-}
 
 1. This document opens with a brief history of the EarthTime project. This section starts with the history of the CREATE Lab at Carnegie Mellon University where EarthTime was first conceived and goes onto detail EarthTime’s journey from the original time-lapse project proposed as a collaboration between  Google’s Earth Engine team, Carnegie Mellon University’s CREATE Lab, and TIME Magazine all the way to its presence as the Global Situation Space at the World Economic Forum’s Annual Meetings in Davos, Switzerland, as well as its continued use on the Forum’s Strategic Intelligence platform.
 
@@ -59,7 +62,7 @@ bookdown::render_book()
 
 To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
 
-## Acknowledgements
+## Acknowledgements {-}
 
 As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
 
