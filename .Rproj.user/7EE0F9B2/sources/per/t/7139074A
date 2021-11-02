@@ -1,14 +1,14 @@
 {
-    "id": "19BD9CA7",
-    "path": "~/the-earthtime-primer/_output.yml",
-    "project_path": "_output.yml",
+    "id": "7139074A",
+    "path": "C:/Users/ABERK/Box/The_Definitive_ABERK_Data_Science_Folder/the-earthtime-primer/_bookdown.yml",
+    "project_path": "_bookdown.yml",
     "type": "yaml",
-    "hash": "997389390",
+    "hash": "4031387033",
     "contents": "",
     "dirty": false,
-    "created": 1635540174851.0,
+    "created": 1635540173873.0,
     "source_on_save": false,
-    "relative_order": 4,
+    "relative_order": 3,
     "properties": {
         "source_window_id": "",
         "Source": "Source"
