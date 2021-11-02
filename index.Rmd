@@ -8,16 +8,15 @@ bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
+  This is a brief primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: andrewcberkley/EarthTimeR
 ---
 
-# Preface
+# Preface {-}
 
-This is the online version of EarthTime documentation, a reference tool currently under development and intended for Forum staff, members of the CMU CREATE Lab and extended community, and/or anyone else that has an interest in creating and sharing narratives that examine complex global topics through data visualization instead of traditional prose using this unique storytelling tool. I’ve been fortunate enough to play a small role collaborating with the CREATE Lab on EarthTime since 2018 from the World Economic Forum’s side and with my pending departure from the Forum, the ultimate aim of this work is to not only formally archive the information that is stuck in my head into a form that is more widely accessible, but I also hope this document is able to convey the excitement and joy that I’ve been lucky enough to experience whilst a collaborator on this project. It is my hope that others can find the same excitement and joy in using data to help communities across the globe—either in Davos, Pittsburgh, or somewhere in between—examine major environmental, social, and political phenomenon across time, across space, and between each other. - Andrew C. Berkley, 2021
+This is the online version of EarthTime documentation, a reference tool currently under development and intended for Forum staff, members of the CMU CREATE Lab and extended community, and/or anyone else that has an interest in creating and sharing narratives that examine complex global topics through data visualization instead of traditional prose using this unique storytelling tool. I’ve been fortunate enough to play a small role collaborating with the CREATE Lab on EarthTime since 2018 from the World Economic Forum’s side and with my pending departure from the Forum, the ultimate aim of this work is to not only formally archive the information that is stuck in my head into a form that is more widely accessible, but I also hope this document is able to convey the excitement and joy that I’ve been lucky enough to experience whilst a collaborator on this project. It is my hope that others can find the same excitement and joy in using data to help communities across the globe—either in Davos, Pittsburgh, or somewhere in between—examine major environmental, social, and political phenomenon across time, across space, and between each other. 
+- Andrew C. Berkley, 2021
 
 ## Premise 
 
@@ -29,7 +28,7 @@ The `index.Rmd` file is required, and is also your first book chapter. It will b
 
 ## Documentation Structure
 
-1. This document opens with a brief history of the EarthTime project. This section starts with the history of the CREATE Lab at Carnegie Mellon University where EarthTime was first conceived and goes onto detail EarthTime’s journey from the original time-lapse project proposed as a collaboration between  Google’s Earth Engine team, Carnegie Mellon University’s CREATE Lab, and TIME Magazine all the way to its presence as the Global Situation Space at the World Economic Forum’s Annual Meetings in Davos, Switzerland, as well as it’s continued use on the Forum’s Strategic Intelligence platform.
+1. This document opens with a brief history of the EarthTime project. This section starts with the history of the CREATE Lab at Carnegie Mellon University where EarthTime was first conceived and goes onto detail EarthTime’s journey from the original time-lapse project proposed as a collaboration between  Google’s Earth Engine team, Carnegie Mellon University’s CREATE Lab, and TIME Magazine all the way to its presence as the Global Situation Space at the World Economic Forum’s Annual Meetings in Davos, Switzerland, as well as its continued use on the Forum’s Strategic Intelligence platform.
 
 2. The next section of this document goes onto discuss the basics of EarthTime in what is referred to as the “Explore” view that one would find when visiting the main EarthTime website. It also suggests a few prerequisites for computer hardware that one is expected to have to successful run EarthTime in a browser.
 
@@ -60,7 +59,7 @@ bookdown::render_book()
 
 To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
 
-## Acknowledgement
+## Acknowledgements
 
 As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
 
