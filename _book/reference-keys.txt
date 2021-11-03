@@ -2,9 +2,6 @@ fig:nice-fig
 tab:nice-tab
 eq:binom
 thm:tri
-premise
-documentation-structure
-acknowledgements
 hello-bookdown
 a-section
 cross
