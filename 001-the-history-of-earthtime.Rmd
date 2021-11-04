@@ -1,11 +1,21 @@
 # (PART) From Pittsburgh to Davos {-} 
 
-# The History of EarthTime
+# The History of EarthTime {#the-history-of-earthtime}
 
 Mapmaking and the use of maps is an ancient idea, it's an impulse we've had for thousands of years. As humans we've been drawing our whereabouts on cave walls since the dawn of our species, but we've come a long way in the last couple hundred years. There's an amazing diversity of the kinds of maps that we're seeing today. There are thousands of satellites that are circling our planet taking a pulse of our planet.
 
 ## The CREATE Lab at CMU
 
+Lorem ipsum dolor sit amet.
+
 ## Earth-Time Lapse
 
+Lorem ipsum dolor sit amet.
+
 ## World Economic Forum Partnership
+
+Lorem ipsum dolor sit amet.
+
+## Satellites
+
+Lorem ipsum dolor sit amet.
