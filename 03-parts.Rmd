@@ -1,4 +1,4 @@
-# Parts
+# Basics and Roadmap
 
 You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file. 
 
@@ -10,3 +10,10 @@ Add an appendix as a special kind of un-numbered part: `# (APPENDIX) Other stuff
 
 
 
+## Overview
+
+The way that most people will interface with the EarthTime platform is what is referred to as the “Explore” view. This is the primary interactive, web-based system that allows users to easily traverse the large spatial and temporal datasets within EarthTime, especially flow maps, dot maps, color images, and satellite base layer renderings. 
+
+Within Explore, there’s a number of headings that you’ll find useful: “Stories”, “Data Library”, “Share”, “Story Editor”, and “Settings”.
+
+It’s best to think of “Stories” as data narratives that are organized by various themes. Generally speaking, each one of these narratives has been authored with at least one expert in the relevant area and that expert has carefully chosen not only the relevant dataset and the location on Earth where you’ll view the dataset, but also a short text to accompany what the viewer will be seeing. The data, the view, and the text are the three components of what is referred to as a “waypoint”.  We’ll be covering waypoints further in the eight section on “EarthTime layers sheets”.
