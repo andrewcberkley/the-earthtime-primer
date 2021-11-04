@@ -1,5 +1,3 @@
-# (PART) Publishing EarthTime Stories {-} 
-
 # Wider Dissemination {#wider-dissemination}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
