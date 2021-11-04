@@ -1,0 +1,15 @@
+# Data Visualizations and Map Types
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Color Theory
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## Sensitivities
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+
+## A note on “recent” and “dynamic” data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.

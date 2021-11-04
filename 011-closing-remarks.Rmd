@@ -1,0 +1,11 @@
+# Closing Remarks
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Conclusion
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## References
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.

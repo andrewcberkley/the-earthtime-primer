@@ -1,0 +1,15 @@
+# Wider DIssemination
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Embedding
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## Mobile View
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## GIFs
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.

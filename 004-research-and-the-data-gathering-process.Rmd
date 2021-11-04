@@ -1,0 +1,15 @@
+# Research and the Data Gathering Process
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Open-Source Data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## A Note on Data in the Wild (Data Scrapping)
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+
+## A note on “recent” and “dynamic” data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.

@@ -1,0 +1,11 @@
+# The Data Wrangling Process
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Code first, not click first
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## EarthTimeR
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.

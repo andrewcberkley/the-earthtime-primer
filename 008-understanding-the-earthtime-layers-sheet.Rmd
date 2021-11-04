@@ -1,0 +1,27 @@
+# Understanding the EarthTime Layers Sheet {#earthtime-layers-sheet}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Waypoints
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+### Anatomy of an EarthTime URL {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum.
+
+### Story Editor {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet.
+
+### Desktop view vs. mobile view {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque.
+
+## CSV Layers
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+
+## Checking on Thumbnails
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
