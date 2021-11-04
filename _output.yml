@@ -13,7 +13,7 @@ bookdown::gitbook:
       github: yes
       all: []
   includes:
-    in_header: [ga.html, social.html]
+    in_header: preamble.tex
 bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
