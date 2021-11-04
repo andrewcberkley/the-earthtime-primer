@@ -1,4 +1,4 @@
-# Data Visualizations and Map Types
+# Data Visualizations and Map Types {#data-visualizations-and-map-types}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
 

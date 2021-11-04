@@ -14,8 +14,22 @@ The way that most people will interface with the EarthTime platform is what is r
 
 Within Explore, there’s a number of headings that you’ll find useful: “Stories”, “Data Library”, “Share”, “Story Editor”, and “Settings”.
 
-### Stories
+### Stories {-} 
 
-It’s best to think of “Stories” as data narratives that are organized by various themes. Generally speaking, each one of these narratives has been authored with at least one expert in the relevant area and that expert has carefully chosen not only the relevant dataset and the location on Earth where you’ll view the dataset, but also a short text to accompany what the viewer will be seeing. The data, the view, and the text are the three components of what is referred to as a “waypoint”.  We’ll be covering waypoints further in section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”.
+It’s best to think of “Stories” as data narratives that are organized by various themes. Generally speaking, each one of these narratives has been authored with at least one expert in the relevant area and that expert has carefully chosen not only the relevant dataset and the location on Earth where you’ll view the dataset, but also a short text to accompany what the viewer will be seeing. The data, the view, and the text are the three components of what is referred to as a “waypoint”.  We’ll be covering waypoints further in Section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”.
 
-### Data Layers
+### Data Layers {-} 
+
+For examining the total depth and breadth of data that EarthTime has to offer, the “Data Layers” section offers the best bird’s eye view. The data in this section is organized alphabetically and clicking on a given category will provide a drop-down list of individual data layers under the respective category. While most data layers will act as an overlay and a user can have multiple data layers present at a given time^[though, we do caution against having too many data layers present at once as this may unintentionally create misleading spurious correlations], there is a special type of data layer called a “base layer”, of which only one can be present at a given time. The default base layer is “Landsat Annual”, which is a massive archive of NASA’s Landsat corpus that was covered in Section \@ref(the-history-of-earthtime) under "Satellites"; however, there are a number of other basemaps that can be used depending on your purpose. We cover these basemaps and use cases in greater depth in Section \@ref(data-visualizations-and-map-types) on "Data Visualizations & Map Types".
+
+### Share {-}
+
+The “Share” section creates an opportunity to share the current Explore View as a link with a unique URL, as a still image, or as a video. While this section is useful for novice users looking to share outputs quickly, it is our hope that by the end of this document, users will be comfortable interacting with some of the nuances of EarthTime and will not need to use this section. We’ll be covering the details of EarthTime URLs in Section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets” and best practices in sharing views in Section \@ref(wider-dissemination) on “Wider Dissemination”.
+
+### Story Editor {-}
+
+Similar to the “Share” section, the “Story Editor” section gives novice users the opportunity to create stories directly from the Explore View. Once again, by the end of this documents, users should be able to forgo the use of the “Story Editor” and create and edit stories directly in their respective EarthTime layers sheet, which we’ll be coving in more depth in Section \@ref(data-visualizations-and-map-types) on "Data Visualizations & Map Types".
+
+### Settings {-}
+
+The “Settings” section allows users to import their own EarthTime stories and data layers using a properly formatted Google Sheet. Generally speaking, if one is creating a large number of EarthTime stories and data layers and has a close relationship with the CREATE Lab, then a new EarthTime instance will be created for a specific person, organization, or purpose. This section is intended for users who do not have their own EarthTime instance, but still want to visualize their own EarthTime stories and data layers.
