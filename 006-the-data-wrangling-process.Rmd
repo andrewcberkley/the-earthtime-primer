@@ -1,3 +1,5 @@
+# (PART) Ideas, Data, & Philosophies {-} 
+
 # The Data Wrangling Process
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.

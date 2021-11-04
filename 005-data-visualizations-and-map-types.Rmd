@@ -1,3 +1,5 @@
+# (PART) Ideas, Data, & Philosophies {-} 
+
 # Data Visualizations and Map Types {#data-visualizations-and-map-types}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.

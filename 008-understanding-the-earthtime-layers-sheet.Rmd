@@ -1,3 +1,5 @@
+# (PART) Ideas, Data, & Philosophies {-} 
+
 # Understanding the EarthTime Layers Sheet {#earthtime-layers-sheet}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.

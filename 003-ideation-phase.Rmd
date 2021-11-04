@@ -1,3 +1,5 @@
+# (PART) Ideas, Data, & Philosophies {-} 
+
 # Ideation Phase
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.

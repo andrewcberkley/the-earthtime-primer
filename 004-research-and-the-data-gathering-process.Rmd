@@ -1,3 +1,5 @@
+# (PART) Ideas, Data, & Philosophies {-} 
+
 # Research and the Data Gathering Process
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
