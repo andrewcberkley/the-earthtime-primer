@@ -27,3 +27,6 @@ waypoints
 waypoints-1
 url-your-book-url-like-httpsbookdown.orgyihuibookdown
 the-history-of-earthtime
+the-basics
+prerequisites
+introduction-to-the-earthtime-platform

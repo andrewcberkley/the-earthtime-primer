@@ -1,16 +1,12 @@
-# Basics and Roadmap
+# (PART) Ideas, Technologies, & Data Philosophies {-} 
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file. 
+# The Basics
 
-Add a numbered part: `# (PART) Act one {-}` (followed by `# A chapter`)
+Test text
 
-Add an unnumbered part: `# (PART\*) Act one {-}` (followed by `# A chapter`)
+## Prerequisites
 
-Add an appendix as a special kind of un-numbered part: `# (APPENDIX) Other stuff {-}` (followed by `# A chapter`). Chapters in an appendix are prepended with letters instead of numbers.
-
-
-
-## Overview
+## Introduction to the EarthTime Platform
 
 The way that most people will interface with the EarthTime platform is what is referred to as the “Explore” view. This is the primary interactive, web-based system that allows users to easily traverse the large spatial and temporal datasets within EarthTime, especially flow maps, dot maps, color images, and satellite base layer renderings. 
 
