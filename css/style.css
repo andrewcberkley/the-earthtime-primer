@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital@0;1&display=swap');
+@import url('https://fonts.gstatic.com/s/firasans/v10/va9B4kDNxMZdWfMOD5VnPKruQg.woff');
 
 body, div, p, h1, h2, h3 {
-  font-family: 'Lora', serif;
+  font-family: 'Fira Sans', normal;
 }
 
 code, pre{
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Ubuntu Mono', normal;
 }
 
 .sourceCode{
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Ubuntu Mono', normal;
 }
 
 p.caption {
@@ -31,31 +31,31 @@ pre code {
 }
 
 section.normal strong {
-  color: #0462a1;
+  color: #2596be;
 }
 
 section.normal h1  {
-  color: #0462a1;
+  color: #2596be;
 }
 
 section.normal h2  {
-  color: #0462a1;
+  color: #2596be;
 }
 
 section.normal h3  {
-  color: #0462a1;
+  color: #2596be;
 }
 
 section.normal h4  {
-  color: #0462a1;
+  color: #2596be;
 }
 
 section.normal h5  {
-  color: #0462a1;
+  color: #2596be;
 }
 
 section.normal h6  {
-  color: #0462a1;
+  color: #2596be;
 }
 
 .btn-default {
@@ -63,7 +63,7 @@ section.normal h6  {
 }
 
 .btn {
-  background-color: #0462a1; /* Green */
+  background-color: #2596be; /* Green */
   border: none;
   color: white;
   padding: 10px 22px;
@@ -74,31 +74,31 @@ section.normal h6  {
 
 .book-header.fixed a:link { 
   background-color:#FFF;
-  color: #0462a1
+  color: #2596be
 }
 .book-header.fixed a:visited{ 
   background-color:#FFF;
-  color: #0462a1
+  color: #2596be
 }
 .book-header.fixed a:hover{ 
   background-color:#FFF;
-  color: #0462a1
+  color: #2596be
 }
 .book-header.fixed a:active{ 
   background-color:#FFF;
-  color: #0462a1
+  color: #2596be
 }
 .book-header { 
   border-color: #fff!important;
 }
 
-.page-wrapper a:link { color: #0462a1 !important; }
-.page-wrapper a:visited { color: #0462a1 !important; }
-.page-wrapper a:hover { color: #0462a1 !important; }
-.page-wrapper a:active { color: #0462a1 !important; }
+.page-wrapper a:link { color: #2596be !important; }
+.page-wrapper a:visited { color: #2596be !important; }
+.page-wrapper a:hover { color: #2596be !important; }
+.page-wrapper a:active { color: #2596be !important; }
 
 .dropdown-menu .buttons .button {
-    color: #0462a1;
+    color: #2596be;
 }
 
 /* notes */
