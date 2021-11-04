@@ -30,3 +30,4 @@ the-history-of-earthtime
 the-basics
 prerequisites
 introduction-to-the-earthtime-platform
+earthtime-layers-sheet
