@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
 body, div, p, h1, h2, h3 {
-  font-family: 'Lora', serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 code, pre{
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .sourceCode{
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 p.caption {
@@ -103,7 +103,7 @@ section.normal h6  {
 
 /* notes */
 .rmdnote {
-  background-color: #f5f5f5;
+  background-color: #2596be;
   margin: 2em 0;
   padding: 12px 24px 12px 30px;
   position: relative;
@@ -113,11 +113,11 @@ section.normal h6  {
 }
 
 .rmdnote{
-  border-left: 4px solid #ffcb00;
+  border-left: 4px solid #2596be;
 }
 
 .rmdnote:before{
-  background-color: #ffcb00;
+  background-color: #2596be;
   border-radius: 100%;
   color: #fff;
   content: "!";
