@@ -2,6 +2,7 @@ the-history-of-earthtime
 the-create-lab-at-cmu
 earth-time-lapse
 world-economic-forum-partnership
+satellites
 the-basics
 prerequisites
 introduction-to-the-earthtime-platform
