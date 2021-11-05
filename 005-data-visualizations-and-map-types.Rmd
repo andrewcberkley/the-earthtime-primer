@@ -6,19 +6,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
 
-### Linear
+### Linear {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
 
-### Logarithmic
+### Logarithmic {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
 
-### Power
+### Power {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
 
-### Square Root
+### Square Root {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
 
@@ -26,7 +26,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
-### Bubble
+### Bubble {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
@@ -34,23 +34,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
-### Dot
+### Dot {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
-### Line String
+### Line String {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
-### Point
+### Point {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
-### Point Flow
+### Point Flow {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
-### Raster
+### Raster {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
