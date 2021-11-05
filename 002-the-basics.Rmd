@@ -4,9 +4,13 @@
 
 Lorem ipsum dolor sit amet, consectetur.
 
-## Prerequisites
+## Hardware Prerequisites
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a.
+A number of individuals have been introduced to EarthTime at the World Economic Forum Annual Meeting’s Global Situation Space—a 7.2-meter x 2.88-meter (24 feet x 9 feet), multi-screen video hyperwall running off of custom-built computers and might be under the impression that their own computers are not powerful enough to run the platform, thankfully nothing could be further from the truth. The CREATE Lab has pre-processed massive data sets using various techniques to create animated, high-resolution EarthTime visualizations at different time scales. Relying on many of the same strategies used by video game designers, EarthTime uses your computer’s GPU in to create a new capability for interactively exploring extreme-sized data.
+
+While the latest computer models would be ideal, we’ve found that at a minimum, people wishing to have a smooth experience with EarthTime running from their browser should have a Macbook Pro or Windows laptop from at least 2016 with an Intel i7 CPU. Also try to ensure that the screen resolution is at a minimum 1920x1080 (not 1366x768) and the computer’s graphics are either at minimum Intel 630 series or dual graphics setup that includes NVIDIA/ATI cards.
+
+Many people wonder if EarthTime is compatible with mobile devices. In short, the answer is “yes”; however, as we’ll cover in the next section, only EarthTime stories are currently available on mobile devices. Users wishing to have a more interactive experience and explore various data layers should access EarthTime via a browser on a standard desktop or laptop computer. 
 
 ## Introduction to the EarthTime Platform
 
