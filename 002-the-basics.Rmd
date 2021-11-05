@@ -10,7 +10,7 @@ A number of individuals have been introduced to EarthTime at the World Economic 
 
 While the latest computer models would be ideal, we’ve found that at a minimum, people wishing to have a smooth experience with EarthTime running from their browser should have a Macbook Pro or Windows laptop from at least 2016 with an Intel i7 CPU. Also try to ensure that the screen resolution is at a minimum 1920x1080 (not 1366x768) and the computer’s graphics are either at minimum Intel 630 series or dual graphics setup that includes NVIDIA/ATI cards.
 
-Many people wonder if EarthTime is compatible with mobile devices. In short, the answer is “yes”; however, as we’ll cover in the next section, only EarthTime stories are currently available on mobile devices. Users wishing to have a more interactive experience and explore various data layers should access EarthTime via a browser on a standard desktop or laptop computer. 
+Many people wonder if EarthTime is compatible with mobile devices. In short, the answer is “yes”; however, as we’ll briefly touch upon in the next section, only EarthTime stories are currently available on mobile devices (we’ll be be diving deeper into the mobile view in Section \@ref(earthtime-layers-sheet) focused on “Understanding the EarthTime Layers Sheet”). Users wishing to have a more interactive experience and explore various data layers should access EarthTime via a browser on a standard desktop or laptop computer. 
 
 ## Introduction to the EarthTime Platform
 
