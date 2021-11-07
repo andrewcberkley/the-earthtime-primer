@@ -4,17 +4,27 @@
 
 Mapmaking and the use of maps is an ancient idea, it's an impulse we've had for thousands of years. As humans we've been drawing our whereabouts on cave walls since the dawn of our species, but we've come a long way in the last couple hundred years. There's an amazing diversity of the kinds of maps that we're seeing today. There are thousands of satellites that are circling our planet taking a pulse of our planet.
 
-## The CREATE Lab at CMU
+## CMU CREATE LAB
 
-Lorem ipsum dolor sit amet.
+EarthTime evolved from CREATE Lab projects for creating and exploring panoramic imagery, eventually incorporating data sets from such sources
+
+## GigaPan & GigaPan Time Machine
+
+In 2010, the CREATE Lab in collaboration with NASA, developed a technology known as "GigaPan" which captured a mosaic of hundreds or thousands of digital pictures and stitch those frames into a panorama that was able to be explored interactively.
+
+In 2011, released what was known as ["GigaPan Time Machine"](https://www.youtube.com/watch?v=Dk9WanUO_gg), a system that enabled viewers to explore gigapixel-scale, high-resolution videos and image sequences by panning or zooming in and out of the images while simultaneously moving back and forth through time. For examples, were able to use the system to focus in on the details of a booth within a panorama of a carnival midway and also reverse time to see how the booth was constructed; watch a group of plants sprout, grow and flower, but also see others get eaten by caterpillars; or view computer simulations of the early universe, watching as gravity works across 600 million light-years to condense matter into filaments and finally into stars that can be seen by zooming in for a close up. Whereas GigaPan was about exploring physical space at high resolutions, GigaPan Time Machine added the critical element of time to allow viewers to explore both simultaneously. Extending GigaPan into the time dimension, image mosaics were repeatedly captured at set intervals, and then stitched across both space and time to create a video in which each frame was hundreds of millions—and sometimes billions—of pixels.
 
 ## Earth-Time Lapse
 
-Lorem ipsum dolor sit amet.
+In 2013 the CREATE Lab began working on its [Explorables Project](https://www.cmucreatelab.org/projects/Explorables), a platform designed to help make big data–with billions of data points, dozens of different fields of information, changing over time–easier to explore, by layering animations over maps with the hope that it would help people make sense of the data by using visual evidence that was more rhetorically compelling that traditional charts or graphs. The Explorables Project also pioneered the use of base maps instead of solely relying on satellite imagery for what would later become EarthTime's alternate basemaps. Early Explorables Project maps opted to leverage the Google Maps API instead with non-satellite data such as statistics on wealth from the World Top Incomes Database.
+
+## Explorables Project
+
+In 2017, the CREATE Lab released their first visualization of global refugee flows between 2000 - 2015 using data from UNHCR. By 2018, this visual was turned into a series of EarthTime stories for the year's World Refugee Day: ["Global Refugee Crisis: The Big Picture"](https://earthtime.org/stories/global_refugee_crisis_the_big_picture) co-authored with UNHCR and ["Global Refugee Crisis: A System Overburdened"](https://earthtime.org/stories/global_refugee_crisis_a_system_overburdened) co-authored by Dr. Khalid Koser of GCERF.
+
+By late 2017, the Pittsburgh International Airport had installed an EarthTime display in Concourse D as part of its "Creating a Sense of Place" program. Still standing to this day, the display gives travelers a chance to interact with the CREATE Lab's technology and see how research conducted at Carnegie Mellon University is shaping the future of the world.
 
 ## World Economic Forum Partnership
-
-Lorem ipsum dolor sit amet.
 
 ## Satellites
 
