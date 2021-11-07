@@ -29,7 +29,7 @@ The aim of this document is to introduce readers and guide readers as they begin
 
 1. This document opens with a brief history of the EarthTime project. This section starts with the history of the CREATE Lab at Carnegie Mellon University where EarthTime was first conceived and goes onto detail EarthTime’s journey from the original time-lapse project proposed as a collaboration between  Google’s Earth Engine team, Carnegie Mellon University’s CREATE Lab, and TIME Magazine all the way to its presence as the Global Situation Space at the World Economic Forum’s Annual Meetings in Davos, Switzerland, as well as its continued use on the Forum’s Strategic Intelligence platform.
 
-2. The next section of this document goes onto discuss the basics of EarthTime in what is referred to as the “Explore” view that one would find when visiting the main EarthTime website. It also suggests a few prerequisites for computer hardware that one is expected to have to successful run EarthTime in a browser.
+2. The next section of this document goes onto discuss the basics of EarthTime in what is referred to as the “Explore” view that one would find when visiting the [main EarthTime website](http://earthtime.org/explore). It also suggests a few prerequisites for computer hardware that one is expected to have to successful run EarthTime in a browser.
 
 3. The third section of this documents focuses on generating ideas for EarthTime stories—and by extension generating ideas for the data layers that underpin them. This section is generally focused on communication with and outreach to three major groups: academic experts, industry leaders, and journalists.
 
@@ -37,7 +37,7 @@ The aim of this document is to introduce readers and guide readers as they begin
 
 5. The document’s fifth section examines a number of philosophies around data visualization in the EarthTime specific context. It provides a brief introduction to the different types of data layers, color theory, as well as geopolitical considerations that should be taken into account when attempting to visualize names and borders in regions with disputed territories.
 
-6. The sixth section of the document is also the shortest section and provides a few lines on the art of data wrangling. It implores readers to data wrangle using a “code first, not click first” approach so that their process can be reproducible through code. Much of the data wrangling documentation for EarthTime can be found in the companion R package, “EarthTimeR”.
+6. The sixth section of the document is also the shortest section and provides a few lines on the art of data wrangling. It implores readers to data wrangle using a “code first, not click first” approach so that their process can be reproducible through code. Much of the data wrangling documentation for EarthTime can be found in the companion R package, [EarthTimeR](https://github.com/andrewcberkley/EarthTimeR).
 
 7. The document’ seventh section looks at getting formatted data into EarthTime with a process known as “data ingestion”. This section covers the use of Google sheets to read data into EarthTime.
 
