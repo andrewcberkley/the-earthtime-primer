@@ -1,16 +1,13 @@
-# Oops!
-
-##The EarthTime Primer
+# Oops! Error code: 404
 
 You've found a page that does exist!
 
-Error code: 404
+There are a lot of unknowns in the world right now, but thankfully compelling visualizations accompanied by fact-based narratives from international experts can help fight a few of those unknowns. You may want to try searching to find the page's new location, or use the table of contents to find the page you are looking for.
 
-There are a lot of unknowns in the world right now, but compelling visualizations accompanied by fact-based narratives from international experts can help fight a few of those unknowns. You may want to try searching to find the page's new location, or use the table of contents to find the page you are looking for.
-
-To continue, you can simply click on the contents on the left,  or click on the view of Earth from Himawari-8 below to take you back home.
+To continue, you can simply browse the contents on the left,  visit the [main EarthTime website](http://earthtime.org/explore), or click on the view of Earth from Himawari-8 below to take you back home.
 
 
-```{r fig.align='centre', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://github.com/andrewcberkley/the-earthtime-primer/tree/main/'}
+```{r fig.align='centre', out.width="1920px", echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://github.com/andrewcberkley/the-earthtime-primer/tree/main/'}
 knitr::include_graphics('img/himawari-8.gif', dpi = NA)
+#knitr::include_url("https://wef-prod.earthtime.org/m/stories/the_tipping_point")
 ```
