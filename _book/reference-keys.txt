@@ -1,6 +1,8 @@
 the-history-of-earthtime
-the-create-lab-at-cmu
+cmu-create-lab
+gigapan-gigapan-time-machine
 earth-time-lapse
+explorables-project
 world-economic-forum-partnership
 satellites
 the-basics
@@ -41,4 +43,3 @@ gifs
 closing-remarks
 conclusion
 references
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
