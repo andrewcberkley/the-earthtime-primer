@@ -5,8 +5,8 @@ date: "`r format(Sys.Date(), '%B %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
+url: https://andrewcberkley.github.io/the_earthtime_primer/
+cover-image: img/himawari-8.gif
 description: |
   This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other.
 link-citations: yes
