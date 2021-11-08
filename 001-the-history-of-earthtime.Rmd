@@ -10,19 +10,15 @@ Founded in 2000 by Dr. Illah Nourbakhsh, the CREATE Lab sought out a way to use 
 
 In 2009 Dr.  Nourbakhsh was joined by Randy Sargent and Anne Wright (two lead researchers he had previously collaborated with at NASA’s Ames Research Center) and expanded the range of projects that have been notable for their interdisciplinarity and human-centered approach. Some projects such as the [“Breathe Cam”](https://breatheproject.org/about/) used state of the art tech to quantify everyday problems. For example, when the Allegheny County Clean Air Now raised concerns that a local coke works was violating EPA regulations, a PhD student at CREATE Lab devised an algorithm that used video cameras to detect when the coke works were emitting pollutants. The visual data couples with the data collected from affordable air quality monitors inside residents’ homes, as well as real-time reporting of bad odors collected on the [“Smell My City”](https://smellmycity.org/) app, meant that the community’s concerns would be taken seriously by the EPA leading to the eventual shut down of the coke works.
 
-### GigaPan & GigaPan Time Machine
+### GigaPan & GigaPan Time Machine {-} 
 
 In 2010, the CREATE Lab in collaboration with NASA, developed a technology known as "GigaPan" which captured a mosaic of hundreds or thousands of digital pictures and stitch those frames into a panorama that was able to be explored interactively.
 
 In 2011, released what was known as ["GigaPan Time Machine"](https://www.youtube.com/watch?v=Dk9WanUO_gg), a system that enabled viewers to explore gigapixel-scale, high-resolution videos and image sequences by panning or zooming in and out of the images while simultaneously moving back and forth through time. For examples, were able to use the system to focus in on the details of a booth within a panorama of a carnival midway and also reverse time to see how the booth was constructed; watch a group of plants sprout, grow and flower, but also see others get eaten by caterpillars; or view computer simulations of the early universe, watching as gravity works across 600 million light-years to condense matter into filaments and finally into stars that can be seen by zooming in for a close up. Whereas GigaPan was about exploring physical space at high resolutions, GigaPan Time Machine added the critical element of time to allow viewers to explore both simultaneously. Extending GigaPan into the time dimension, image mosaics were repeatedly captured at set intervals, and then stitched across both space and time to create a video in which each frame was hundreds of millions—and sometimes billions—of pixels.
 
-### Earth-Time Lapse
+### Earth-Time Lapse {-} 
 
 In 2013 the CREATE Lab began working on its [Explorables Project](https://www.cmucreatelab.org/projects/Explorables), a platform designed to help make big data–with billions of data points, dozens of different fields of information, changing over time–easier to explore, by layering animations over maps with the hope that it would help people make sense of the data by using visual evidence that was more rhetorically compelling that traditional charts or graphs. The Explorables Project also pioneered the use of base maps instead of solely relying on satellite imagery for what would later become EarthTime's alternate basemaps. Early Explorables Project maps opted to leverage the Google Maps API instead with non-satellite data such as statistics on wealth from the World Top Incomes Database.
-
-```{r fig.align='centre', out.width="1920px", echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')}
-knitr::include_graphics('img/create_lab_explorables_wtid.png', dpi = NA)
-```
 
 Of note in 2013, the CREATE Lab in collaboration with Google and TIME Magazine was putting the finishing touches on "Earth-Timelapse", a 52-terapixel time-lapse portrait of Earth that achieved a resolution of 30-meter-per pixel (1.78 trillion pixels per tile) of the planet. This project, led by the CREATE Lab's Randy Sargent and the Earth Engine team, used 909 terabytes of data from a portion of the Landsat satellite corpus (Landsat4, 5, and 7)—with each of the million images coming in at more than 100 megapixels. While Landsat's polar orbit allows its satellites to take a full set of images of the Earth's surface every 16 days, not all those images were usable because of clouds, weather, and other factors. Creating the cloud-free, low-resolution model required 20 terabytes of data from MODIS sensors on NASA's Earth Observing System Terra and Aqua satellites as it had enough differing spectral bands that allowed the team to accurately analyze the atmosphere.
 
@@ -30,25 +26,23 @@ A keen observer of the current version of EarthTime will notice that early years
 
 The initial data processing to produce the original Earth-Timelapse single shot tiles (from 1984 to 2012) took approximately 260,000 core-hours of CPU time in Google's compute cloud; however, to generate the millions of overlapping video tiles required for Earth-Timelapse's geospatial search capabilities, the CREATE Lab had to leverage Google's computing and storage infrastructure. Encoding of those tiles alone consumed 1.4 million core-hours of compute time and the total process of creating the Earth-Timelapse web application took approximately three days of total processing time and 1.8 million core-hours. At its peak, the project used 66,000 cores simultaneously in Google's cloud. The research with Google done by Sargent and the wider team can be found [here](https://ai.googleblog.com/2013/06/building-visual-planetary-time-machine.html), the subsequent paper on "A Web-based Large-scale Timelapse Editor for Creating and Sharing Guided Video Tours and Interactive Slideshows" by the CREATE Lab can be found [here](https://cmucreatelab.org/files/A%20Web-based%20Large-scale%20Timelapse%20Editor%20for%20Creating%20and%20Sharing%20Guided%20Video%20Tours%20and%20Interactive%20Slideshows.pdf), and the paper from Google on "Google Earth Engine: Planetary-scale geospatial analysis for everyone" can be found [here](https://www.sciencedirect.com/science/article/pii/S0034425717302900?via%3Dihub) for those interested in more details.
 
-### The Beginning of a Wider Reach for the Explorables Project
+### The Beginning of a Wider Reach for the Explorables Project {-} 
 
 In 2017, the CREATE Lab released their first visualization of global refugee flows between 2000 - 2015 using data from UNHCR. By 2018, this visual was turned into a series of EarthTime stories for the year's World Refugee Day: ["Global Refugee Crisis: The Big Picture"](https://earthtime.org/stories/global_refugee_crisis_the_big_picture) co-authored with UNHCR and ["Global Refugee Crisis: A System Overburdened"](https://earthtime.org/stories/global_refugee_crisis_a_system_overburdened) co-authored by Dr. Khalid Koser of GCERF.
-
-By late 2017, the Pittsburgh International Airport had installed an EarthTime display in Concourse D as part of its "Creating a Sense of Place" program. Still standing to this day, the display gives travelers a chance to interact with the CREATE Lab's technology and see how research conducted at Carnegie Mellon University is shaping the future of the world.
 
 ## World Economic Forum Partnership
 
 The CREATE Lab first began engaging with the World Economic Forum through its event programming in the Arts & Culture portfolio. It was brought to the World Economic Forum's 2015 Annual Meeting of New Champions in Dalian, People's Republic of China as an instillation called "The Earth Time-Lapse". Its goal was to allow the event's participants to zoom in or out on any spot on the globe and move back and forth in time as they are reminded of humanity’s impact and its place in space and time.
 
-### Global Situation Space
+### Global Situation Space {-} 
 
 After its success and popularity at the 2015 Annual Meeting of New Champions, the World Economic Forum invited the CREATE Lab to return with Earth-Timelapse not only as a mainstay feature at its Annual Meetings, but also as a regular feature at its smaller, regional meetings as well in the Middle East as well. By 2017, the Forum renamed the installation to the “Global Situation Space” and it has continued to be a major presence at its meetings.  It takes many forms depending on the meeting—from a 12-screen setup at smaller regional meetings, to a massive 90-screen setup during the marquee Annual Meeting in Davos. On Earth Day 2018, the Carnegie Mellon University CREATE Lab and World Economic Forum officially announced their partnership and released the Earth-Timelapse under a new name, “EarthTime”.
 
-### Strategic Intelligence
+### Strategic Intelligence {-} 
 
 The Forum wanted to continue to use EarthTime outside of its physical meetings so that its constituents could continue to engage with the global visualizations at their own convenience. In 2018, the Forum and the CREATE Lab decided to partially integrate EarthTime into its premier knowledge platform, “Strategic Intelligence”, which helps make sense of the complex forces driving transformational change across economies, industries, and global issues. The Strategic Intelligence platform offers EarthTime stories co-authored by members of the World Economic Forum Expert Network and does not offer users the ability to interactively explore or create their own EarthTime stories. That is still done through the main EarthTime site hosted by the CREATE Lab.
 
-### Agenda Blogs
+### Agenda Blogs {-} 
 
 In addition to the Forum’s Strategic Intelligence platform, the Forum also leverages EarthTime stories in its Agenda Blog pieces.  The blog is visited by almost five million people every month, has nearly four million Twitter followers, and more than six million Facebook fans across several pages. Both the Forum’s Strategic Intelligence platform and Agenda Blog platforms utilize the embedding methods covered in Section \@ref(wider-dissemination) of this document focused on “Wider Dissemination” of EarthTime content.
 
