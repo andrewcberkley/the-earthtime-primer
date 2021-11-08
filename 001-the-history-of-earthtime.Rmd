@@ -6,7 +6,9 @@ Mapmaking and the use of maps is an ancient idea, it's an impulse we've had for 
 
 ## CMU CREATE LAB
 
-EarthTime evolved from CREATE Lab projects for creating and exploring panoramic imagery, eventually incorporating data sets from such sources
+Founded in 2000 by Dr. Illah Nourbakhsh, the CREATE Lab sought out a way to use science, technology, and engineering to serve the needs of people in our communities who are advocating for more perfect justice. The CREATE Lab was keen to forego the traditional route of community engagement where researchers generally setup shop in a location, decide on the community’s needs, and create “solutions” around their own tech interests than to what actually might improve the quality of life for the people who actually live in the community. Instead, the CREATE Lab developed meaningful relationships with Pittsburgh-based community organizations and advocacy groups from the start by allowing community members to decide what might help them in their own advocacy and develop appropriate tech solutions in response.
+
+In 2009 Dr.  Nourbakhsh was joined by Randy Sargent and Anne Wright (two lead researchers he had previously collaborated with at NASA’s Ames Research Center) and expanded the range of projects that have been notable for their interdisciplinarity and human-centered approach. Some projects such as the [“Breathe Cam”](https://breatheproject.org/about/) used state of the art tech to quantify everyday problems. For example, when the Allegheny County Clean Air Now raised concerns that a local coke works was violating EPA regulations, a PhD student at CREATE Lab devised an algorithm that used video cameras to detect when the coke works were emitting pollutants. The visual data couples with the data collected from affordable air quality monitors inside residents’ homes, as well as real-time reporting of bad odors collected on the [“Smell My City”](https://smellmycity.org/) app, meant that the community’s concerns would be taken seriously by the EPA leading to the eventual shut down of the coke works.
 
 ### GigaPan & GigaPan Time Machine
 
