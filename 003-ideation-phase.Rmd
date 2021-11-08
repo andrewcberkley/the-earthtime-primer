@@ -1,15 +1,21 @@
 # Ideation Phase
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+Every EarthTime story starts as an idea^[  While it might be self-evident or even trivial to a reader of this document—the following interaction has happened often enough that it’s worth mentioning here—but generally speaking, ideas for EarthTime stories and data need to have some sort of geospatial element involved.]. Inspiration for new and original ideas is beyond the scope of this document; however, in our experience the best place to germinate new ideas is by browsing the “Data Layers” tab in EarthTime’s Explore view, especially if you have expertise in one of the data categories listed. Are there one or two data layers related to what you’ve studied in the past and can shine new light on? Do you have firsthand experience in a local phenomenon that you can speak to using the appropriate data? If so, it makes sense to double-check that data already exists in EarthTime. If the platform doesn’t have data related to your idea, below we will cover individuals or groups that might already have the appropriate data for your idea. 
 
 ## Experts – Forum Expert Network & Academic Peer Review
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+Academic and peer-reviewed data has and continues to be the preferred underlying data for EarthTime stories. By its very nature, the process by which the data is collected, analysis, reviewed, and vetted follows a number of steps to ensure it’s validity, accuracy, and fairness. As such, these individuals and their associated institutions and organizations are a great resource for data layers to inspire new EarthTime stories.
 
-## Industry and Proprietary Data
+Members of the World Economic Forum’s Expert Network have generously lent their data for use in the EarthTime platform and have also authored and co-authored multiple EarthTime stories. Many times, through their own research both in an academic setting or through their work in the field, experts are able to identify hidden connections between their own data and experiences and other data layers. For example, an expert working in the Middle East was able to  look at conflict and displacement data already in EarthTime and make a connection between internet usage and youth unemployment in the region to tell an [EarthTime story](https://wef-prod.earthtime.org/m/stories/the_big_picture_on_peace_and_conflict_in_the_middle_east) focused on opportunities for greater peace and prosperity in the region.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+## Privileged, Industry, and Proprietary Data
+
+While EarthTime is primarily focused on academic, peer-reviewed, and open-source data, there are special agreements in place that allow for proprietary datasets to be ingested into EarthTime. This is because while EarthTime visualizations are open and accessible to the public, the underlying data is not. The only way to gain access to the underlying data is to have permission to access a specific EarthTime instance or Google Sheet where the data layer resides. We’ll be covering more about underlying data layers in section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”.
+
+Story ideas using proprietary data require a clear set of questions that can only be answered by accessing such data layers. For example, [what is Hypertext Transfer Protocol’s global footprint](https://earthtime.org/stories/the_good_and_bad_of_globalisation#waypointIdx=11) and is there a connection based on how the Internet’s underwater sea cables are distributed? Questions such as these can really only be answered through organizations that have privileged accessed to such data. Using this type of data often requires that you have a certain amount of trust in the process by which the data was collected and analyzed, which is why we always encourage you to partner with the individual providing this kind of data at least as a co-author as they can help shed some light on the specifics, even if the overall process remains confidential.
 
 ## Journalists and Primary Data Collection
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+The final group that you might consider reaching out to for story ideas and interesting datasets are journalists and individuals in the media industry who generally have their finger on the pulse of up and coming as well as breaking news stories. Another advantage of partnering with this group is that they’re often fairly close to the primary collection of this data—if not the primary data collectors themselves. Additionally, there’s been cases in the past where this group (at least in the United States) was able to leverage their knowledge of the Freedom of Information Act and make a FOIA request to gain access to data to aid in their own stories. If stories that they’re working on are geospatial as well as temporal in nature, there’s a good chance that they might want to leverage EarthTime as well.
+
+Journalists and those in the media industry might be interested in jumping Section \@ref(wider-dissemination) of this document focused on “Wider Dissemination” of EarthTime content for learning how to utilize and embed EarthTime in their own stories.
