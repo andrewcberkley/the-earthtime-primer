@@ -1,10 +1,16 @@
-# Research and the Data Gathering Process
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+# Research, Data Gathering, & Statistics
 
 ## Open-Source Data
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+For a variety of reasons, sometimes the preferred groups detailed in the previous section—and by extension their datasets as well as the opportunity to co-author an EarthTime story—might not be available to you. In such cases, the next best option is to try and source open datasets. There are a variety of benefits in using open-source data, but please keep in mind that there are two crucial elements when embarking on open-datasets if you’re not associated with the dataset that you’re exploring. The first element is ensuring that the data is accurate and verifiable. Methods for determining if a dataset is accurate and verified are beyond the scope of this document; however, please ensure to the best of your ability that the open-source dataset is something that you’re willing to defend and stand behind should questions arise. Along similar lines, accessing and using an open-source dataset is only the start. While it is easy and tempting to convert any dataset you find into an EarthTime data layer as EarthTime is primarily a storytelling tool, you’ll need to also analyze the open-source dataset to derive meaning from it so that you’re able to tell a compelling story. There are a number of disagreements about what constitute a “good” analysis, which are also beyond the scope of this document; however, we encourage users that wish to analyze data have a decent grasp of statistics and various statistical techniques such as descriptive statistics, distributions, correlation, regression, group mean differences, hypothesis testing, and an understanding of categorical data are what we would consider to be the minimum, with an additional understanding of statistical features, probability distributions, dimensionality reduction, over and under sampling, and Bayesian statistics being preferred. If you’re comfortable with what has been mentioned above, the below dives a bit deeper into open-source data.
+
+### What is Open Data?
+
+Open-source datasets are open for any individual to access, modify, reuse, and share. The term “open data” derives from various “open movements” such as open hardware, open government, and open science to name a few. Governments, independent organizations, and other agencies have come forward opening the floodgates of data to enable free and easy access for those interested.
+
+### Why Is Open Data Important?
+
+Open data is important because the world has grown increasingly data-driven. But if there are restrictions on the access and use of data, the idea of data-driven business and governance will not be materialized; therefore, open data has its own unique place. It can allow a fuller understanding of the global problems and universal issues, which is the foundational idea behind the CREATE Lab and the ethos behind EarthTime covered in Section \@ref(the-history-of-earthtime) on the history of EarthTime. In short, like EarthTime, open data has the ability to empower citizens, strengthen democracy, and streamline the processes and systems that the society and governments have built to transform the way we understand and engage with the world.
 
 ## A Note on Data in the Wild (Data Scrapping)
 
