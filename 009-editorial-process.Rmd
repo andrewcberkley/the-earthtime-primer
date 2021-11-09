@@ -1,6 +1,6 @@
 # (PART) Publishing EarthTime Stories {-} 
 
-# Editorial Process
+# Editorial Process {#editorial-process}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
 
