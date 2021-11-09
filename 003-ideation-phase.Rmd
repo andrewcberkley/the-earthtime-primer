@@ -1,4 +1,4 @@
-# Ideation Phase
+# Reaching Out for Ideas
 
 Every EarthTime story starts as an idea^[  While it might be self-evident or even trivial to a reader of this document—the following interaction has happened often enough that it’s worth mentioning here—but generally speaking, ideas for EarthTime stories and data need to have some sort of geospatial element involved.]. Inspiration for new and original ideas is beyond the scope of this document; however, in our experience the best place to germinate new ideas is by browsing the “Data Layers” tab in EarthTime’s Explore view, especially if you have expertise in one of the data categories listed. Are there one or two data layers related to what you’ve studied in the past and can shine new light on? Do you have firsthand experience in a local phenomenon that you can speak to using the appropriate data? If so, it makes sense to double-check that data already exists in EarthTime. If the platform doesn’t have data related to your idea, below we will cover individuals or groups that might already have the appropriate data for your idea. 
 
