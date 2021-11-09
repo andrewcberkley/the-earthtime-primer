@@ -4,18 +4,50 @@
 
 For a variety of reasons, sometimes the preferred groups detailed in the previous section—and by extension their datasets as well as the opportunity to co-author an EarthTime story—might not be available to you. In such cases, the next best option is to try and source open datasets. There are a variety of benefits in using open-source data, but please keep in mind that there are two crucial elements when embarking on open-datasets if you’re not associated with the dataset that you’re exploring. The first element is ensuring that the data is accurate and verifiable. Methods for determining if a dataset is accurate and verified are beyond the scope of this document; however, please ensure to the best of your ability that the open-source dataset is something that you’re willing to defend and stand behind should questions arise. Along similar lines, accessing and using an open-source dataset is only the start. While it is easy and tempting to convert any dataset you find into an EarthTime data layer as EarthTime is primarily a storytelling tool, you’ll need to also analyze the open-source dataset to derive meaning from it so that you’re able to tell a compelling story. There are a number of disagreements about what constitute a “good” analysis, which are also beyond the scope of this document; however, we encourage users that wish to analyze data have a decent grasp of statistics and various statistical techniques such as descriptive statistics, distributions, correlation, regression, group mean differences, hypothesis testing, and an understanding of categorical data are what we would consider to be the minimum, with an additional understanding of statistical features, probability distributions, dimensionality reduction, over and under sampling, and Bayesian statistics being preferred. If you’re comfortable with what has been mentioned above, the below dives a bit deeper into open-source data.
 
-### What is Open Data?
+### What is Open Data? {-}
 
 Open-source datasets are open for any individual to access, modify, reuse, and share. The term “open data” derives from various “open movements” such as open hardware, open government, and open science to name a few. Governments, independent organizations, and other agencies have come forward opening the floodgates of data to enable free and easy access for those interested.
 
-### Why Is Open Data Important?
+### Why Is Open Data Important? {-}
 
 Open data is important because the world has grown increasingly data-driven. But if there are restrictions on the access and use of data, the idea of data-driven business and governance will not be materialized; therefore, open data has its own unique place. It can allow a fuller understanding of the global problems and universal issues, which is the foundational idea behind the CREATE Lab and the ethos behind EarthTime covered in Section \@ref(the-history-of-earthtime) on the history of EarthTime. In short, like EarthTime, open data has the ability to empower citizens, strengthen democracy, and streamline the processes and systems that the society and governments have built to transform the way we understand and engage with the world.
 
 ## A Note on Data in the Wild (Data Scrapping)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+If you’ve tried searching for an open-source dataset and you’ve also tried reaching out to the groups in the last section and have still come up empty handed but are still committed to telling a particular story—and are trained and comfortable to do your own data analysis—there is always the option to create your own datasets through data scrapping. If you choose to go down this route, we advise that you proceed with caution. What follows for the remainder of this section are certain things to keep in mind when scrapping data from the web based on our experience from the rare instances we’ve had to scrape data and perform original analysis for a particular EarthTime story. This section does not constitute legal advice.
 
-## A note on “recent” and “dynamic” data
+Data scraping is a practice that, while technically legal, does raise a number of questions that you need to ask before doing so. That is, there are boundaries that you want to respect to ensure that you are not violating any laws. If you scrape data by following some generally accepted best practices, you should be considered safe under the law. What follows is a list of questions that we’ve come up with in our experience to determine if data scrapping is considered permissible:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+### Are you scraping personal data? {-}
+
+Different geographies and jurisdictions have different laws governing access and use of personal data. For example, while it is okay to scrape personal data in some states within the United States, you may get into trouble for doing so in California. Wherever you are in the world, please check your local regulations before you scrape personal data.
+
+### Are you scraping non-public data {-}
+
+As long as you are scraping only the publicly available content, you should generally be safe.
+
+### Are you scraping copyrighted data? {-}
+
+Scraping and using copyrighted material irresponsibly has a high likelihood of falling under copyright infringement; however, not all information on the internet can is copyrightable. A website simply declaring something copyrighted may not make it legally copyrightable. 
+
+### Are you abiding by the website’s terms of service agreement? {-}
+
+Terms of service agreements may or may not be contractually binding for data scraping, depending on how the terms appear and enforced on the website.
+
+Terms of service agreements can be either “browsewrapped” or “clickwrapped”. 
+
+Browsewrap agreements are concluded upon visiting the website; however, in many cases they appear discreetly at the bottom of the page or within a drop-down menu. In these cases, such term of service agreements are generally not law binding. There’s a lot of legal theory behind Browsewrap agreements and while it goes beyond the scope of this document, you can learn more by reading about a number of court cases [here](https://en.wikipedia.org/wiki/Browse_wrap).
+
+Clickwrap agreements are considered as such if the term of service agreement appears as a pop-up window or the website provides a link to the term of service position in a reasonable and clear position on the webpage, it is generally legally binding as they require a user to tick a checkbox or click a button. Below the button or checkbox, something along the lines of, “by clicking, you agree to our Terms and Conditions” will be written. After a user takes the required action, the Terms and Conditions are legally binding on you and the court may enforce them.
+
+### Is your crawling rate tolerable? {-}
+
+Scraping data from websites too aggressively can overload a website’s servers and may even crash them if the website doesn’t have rate-limiting in place. In this case, you damage a website’s functionality and may be held liable under the “Trespass to Chattels” law, which you can learn more about [here](https://ilt.eff.org/Trespass_to_Chattels.html).
+
+## A quick note on “recent” and “dynamic” data
+
+There is always a temptation to have the latest breaking and up-to-date data within EarthTime and a question we get a lot is why some data ends a year or two prior to the current date. We’d like to use this opportunity to reiterate that the preferred data sources for EarthTime and by extension EarthTime stories are academic and subject to peer-review, which by the very nature of that methodological process means the data in most EarthTime stories is as up-to-date as it can possibly be and represents the best understanding of the specific issues covered in the stories; furthermore, having this kind of data allows authors and co-authors to digest and deliberate on what is truly important and relevant from the data instead of trying to rush out conclusions with the latest trends.
+
+We do recognize, however, that there are times when an EarthTime story needs to be updated frequently (like during the COVID-19 global pandemic, for example) by scrapping data, setting up a CRON job, or hitting an API regularly.  For the stories that need to be updated more frequently, we recommend that the EarthTime story is framed in such a way that presents it as “relaying facts” rather than a deeper analysis. We’ll be covering story framing in greater detail in Section \@ref(editorial-process) on the editorial process for EarthTime stories.
+
+With that being said, it is of even more importance when updating EarthTime stories more frequently because of evolving events that we recommend double checking the accuracy of the data and verifying that it comes from reputable sources. If you insist on doing this, we generally recommend drawing from news organizations with robust data journalism operations (such as the New York Times, Washington Post, etc.) that allow for updates as they occur in near real-time and generally have a fairly generous approach to open data. 
