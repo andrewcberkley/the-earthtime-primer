@@ -35,11 +35,11 @@ The aim of this document is to introduce readers and guide readers as they begin
 
 4. While not technical in nature, per se, the fourth section of the document explores the philosophy around data gathering process with a special emphasis placed on open-source data web scraping. It is predicated on the assumption that one of the three aforementioned groups has pointed you towards a data that is either messy or otherwise doesn’t exist in a computer-readable format. It briefly touches on data analysis, but that subject is beyond the scope of this document.
 
-5. The document’s fifth section examines a number of philosophies around data visualization in the EarthTime specific context. It provides a brief introduction to the different types of data layers, color theory, as well as geopolitical considerations that should be taken into account when attempting to visualize names and borders in regions with disputed territories.
+5. The fifth section of the document provides a few lines on the art of data wrangling. It implores readers to data wrangle using a “code first; not click first” approach so that their process can be reproducible through code. Much of the data wrangling documentation for EarthTime can be found in the companion R package, ["EarthTimeR"](https://github.com/andrewcberkley/EarthTimeR).
 
-6. The sixth section of the document is also the shortest section and provides a few lines on the art of data wrangling. It implores readers to data wrangle using a “code first, not click first” approach so that their process can be reproducible through code. Much of the data wrangling documentation for EarthTime can be found in the companion R package, [EarthTimeR](https://github.com/andrewcberkley/EarthTimeR).
+6. The document’s sixth section looks at getting formatted data into EarthTime with a process known as “data ingestion”. This section covers the use of Google sheets to read data into EarthTime.
 
-7. The document’ seventh section looks at getting formatted data into EarthTime with a process known as “data ingestion”. This section covers the use of Google sheets to read data into EarthTime.
+7. The document’s seventh section examines a number of philosophies around data visualization in the EarthTime specific context. It provides a brief introduction to the different types of data layers, color theory, as well as geopolitical considerations that should be taken into account when attempting to visualize names and borders in regions with disputed territories.
 
 8. The eighth section covers the EarthTime layers sheets. It covers understanding the structure of waypoints, waypoint URLs, and CSV layers. Within the CSV layers section, the most fields are covered as well as special considerations that should be taken into account when determining how to best use certain fields.
 
