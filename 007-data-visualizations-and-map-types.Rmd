@@ -1,0 +1,63 @@
+# Data Visualizations and Map Types {#data-visualizations-and-map-types}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Understanding Distributions in your Data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+### Linear {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+### Logarithmic {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+### Power {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+### Square Root {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## Map Types
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+### Bubble {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+### Choropleth
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+### Dot {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+### Line String {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+### Point {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+### Point Flow {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+### Raster {-}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+## Color Theory
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+
+## Sensitivities
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
