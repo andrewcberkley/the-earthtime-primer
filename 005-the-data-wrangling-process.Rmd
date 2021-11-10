@@ -1,0 +1,11 @@
+# The Data Wrangling Process {#data-wrangling}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+## Code first, not click first
+
+This section is purely about advocating for users to create data layers, perform analyses, and generate insight using a reproducible and auditable processes. That is, we encourage readers of this document to establish a habit of generating an output through code instead of generating an output using a click-first process using a spreadsheets program^[While it is a programmable language, Microsoft Excel’s Visual Basic has trouble automating heavy tasks as well as communicating with other software; moreover, Excel is not reproducible. When you receive an Excel file, with aggregated data, colors, abbreviations, and/or formulas, it is very difficult to understand how it was set up and gathered. Excel doesn’t save any of the workflow states involved in building such file.]. If you analyze data and provide the underlying data layer to a friend or colleague, they should be able to re-run the analysis from start to finish and get the same result you did (reproducibility). They should also be able to see and understand all the steps in the analysis, as well as the history of how the analysis developed (auditability). Creating reproducible and auditable analyses allows both yourself and others to easily double-check and validate your work.
+
+## EarthTimeR
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
