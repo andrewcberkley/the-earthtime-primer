@@ -20,7 +20,7 @@ Additionally, not saving your wrangled data saves space. This is not a huge deal
 
 ### Collate your results as EarthTime data layers under a single data category for use in EarthTime story waypoints {-}
 
-We’ll be covering data categories more in section 8 on “EarthTime layers sheets”, but taking this approach allows you to output data layers directly straight into your EarthTime layers sheet. This makes things easier when you’re ready to tell your EarthTime story not as individual data layers, but as multiple data layers spread across different waypoints.
+We’ll be covering data categories more in section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”, but taking this approach allows you to output data layers directly straight into your EarthTime layers sheet. This makes things easier when you’re ready to tell your EarthTime story not as individual data layers, but as multiple data layers spread across different waypoints.
 
 ### Use version control {-}
 
