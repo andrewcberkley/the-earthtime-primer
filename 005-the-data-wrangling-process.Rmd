@@ -2,10 +2,46 @@
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
 
-## Code first, not click first
+## Code first; not click first 
 
 This section is purely about advocating for users to create data layers, perform analyses, and generate insight using a reproducible and auditable processes. That is, we encourage readers of this document to establish a habit of generating an output through code instead of generating an output using a click-first process using a spreadsheets program^[While it is a programmable language, Microsoft Excel’s Visual Basic has trouble automating heavy tasks as well as communicating with other software; moreover, Excel is not reproducible. When you receive an Excel file, with aggregated data, colors, abbreviations, and/or formulas, it is very difficult to understand how it was set up and gathered. Excel doesn’t save any of the workflow states involved in building such file.]. If you analyze data and provide the underlying data layer to a friend or colleague, they should be able to re-run the analysis from start to finish and get the same result you did (reproducibility). They should also be able to see and understand all the steps in the analysis, as well as the history of how the analysis developed (auditability). Creating reproducible and auditable analyses allows both yourself and others to easily double-check and validate your work.
 
+## Five principles for a reproducible workflow
+
+### Structure your files  {-}
+
+Whether as .R scripts, .ipynb files, or something in-between , every command you run should be part of your code script (and ideally be commented line by line) instead of using the command line. When commenting, don’t comment what you’re doing but why you’re doing it as this will help the reader of your code follow your thought process.
+
+### Don’t save your data {-}
+
+Of course, you should read in your initial dataset. Depending on your approach from the last section, this could be from a .csv file, a database or an API; however, everything else you handle “on the fly”, with your data in memory and not saved on the disk. In using this approach, you will always know where your data comes from (what data engineers call data lineage or data provenance) in that you’ll always be able to trace your data wrangling and analysis back to its source and debug your output. Once you hard-save your wrangled data you will never be sure where it came from and what it holds; furthermore, reloading a hard-saved file risks using an outdated version.
+
+Additionally, not saving your wrangled data saves space. This is not a huge deal when you only have a few hundred lines of data, but when your dataset is high dimensional and holds several million rows your data files can quickly add up to a few gigabytes.
+
+### Collate your results as EarthTime data layers under a single data category for use in EarthTime story waypoints {-}
+
+We’ll be covering data categories more in section 8 on “EarthTime layers sheets”, but taking this approach allows you to output data layers directly straight into your EarthTime layers sheet. This makes things easier when you’re ready to tell your EarthTime story not as individual data layers, but as multiple data layers spread across different waypoints.
+
+### Use version control {-}
+
+Version control helps you to keep track of the changes you made to your code as its being developed. It’s a way to make changes to code without having to worry that important code was deleted or placed in the wrong location. Instead of keeping different versions of your file, versioning allows you to commit different versions to a repository while working on the same file and if you want to go back to an earlier version you can simply revert to an earlier iteration of the code and check line by line what has changed; moreover, if you delete a file you can restore if from the repository.
+
+### Use virtual environments {-}
+
+As is natural with all software, packages evolve, libraries change, functions are modified, and output formats no longer look the same. That function that was super helpful last time you ran the analysis might no longer exist in the updated package release and when you re-run your analysis code from a few months back your code might break, and you might wonder where you went wrong with your reproducibility workflow. Virtual environments help avoid this problem.
+
+When you start a new data wrangling and analysis project a snapshot is taken of the versions of the packages you have installed on your machines and a virtual environment with these exact versions is loaded. Updating your package or library version later for a different project will not impact the version of the package or library used for your initial project. When you port your code to another machine, an environment with the exact same package versions will be built which ensures that your code works.
+
 ## EarthTimeR
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+While the principles above can apply to and accommodate most programming languages, as far as specific tools go, we’ve created a specific workflow that caters exclusively to R users: the EarthTimeR package. The package has four primary groups of functions for EarthTime users:
+
+### Convenience functions for pushing data Google Sheets; {-}
+
+### Data wrangling functions for creating and formatting EarthTime data layers; {-}
+
+### Functions for invoking statistical techniques for handling missing values; {-}
+
+### Python wrapper functions to aid in the generation of special map types. {-}
+
+For users wishing to dive deeper into the R package, please visit the GitHub repository [here](https://github.com/andrewcberkley/EarthTimeR).
