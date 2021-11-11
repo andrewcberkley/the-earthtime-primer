@@ -1,7 +1,41 @@
 # Data Ingestion
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+Once you’ve gathered your data, wrangled it, analyzed it, the next step in the process is putting it into a format that EarthTime can understand so it can be read and visualized by the platform. For most cases, you’ll want to format your data into one of two types: “long” data or “wide” data depending on the map type that you want to create. We’ll be covering the different map types in more depth in Section \@ref(data-visualizations-and-map-types) on “Data visualizations and map types”.
+
+## Long Data
+
+Sometimes also referred to as “narrow” or “stacked” data, long data is used when creating dot maps, line-string maps, point maps, and point flow maps. These map types require your data to be formatted as a pre-processing step before transforming the data into a .bin file, which you’ll later upload to your EarthTime instance. The main advantage of using long data formats is that it can be processed in a faster and more efficient manner using vectorized operations. 
+
+For long data formats, each row is one time point per subject. This means that each subject (usually the country name or its respective ISO 3166-1 alpha-3 code) will have data in multiple rows. That is, you’ll usually have three columns for the purposes of EarthTime: one column with the countries, one column with the dates, and one column with the values. On occasion, you might have two columns for the location if your data draws on coordinates (one column for latitude and one column for longitude).
+
+## Wide Data
+
+Also sometimes referred to as “unstacked data”, wide data is used for bubble maps and choropleth maps. Most data we physically see on a daily basis is in this format since wide data is very intuitive and easier to understand. In the wide data format, a subject’s (once again, usually the country name or its respective ISO 3166-1 alpha-3 code) repeated responses will be in a single row, and each response is in a separate column. For the purposes of EarthTime, this usually means that the first column is the location (or two columns if you’re using latitude and longitude) and the first row in each subsequent column is a new date.
+
+Once formatted, the data for these maps will need to go into a Google Sheet that will later be read by your EarthTime Layers sheet from the URL field. We’ll be covering the URL field in more depth in Section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”; however, we’ll briefly cover what also needs to be understood about your Google Sheet that houses a specific dataset even before getting to your EarthTime Layers sheets.
 
 ## Google Sheets
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+As Google map provide a number of base layers in EarthTime, it is only natural that some of the data layers are read from another Google service: Google Drive. There are a number of advantages to storing data in Google Drive—and ultimately for EarthTime purposes in Google Sheets—but in short it allows individuals to have a low-maintenance, flexible, and intuitive way to access a spreadsheet service with the added benefit of cloud storage and global access. There are also a few risks in using Google Sheets to read data into EarthTime, primarily that entering data directly in the sheet can be error-prone, which is why we strongly encourage readers of this document to consider adopting the principles and packages in Section \@ref(data-wrangling) on “the data wrangling process” to reduce the likelihood of errors when interacting with Google Sheets. Nevertheless, there are three critical elements that you need to know about to successfully setup a Google Sheet to interact with EarthTime: the “spreadsheet”, the individual “sheet”, and the sharing permissions settings. The following two items on “Spreadsheet” and “Sheet” are taken directly from Google documentation.
+
+### [Spreadsheet](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets) {-}
+
+The primary object in Google Sheets that can contain multiple sheets, each with structured information contained in cells. Every spreadsheet is represented by a Spreadsheet resource and has a unique [spreadsheetId](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets) value, containing letters, numbers, hyphens, or underscores. You can find the spreadsheet ID in a Google Sheets URL:
+
+`https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0`
+
+Please keep the unique spreadsheet identifier in mind when we get to Section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets” so you’ll be ready to have your data read by EarthTime.
+
+### [Sheet](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets) {-}
+
+A page or tab within a spreadsheet. Each sheet is represented by a Sheet resource and has a unique title and numeric [sheetId](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets) value. You can find the sheet ID in a Google Sheets URL: 
+
+`https://docs.google.com/spreadsheets/d/aBC-123_xYz/edit#gid=sheetId`
+
+Please keep the unique sheet identifier in mind when we get to Section 8 on “EarthTime layers sheets” so you’ll be ready to have your data read by EarthTime. While it is possible to setup the spreadsheet as a single data category to house your data and treat the sheets within the spreadsheet as multiple data layers within the category, we recommend only having one spreadsheet per data layer and to house multiple data layers in a category within a single directory within your Google Drive. This not only reduces the likelihood of introducing errors, but also helps when sharing data layers with others who do not approach EarthTime programmatically.
+
+### Sharing Permissions {-}
+
+After you have both the unique spread identifier as well as the unique sheet identifier, the last step—and arguably the most important step—is to change the sharing permissions for the link. To do this click “Share” and then “Get Link”. Under “Get Link”, click on “Change to anyone with link” and select “Viewer” or “View” to decide what people can do with the link.
+
+While you are technically creating the ability to share the link with the wider public, we encourage you to not do so. The permissions need to be set as such for the ability to read the data into the EarthTime platform. While this link will later be slightly obfuscated in your EarthTime layers sheet, we do not recommend sharing the link to the sheet outside of trusted circles. This is especially true if you’ve gone down the route of securing industry or any type of propriety data that was discussed in Section \@ref(research-data-gathering-statistics) on “Research, Data Gathering, & Statistics” as this could jeopardize the agreement you have with whomever you secured the data from. As a rule of thumb, we strongly encourage when dealing with any type of proprietary data in EarthTime that you create a dot map, line-string map, point map, or point flow map as the data for these map types will be transformed into a .bin file, which will obfuscate the underlying data and only be able to be read by the EarthTime platform, thus not leading any underlying data to be exposed.
