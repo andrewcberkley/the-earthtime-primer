@@ -20,7 +20,7 @@ Additionally, not saving your wrangled data saves space. This is not a huge deal
 
 ### Collate your results as EarthTime data layers under a single data category for use in EarthTime story waypoints {-}
 
-We’ll be covering data categories more in section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”, but taking this approach allows you to output data layers directly straight into your EarthTime layers sheet. This makes things easier when you’re ready to tell your EarthTime story not as individual data layers, but as multiple data layers spread across different waypoints.
+We’ll be covering data categories more in Section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”, but taking this approach allows you to output data layers directly straight into your EarthTime layers sheet. This makes things easier when you’re ready to tell your EarthTime story not as individual data layers, but as multiple data layers spread across different waypoints.
 
 ### Use version control {-}
 
@@ -36,12 +36,9 @@ When you start a new data wrangling and analysis project a snapshot is taken of 
 
 While the principles above can apply to and accommodate most programming languages, as far as specific tools go, we’ve created a specific workflow that caters exclusively to R users: the EarthTimeR package. The package has four primary groups of functions for EarthTime users:
 
-### Convenience functions for pushing data Google Sheets; {-}
-
-### Data wrangling functions for creating and formatting EarthTime data layers; {-}
-
-### Functions for invoking statistical techniques for handling missing values; {-}
-
-### Python wrapper functions to aid in the generation of special map types. {-}
+* Convenience functions for pushing data Google Sheets;
+* Data wrangling functions for creating and formatting EarthTime data layers;
+* Functions for invoking statistical techniques for handling missing values;
+* Python wrapper functions to aid in the generation of special map types.
 
 For users wishing to dive deeper into the R package, please visit the GitHub repository [here](https://github.com/andrewcberkley/EarthTimeR).
