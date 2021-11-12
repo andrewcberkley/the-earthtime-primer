@@ -1,63 +1,160 @@
 # Statistics, Data Visualizations, & Map Types {#statistics-data-visualizations-map-types}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+Compelling visualizations coupled with expert narratives are the two combined elements that work together to drive the continued appeal and success of EarthTime as a platform. This section covers the visualization element and what needs to be taken into consideration when determining what type of visualization works best with an expert narrative. We try to emphasis in this section that while you might personally find certain types of visualizations more appealing than others, the choice of visualization should be driven by statistical foundations in your data instead of what you personally think looks best—of course, this is not a hard and fast rule, but in our experience this guidance produces the most accurate representation of data in your EarthTime story.
 
-## Understanding Distributions in your Data
+## Understanding Distributions in the Data and the Assumption of Normality
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+When working with any dataset in EarthTime, from a statistical point of view we generally assume that it is normally distributed or approximately so^[While more statistically minded readers might argue that this is a myth, we recognize that although one's data doesn't have to be normal, it’s still a good idea to get in the habit of checking data distributions just to understand the data and determine if it looks reasonable. While one's data might not be normal for a reason, in such cases, an individual may want to transform it or use other analysis methods (e.g., generalized linear models or nonparametric methods). So while none of one's observed variables have to be normal in linear regression analysis, which includes t-test and ANOVA. The errors after modelling, should be normal to draw a valid conclusion by hypothesis testing.]. While this document isn’t meant to be a refresher on high school mathematics, in short it is mathematically convenient to use normal distributions due to its relation to Least Squares fitting and can easily be solved with pseudoinverse (computing a "best fit"); moreover, due to Central Limit Theorem, we generally assume that there are lots of underlying facts in the dataset having an impact and the sum of these individual effects will tend to behave like normal distribution. 
 
-### Linear {-}
+### Gaussian (Normal) {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+This will more or less take the form of bell-shaped curve and we assume that during any numerical variables will follow a normal distribution with an equal number of measurements above and below the mean value. In order to understand normal distribution, it is important to know the definitions of “mean,” “median,” and “mode.” The “mean” is the calculated average of all numerical variables, the “median” is the value at the center point (mid-point) of the distribution, while the “mode” is the value that was observed most frequently during the measurement. If the distribution is perfectly normal, then the values of the mean, median, and mode are the same. No transformation is necessary when the data is normally distributed.
 
-### Logarithmic {-}
+### Power (Box-Cox) {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+The Power transformation (`Y(s) = (Z(s)λ - 1)/λ `) works fairly well for a large number of non-normal distributions. All the values of lambda vary from -5 to 5 are considered and the best value for the data is selected. The “best” value is one that results in the best skewness of the distribution. For this transformation, values need to be strictly positive.
 
-### Power {-}
+### Log {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+While technically a special case of the Power transformation (in so far that it occurs when `λ=0`), the Log transformation (`Y(s) = ln(Z(s)) `) is often used where the data has a positively skewed distribution and there are a few very large outlier values. Log transformations will help make the variances more constant and normalize your data.
 
 ### Square Root {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+The Square-Root transformation will moderately impact the distribution. The main advantage of square root transformation is that it can be applied to zero values. Here the x will replace by the square root(x). It is weaker than the Log transformation. It is also a special case of the Power transformation when `λ=½`.
+
+In the next section we’ll be applying what we covered in this section to selecting visualization scales for your data.
+
+## Choosing the appropriate d3-scale
+
+EarthTime’s bubble and choropleth maps, are underpinned by Mike Bostock’s [Data-Driven Documents](https://d3js.org/) (d3), which is JavaScript library used for producing dynamic and interactive data visualizations has become one of the standard libraries for data visualization on the web. As discussed above, the distribution of your data will help determine the best scale to use to abstractly represent your data. The following brief explanations of each scale are taken directly from the [d3 documentation](https://github.com/d3/d3-scale). If the reader of this document wishes to receive a longer introduction, we’d recommend referring to Mike Bodstock’s article, [Introducing d3-scale](https://medium.com/@mbostock/introducing-d3-scale-61980c51545f).
+
+### Linear Scales {-}
+
+`d3.scaleLinear().domain([minValue, maxValue]).range([0,1]) `
+
+Constructs a new continuous scale with the specified domain and range, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to ` [0, 1] `. Linear scales are a good default choice for continuous quantitative data because they preserve proportional differences. Each range value y can be expressed as a function of the domain value `x: y = mx + b`
+
+### Logarithmic Scales {-}
+
+`d3.scaleLog().domain([minValue, maxValue]).range([0,1]) `
+
+Log scales are similar to linear scales, except a logarithmic transform is applied to the input domain value before the output range value is computed. The mapping to the range value y can be expressed as a function of the domain value `x: y = m log(x) + b. As log(0) = -∞`, a log scale domain must be strictly-positive or strictly-negative; the domain must not include or cross zero. A log scale with a positive domain has a well-defined behavior for positive values, and a log scale with a negative domain has a well-defined behavior for negative values. (For a negative domain, input and output values are implicitly multiplied by -1.) The behavior of the scale is undefined if you pass a negative value to a log scale with a positive domain or vice versa.
+
+Constructs a new continuous scale with the specified domain and range, the base 10, the default interpolator and clamping disabled. If domain is not specified, it defaults to `[1, 10] `. If range is not specified, it defaults to `[0, 1] `.
+
+### Power Scales {-}
+
+`d3.scalePow().domain([minValue, maxValue]).range([0,1]) `
+
+Power scales are similar to linear scales, except an exponential transform is applied to the input domain value before the output range value is computed. Each range value y can be expressed as a function of the domain value `x: y = mx^k + b`, where k is the exponent value. Power scales also support negative domain values, in which case the input value and the resulting output value are multiplied by -1.
+
+Constructs a new continuous scale with the specified domain and range, the exponent 1, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to `[0, 1]`. (Note that this is effectively a linear scale until you set a different exponent.)
+
+### Square Root Scales {-}
+
+`d3.scaleSqrt().domain([minValue, maxValue]).range([0,1]) `
+
+Constructs a new continuous power scale with the specified domain and range, the exponent 0.5, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to `[0, 1] `.
+
+Keeping these scales in mind, now we’re ready to examine the different types of maps that will represent your data in EarthTime.
 
 ## Map Types
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
-
-### Bubble {-}
+### Dynamic Maps {-}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
 
-### Choropleth
+#### Bubble {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+Bubble maps use circles of a single color to represent data at a particular location increasing and decreasing in size based on the value of the data at the location. They are also proportional to all other circles on the map based on the scale and the minimum and maximum values of the dataset covered earlier in the section. There is also a variant of the bubble map called a “bivalent bubble map” that will also change color over time. 
 
-### Dot {-}
+Bubble maps unfortunately suffer when used with a large-scale map view, as points may overlap each other at when zoomed out to certain levels.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+#### Choropleth {-}
 
-### Line String {-}
+A choropleth map is one of the most common types of maps used in cartography. It’s made by separating the area being mapped, such as by geographic or political boundaries^[  By default, EarthTime uses geopolitical boundaries at the country level as that is the .geojson file native to the platform. This carries several risks and sensitives which we'll be covering in the later part of this section. For the time being, know that you always have the option of pushing a custom .geojson file to your EarthTime instance. We'll cover more on how to point a data layer to a specific .geojson file in your instance in in Section \@ref(earthtime-layers-sheet) on “EarthTime layers sheets”.], and then filling each resulting section with a different color or shade. Each color or shade represents a different value in your dataset. This makes choropleth maps useful for visualizing clusters of data across a geographic area while maintaining the context of regional boundaries.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+Please be careful using this style with areas where regions differ markedly in size, as the size of a region may not necessarily have any relationship to the data attributed to it. For example, on a map of the United States, states with larger land masses—like Alaska, California, or Texas—tend to draw attention; however, on a choropleth map, they may not have a high concentration of a measured variable or have traits that are important to a particular form of analysis, compared to smaller states like Maryland, Delaware, or Rhode Island. If you are trying to point out something in a smaller area that could be dwarfed by larger areas, we recommend using more granular regions such as (at least in the United States) counties, zip codes, voter precincts. Generally speaking, if you have the option and the data at a more granular level, our recommendation is to always use the most granular level possible to help capture the nuances in the data.
 
-### Point {-}
+#### Point {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+Also known as “firefly maps”, point maps are a powerful and elegantly simple way to visualize data in EarthTime. Its greatest strengths are its cinematic effects and glowing appeal. Place a point at any location on the map that corresponds to the variable you’re trying to represent with what some have described as “lightsaber-glowing symbology”. It’s useful for showing distribution and density patterns of things, but it requires your data to have fairly accurate latitudinal and longitudinal coordinates so that each point is precisely reflected on the map. Their radiance really stands out for earthquake events, transportation networks, and population clusters maps.
 
-### Point Flow {-}
+While other point maps can be difficult to use on large-scale maps as points may overlap each other at certain zoom levels, EarthTime circumvents this issue using an image technique developed by the CREATE Lab and cognitive scientists at NASA called “blooming”, which originally set out to answer the question of how to show extreme dynamic range on a computer screen.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+When zooming into this type of map, the data layer will disaggregate points into individual dots and when zooming out, these dots merge into a bloom. Most techniques simple merge those dots together based on certain zoom levels; however, these techniques don't take into account varying degrees of nuance in the data. Finally, with blooming technique, when taking a lumber of dots and constituting them together, it will begin to overshine the colors towards a type of white (like white hot), which gives viewers a sense of how much more density underlies that data.
 
-### Raster {-}
+#### Point Flow {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+Point flow maps, is specialized map type that represents the movement of things across the Earth. These can include migrating humans, resources and other goods for trade, or traffic. Within EarthTime, they are constructed as sets or pairs of origin and destination points within your dataset (please refer to “Long Data” in in Section \@ref(data-ingestion) on “Data Ingestion” to see how to format your data for this map type).
 
-## Color Theory
+By default, the path for a point within point flow maps follows a straight line; however, advanced users might wish for more of a parametic curve. One way this can be done is by adjusting the map’s Bézier curve parameter in the `create_flowMap()` function within the EarthTimeR—the larger the number in the parameter, the greater the degree of the path’s curve when a point travels from its origin to its destination. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+### Static Maps {-}
 
-## Sensitivities
+#### Dot {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+Dot maps are fairly similar to the point maps covered above. That is, they are used to illustrate geographic densities and distributions of a phenomena. The primary difference between the dot map and the point map is that with dot maps, the map is static, each dot generally has a value of one, and this type of map allows for multiple colors to represent different variables, whereas a point map only has one variable.
+
+#### Line String {-}
+
+Line string maps are used fairly infrequently as their use cases are limited to representing the distribution of routes, such as infrastructure or traffic.
+
+#### Dot {-}
+
+Raster maps are simply an image of a map placed over the EarthTime base layer. It might be easier to think of it as a digital photograph or a paper map on a screen. All raster maps in EarthTime are georeferenced based on a specific projected coordinate system, meaning that it will open on the platform directly related to its position on the globe. By default, EarthTime sets its projected coordinate system to `EPSG:3857`, or what is more commonly referred to as the “Pseudo-Mercator/WGS 84” projection.
+
+## The Use of Colors
+
+Colors are uniquely positioned among all the principles of EarthTime map design and visualization of spatial data—they are inherently part of language of the EarthTime story and carry the information value. Additionally, the colors chosen are used for creating the hierarchy of map elements by distinguishing the important from the unimportant. There are multiple academic papers focusing on the theoretical basis of color use in cartography and spatial data visualization, but unfortunately getting into that much color theory is beyond the scope of this document. What a reader of this document needs to know, in short, is this: color provides a significant contribution to the style and perception of EarthTime viewers and special consideration should be made when selected colors for the static maps detailed above, but especially for the dynamic maps detailed above due to these maps’ reliance on a sequential color scheme. If you wish to see all the color mappings that EarthTime supports by default, you can find them [here](https://tiles.earthtime.org/colormaps/index.html).
+
+### Color Theory {-}
+
+Colors that look good together are called a color harmony. Color harmony is generally created by using a color wheel, which was invented by Isaac Newton in 1666. There are two types of color wheels, but for the purposes of EarthTime we suggest using the RGB (red, green, blue) color wheel by focusing on the following types of color combinations depending on the number of data layers that you’re intending to display at any given time: complementary, triadic, and tetradic.
+
+Complementary colors are two colors that are on opposite sides of the color wheel. This combination provides a high contrast and high impact color combination – together, these colors will appear brighter and more prominent.
+
+```{r fig.align='centre', out.width="1920px", echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')
+knitr::include_graphics('img/color_wheels/complementary_colors.png', dpi = NA)
+```
+
+Triadic colors are three colors that are evenly spaced on the color wheel. This provides a high contrast color scheme, but less so than the complementary color combination — making it more versatile. This combination creates bold, vibrant color palettes.
+
+```{r fig.align='centre', out.width="1920px", echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')
+knitr::include_graphics('img/color_wheels/triadic_colors.png', dpi = NA)
+```
+
+Tetradic colors are four colors that are evenly spaced on the color wheel. Tetradic color schemes are bold and work best if you let one color be dominant, and use the others as accents. The more colors you have in your palette, the more difficult it is to balance.
+
+```{r fig.align='centre', out.width="1920px", echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')
+knitr::include_graphics('img/color_wheels/tetradic_colors.png', dpi = NA)
+```
+
+### Human Psychology & Perception {-}
+
+There are other factors such as human psychology and perception that a reader of this document should take into consideration when selecting colors for EarthTime data layers. 
+
+For example, for most people, every color has multiple meanings & feelings; therefore, you should be careful when you use a color for your data visualization. People expect to see more positive or pleasant data represented with colors like blue or green, while negative or danger types of data represented in colors like red or orange.
+
+Additionally, what you see is usually defined by what you perceive around it. The choice of colors should be as contrastable as possible, and the reader of this document should contrast the colors within their data layers—and ultimately within their EarthTime stories—appropriately. Keep in mind what makes a visualization is easier to understand is usually the good use of contrast colors & borders.
+
+## Borders, Base Layers, & Geopolitical Sensitivities
+
+While many people believe that the world is divided neatly into distinct nations with clearly defined borders, there are a number of locations that do not fit that model. There are certain territories that are claimed by more than one country and/or occupying forces. These territorial conflicts range from major wars whose impacts are felt around world to minor disagreements over remote, uninhabited rocks.
+
+Territorial disputes are often related to the possession of natural resources such as rivers, fertile farmland, mineral or petroleum resources although the disputes can also be driven by culture, religion, and ethnic nationalism. Territorial disputes often result from vague and unclear language in a treaty that set up the original boundary. Regardless of the origin of these disputes, these are sensitives that readers of this document need to take into consideration when creating an EarthTime story.
+
+For satellite imagery, sensitives are not as much of an issue; however, when using other base layers (which are drawn from the Google Maps corpus as briefly touched upon in Section \@ref(data-ingestion) on “Data Ingestion” above), one needs to first understand that Google previously [released a statement](https://www.washingtonpost.com/technology/2020/02/14/google-maps-political-borders/) stating that it intends to remain, “neutral on issues of disputed regions and borders, and make every effort to objectively display the dispute in our maps using a dashed gray border line. In countries where [Google has] local versions of Google Maps, we follow local legislation when displaying names and borders.”
+
+What this means for the practical approach of creating EarthTime stories is taken directly from [Google documentation](https://support.google.com/maps/answer/3145721?hl=en) states the following regarding borders and labels:
+
+* International country borders: International country borders are displayed in different styles according to the political status of the border.
+* International boundaries: Undisputed international boundaries, like the one between the United States and Canada, are shown as a solid gray line.
+* Treaty and de facto boundaries: Treaty and provisional boundaries, which are temporary, are displayed as a dashed gray line.
+		+ Treaty boundary: A boundary set in a treaty or similar agreement, but not finalized by law.
+		+ De facto boundary: A boundary not set by a treaty or similar agreement, but used by all states involved.
+* Disputed boundaries: Disputed boundaries are displayed as a dashed gray line. The places involved don't agree on a boundary.
+* Country/Region names: Country names, like Germany or Japan, are displayed directly on the map. Google Maps automatically shows place names in the same language that is set in your browser's settings.
+* State or province borders: State and province borders are shown as thin, light-gray dotted lines inside a country.
+
+Keeping the above in-mind, if you intend to show an area in an EarthTime story that could be considered sensitive from a geopolitical point of view we strongly recommend that you use one of the default EarthTime base layers such as `Lighter Colored Dark Base Map Without Labels ` that retains the features mentioned in the Google documentation above. Additionally, we recommend not using choropleth maps as, by their very nature, have to contain hard boundaries. Most—but not all—data that is represented by a choropleth map can also be represented by a bubble map, which is what we would recommend in geopolitically sensitive situations. As a fall back solution, EarthTime also contain a special base layer, `Base Map Without Labels or Borders`, that should be used in conjunction with any non-choropleth map.
