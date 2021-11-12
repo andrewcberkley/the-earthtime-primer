@@ -1,6 +1,6 @@
 # Data Ingestion
 
-Once you’ve gathered your data, wrangled it, analyzed it, the next step in the process is putting it into a format that EarthTime can understand so it can be read and visualized by the platform. For most cases, you’ll want to format your data into one of two types: “long” data or “wide” data depending on the map type that you want to create. We’ll be covering the different map types in more depth in Section \@ref(data-visualizations-and-map-types) on “Data visualizations and map types”.
+Once you’ve gathered your data, wrangled it, analyzed it, the next step in the process is putting it into a format that EarthTime can understand so it can be read and visualized by the platform. For most cases, you’ll want to format your data into one of two types: “long” data or “wide” data depending on the map type that you want to create. We’ll be covering the different map types in more depth in Section \@ref(statistics-data-visualizations-map-types) on “Data visualizations and map types”.
 
 ## Long Data
 
