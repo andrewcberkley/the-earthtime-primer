@@ -1,4 +1,4 @@
-# Research, Data Gathering, & Statistics {#research-data-gathering-statistics}
+# Research & Data Gathering {#research-and-data-gathering}
 
 ## Open-Source Data
 
