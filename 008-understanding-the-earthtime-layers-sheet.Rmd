@@ -1,14 +1,22 @@
 # Understanding the EarthTime Layers Sheet {#earthtime-layers-sheet}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+The EarthTime layers sheet, often titled `https://[earthtime-instance-name].earthtime.org EarthTime Waypoints, Dotmap layers, and Bubble Layers` is arguably the most important element for the functioning of the EarthTime platform. This is the place where you’ll be housing the text and views for EarthTime stories (i.e.- the “Waypoints” sheet), but also where you’ll be adjusting parameters for the visualizations of datasets (i.e.-the “CSV Layers” sheet). Both sheets have multiple parameters represented as column headers in each respective sheet. We’ll only be covering the most relevant parameters in this document as certain parameters are reserved for special use cases by the CREATE Lab. If you don’t yet have access to an EarthTime Layers Sheet—or if you want more guidance on parameters in your sheet that aren’t covered here—please reach out to the CREATE Lab for further guidance.
 
-## Waypoints
+## The CSV Layers Sheet
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
 
-### Anatomy of an EarthTime URL {-}
+## The Waypoints Points Sheet
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum.
+Each EarthTime story is constructed from multiple “waypoints”, which are different views of data layers accompanied by short text to tell a cohesive narrative about the highlighted phenomenon. The following are the major parameters of the Waypoints sheet.
+
+### `Enabled` {-}
+
+Determines whether the story is visible and accessible within your specific EarthTime instance. Can be set to either `TRUE` or `FALSE`.
+
+### `URL` {-}
+
+This is the unique hyperlink that will be assigned to your story that the wider world will use to access your story directly. It often takes the form of `https://[earthtime-instance-name].earthtime.org/stories/name_of_the_story`. The name of the story in your URL needs to exactly math the title of your story in the `Waypoint Title` parameter. While you can use spaces to title your story in the `Waypoint Title` parameter, please do not use spaces when constructing your URL as they will not be converted to the standard `%20` encoding often found in URLs with spaces. The current codebase does not safely support hyphens, so we recommend using underscores if you need to convert a space within your URL.
 
 ### Story Editor {-}
 
