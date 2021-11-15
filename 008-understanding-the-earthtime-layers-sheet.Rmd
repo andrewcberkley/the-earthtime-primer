@@ -18,13 +18,34 @@ Determines whether the story is visible and accessible within your specific Eart
 
 This is the unique hyperlink that will be assigned to your story that the wider world will use to access your story directly. It often takes the form of `https://[earthtime-instance-name].earthtime.org/stories/name_of_the_story`. The name of the story in your URL needs to exactly math the title of your story in the `Waypoint Title` parameter. While you can use spaces to title your story in the `Waypoint Title` parameter, please do not use spaces when constructing your URL as they will not be converted to the standard `%20` encoding often found in URLs with spaces. The current codebase does not safely support hyphens, so we recommend using underscores if you need to convert a space within your URL.
 
-### Story Editor {-}
+### `Mobile URL` {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet.
+This is the unique hyperlink that will be assigned to your story that the wider world will use to access your story directly from a mobile device. It often takes the form of `https://[earthtime-instance-name].earthtime.org/m/stories/name_of_the_story`. It is similar to the `URL` parameter except that there is a `/m/` before the word “stories” in the URL to indicate the “mobile” version. Other than `/m/` in the URL, please make it identical to the `URL` parameter. 
 
-### Desktop view vs. mobile view {-}
+### `Waypoint Title` {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque.
+This parameter has a number of functions. In addition to establishing the title of your story, it also serves as a way to sort your stories into categories as well as the titles of all the waypoints in a story.
+
+#### Establishing Categories {-}
+
+To set a new category for stories in your EarthTime instance, use the `#` symbol, followed by the name of the category. For example, if you wanted to have a number of EarthTime stories for special events, you would set the category with something such as `#World Refugee Day`. All subsequent stories will fall within that category until a new single `#` symbol is detected.
+
+#### Establishing Story Titles {-}
+
+Setting a new story requires the use of two `##` symbols, followed by the name of the story. For example, if you wanted to have an EarthTime focus on the flow of refugees, you would set the new story with something such as `#Global Refugee Crisis The Big Picture`. All subsequent waypoint titles will fall under that story until the double `##` symbol is detected. Please feel free to use spaces when constructing this parameter, but please don’t use special characters as they won’t be able to be converted into a URL for the `URL` or `Mobile URL` parameters.
+
+#### Establishing Waypoint Titles {-}
+
+For each of the following views in the story, you’ll want to set appropriate waypoints that allows you to setup a natural and logical flow for your story. Please refrain from using any `#` symbols for waypoint titles as that would create a new category or story within the waypoint sheet.
+
+### `Annotation Title` {-}
+
+This parameter is similar to the `Waypoint Title` parameter with the exception that you can use special characters like a “:”. For example, whereas in the `Waypoint Title` parameter, our example story was set as `#Global Refugee Crisis The Big Picture `, in the `Annotation Title` parameter we can use a “:” to construct a more grammatically appropriate title such as `#Global Refugee Crisis: The Big Picture`. The `Annotation Title` parameter is the actual title that will be rendered and displayed to those viewing your story title and waypoint titles.
+
+### `Annotation Text` {-}
+
+This parameter is where you’ll put the body of your text for each waypoint. For more information on how to write engaging waypoint text, please refer to Section \@ref(earthtime-layers-sheet) focused on the “editorial process”. This parameter accepts and will render standard HTML tags.
+
 
 ## CSV Layers
 
