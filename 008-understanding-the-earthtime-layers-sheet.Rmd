@@ -44,13 +44,49 @@ This parameter is similar to the `Waypoint Title` parameter with the exception t
 
 ### `Annotation Text` {-}
 
-This parameter is where you’ll put the body of your text for each waypoint. For more information on how to write engaging waypoint text, please refer to Section \@ref(earthtime-layers-sheet) focused on the “editorial process”. This parameter accepts and will render standard HTML tags.
+This parameter is where you’ll put the body of your text for each waypoint. For more information on how to write engaging waypoint text, please refer to Section \@ref(editorial-process) focused on the “editorial process”. This parameter accepts and will render standard HTML tags.
 
+### `Share View` {-}
 
-## CSV Layers
+This parameter is where the view of the EarthTime story is will be established. You’ll want to keep a number of considerations in mind when setting the share view. You might want to ask yourself questions such as:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius.
+* Will individuals primarily be viewing this on a computer screen or a mobile device?
+* How big do you anticipate those devices to be—the size of a phone screen or a larger-than-life screen like the Global Situation Space (detailed in Section \@ref(the-history-of-earthtime))?
+* What will the resolution of the data layer and the base layers look like at certain zoom levels? 
+* Will the speed of the data layer be appropriate enough for viewers to make sense of the phenomenon being represented in the data layer?
 
-## Checking on Thumbnails
+Once you’ve had a think about the above considerations—and possibly others as well—the easiest way to generate the view you’d like for your story is to go to your EarthTime instance’s “Explore” view and add the data layer(s) you wish to have displayed in your waypoint. Additionally, you’ll want to set the speed (“Slow”, “Medium”, or “Fast”) of the timeline as well as the appropriate zoom level for the area of interest. Once you are satisfied, click on “Share” at the top of the screen. On the sidebar under “Share as link” click “Copy”, which will generate copy the unique URL of the view that you want to share to your clipboard and paste that in the `Share View` parameter cell. For those wishing to learn more about how the URL is structured, please see the below.
+
+#### Anatomy of an EarthTime URL {-}
+
+Let’s take the following URL as an example (you can copy and paste it into your browser if it helps contextualizing what we’re about to go over in real-time): `https://earthtime.org/explore#v=34.53836,38.27958,4.506,latLng&t=1.29&ps=50&l=bdrk,ar,uf&bt=20000101&et=20151231`
+
+`https://earthtime.org/explore` is the name of the EarthTime instance as well as the mode that was active when the unique URL was generated (i.e.- the “Explore” mode).
+
+`#v=34.53836,38.27958,4.506,latLng` represent the zoom level and the coordinates of the view that you want to share for your area of interest.
+
+`&t=1.29` represents a time multiplier function that generally corresponds with the playback rate of the data layer. A value of `1` would leave the playback rate unchanged.
+
+`&ps=50` represents the natural playback rate of the data layer. A value of `25` corresponds to the “Slow” speed in the timeline. A value of `50` corresponds to the “Medium” speed in the timeline. A value of `100` corresponds to the “Fast” speed in the timeline. For time intervals in years across a span of 15 or 20 years, these values are usually sufficient. If the data layer’s time interval is in days or months, you might want to consider using a value greater than `100` depending on the total time span of the data layer.
+
+`&l=bdrk,ar,uf` represents the data layers that are currently active. In this example, `bdrk ` represents the “Dark Map” base layer, `ar ` represents the “Annual Refugees” data layer using a point flow map, and `uf ` represents the “Urban Fragility” data layer using a bubble map. Each data layer is tied to a unique `Share link identifier ` in the “CSV Layers” sheet, which was covered in the preceding part. While not strictly necessary (as seen in this example), a good practice is to nevertheless make the `Share link identifier ` as natural and intuitive as possible if you’re working on a EarthTime instance and a layer sheet that has multiple contributors.
+
+`&bt=20000101`represents the date that the data layer starts. Keep in mind that the date will always need to be in a `YYYYMMDD` format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (`YYYYMM`), within the `Share View` URL, the format still needs to remain `YYYYMMDD` to properly initiate the start sequence.
+
+`&et=20151231` represents the date that the data layer ends. Keep in mind that the date will always need to be in a `YYYYMMDD` format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (`YYYYMM`), within the `Share View` URL, the format still needs to remain `YYYYMMDD` to properly initiate the end sequence.
+
+There are a few other additional parameters that you can add to the end of the URL which—while not used in the example above—is useful to know nonetheless. 
+
+`&startDwell=3` is a parameter that will delay the start of the timeline for a certain period of time (formatted in seconds). In this example, the value `3` indicates that the start of playback will be delayed by three seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
+
+`&endDwell=5` is a parameter that will pause the timeline at the last time interval for a certain period of time (formatted in seconds). In this example, the value `5` indicates that the timeline will pause at the end for five seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
+
+`&forceLegend=true` is a parameter that is generally added when you want to add the data layer’s key when viewers are looking at your story on a mobile device as legends are generally off by default. This is because screen real estate is generally smaller on mobile devices and—while having a key is useful—it can obstruct a decent portion of the visualization. In such cases instead of relying on the key, we recommend address the colors and symbols of the waypoint in the `Annotation Title` parameter.
+
+### `Author` {-}
+
+This parameter is where you’ll put the authors of the EarthTime story as well any additional information that might be useful to highlight, such a data citation. This parameter accepts and will render standard HTML tags. For example, in our example story, this section when used with HTML would appear as follows: `Story by: UNHCR <br>Data from: UNHCR, Igarapé Institute`.
+
+## Generating Thumnails
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
