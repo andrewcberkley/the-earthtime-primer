@@ -26,21 +26,18 @@ This is the unique hyperlink that will be assigned to your story that the wider 
 
 This parameter has a number of functions. In addition to establishing the title of your story, it also serves as a way to sort your stories into categories as well as the titles of all the waypoints in a story.
 
-#### Establishing Categories {-}
-
+###### Establishing Categories {-}
 To set a new category for stories in your EarthTime instance, use the `#` symbol, followed by the name of the category. For example, if you wanted to have a number of EarthTime stories for special events, you would set the category with something such as `#World Refugee Day`. All subsequent stories will fall within that category until a new single `#` symbol is detected.
 
-#### Establishing Story Titles {-}
-
+###### Establishing Story Titles {-}
 Setting a new story requires the use of two `##` symbols, followed by the name of the story. For example, if you wanted to have an EarthTime focus on the flow of refugees, you would set the new story with something such as `#Global Refugee Crisis The Big Picture`. All subsequent waypoint titles will fall under that story until the double `##` symbol is detected. Please feel free to use spaces when constructing this parameter, but please don’t use special characters as they won’t be able to be converted into a URL for the `URL` or `Mobile URL` parameters.
 
-#### Establishing Waypoint Titles {-}
-
+###### Establishing Waypoint Titles {-}
 For each of the following views in the story, you’ll want to set appropriate waypoints that allows you to setup a natural and logical flow for your story. Please refrain from using any `#` symbols for waypoint titles as that would create a new category or story within the waypoint sheet.
 
 ### `Annotation Title` {-}
 
-This parameter is similar to the `Waypoint Title` parameter with the exception that you can use special characters like a “:”. For example, whereas in the `Waypoint Title` parameter, our example story was set as `#Global Refugee Crisis The Big Picture `, in the `Annotation Title` parameter we can use a “:” to construct a more grammatically appropriate title such as `#Global Refugee Crisis: The Big Picture`. The `Annotation Title` parameter is the actual title that will be rendered and displayed to those viewing your story title and waypoint titles.
+This parameter is similar to the `Waypoint Title` parameter with the exception that you can use special characters like a colon. For example, whereas in the `Waypoint Title` parameter, our example story was set as `#Global Refugee Crisis The Big Picture `, in the `Annotation Title` parameter we can use a “:” to construct a more grammatically appropriate title such as `#Global Refugee Crisis: The Big Picture`. The `Annotation Title` parameter is the actual title that will be rendered and displayed to those viewing your story title and waypoint titles.
 
 ### `Annotation Text` {-}
 
@@ -63,25 +60,25 @@ Let’s take the following URL as an example (you can copy and paste it into you
 
 `https://earthtime.org/explore` is the name of the EarthTime instance as well as the mode that was active when the unique URL was generated (i.e.- the “Explore” mode).
 
-`#v=34.53836,38.27958,4.506,latLng` represent the zoom level and the coordinates of the view that you want to share for your area of interest.
+* `#v=34.53836,38.27958,4.506,latLng` represent the zoom level and the coordinates of the view that you want to share for your area of interest.
 
-`&t=1.29` represents a time multiplier function that generally corresponds with the playback rate of the data layer. A value of `1` would leave the playback rate unchanged.
+* `&t=1.29` represents a time multiplier function that generally corresponds with the playback rate of the data layer. A value of `1` would leave the playback rate unchanged.
 
-`&ps=50` represents the natural playback rate of the data layer. A value of `25` corresponds to the “Slow” speed in the timeline. A value of `50` corresponds to the “Medium” speed in the timeline. A value of `100` corresponds to the “Fast” speed in the timeline. For time intervals in years across a span of 15 or 20 years, these values are usually sufficient. If the data layer’s time interval is in days or months, you might want to consider using a value greater than `100` depending on the total time span of the data layer.
+* `&ps=50` represents the natural playback rate of the data layer. A value of `25` corresponds to the “Slow” speed in the timeline. A value of `50` corresponds to the “Medium” speed in the timeline. A value of `100` corresponds to the “Fast” speed in the timeline. For time intervals in years across a span of 15 or 20 years, these values are usually sufficient. If the data layer’s time interval is in days or months, you might want to consider using a value greater than `100` depending on the total time span of the data layer.
 
-`&l=bdrk,ar,uf` represents the data layers that are currently active. In this example, `bdrk ` represents the “Dark Map” base layer, `ar ` represents the “Annual Refugees” data layer using a point flow map, and `uf ` represents the “Urban Fragility” data layer using a bubble map. Each data layer is tied to a unique `Share link identifier ` in the “CSV Layers” sheet, which was covered in the preceding part. While not strictly necessary (as seen in this example), a good practice is to nevertheless make the `Share link identifier ` as natural and intuitive as possible if you’re working on a EarthTime instance and a layer sheet that has multiple contributors.
+* `&l=bdrk,ar,uf` represents the data layers that are currently active. In this example, `bdrk ` represents the “Dark Map” base layer, `ar ` represents the “Annual Refugees” data layer using a point flow map, and `uf ` represents the “Urban Fragility” data layer using a bubble map. Each data layer is tied to a unique `Share link identifier ` in the “CSV Layers” sheet, which was covered in the preceding part. While not strictly necessary (as seen in this example), a good practice is to nevertheless make the `Share link identifier ` as natural and intuitive as possible if you’re working on a EarthTime instance and a layer sheet that has multiple contributors.
 
-`&bt=20000101`represents the date that the data layer starts. Keep in mind that the date will always need to be in a `YYYYMMDD` format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (`YYYYMM`), within the `Share View` URL, the format still needs to remain `YYYYMMDD` to properly initiate the start sequence.
+* `&bt=20000101`represents the date that the data layer starts. Keep in mind that the date will always need to be in a `YYYYMMDD` format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (`YYYYMM`), within the `Share View` URL, the format still needs to remain `YYYYMMDD` to properly initiate the start sequence.
 
-`&et=20151231` represents the date that the data layer ends. Keep in mind that the date will always need to be in a `YYYYMMDD` format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (`YYYYMM`), within the `Share View` URL, the format still needs to remain `YYYYMMDD` to properly initiate the end sequence.
+* `&et=20151231` represents the date that the data layer ends. Keep in mind that the date will always need to be in a `YYYYMMDD` format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (`YYYYMM`), within the `Share View` URL, the format still needs to remain `YYYYMMDD` to properly initiate the end sequence.
 
 There are a few other additional parameters that you can add to the end of the URL which—while not used in the example above—is useful to know nonetheless. 
 
-`&startDwell=3` is a parameter that will delay the start of the timeline for a certain period of time (formatted in seconds). In this example, the value `3` indicates that the start of playback will be delayed by three seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
+* `&startDwell=3` is a parameter that will delay the start of the timeline for a certain period of time (formatted in seconds). In this example, the value `3` indicates that the start of playback will be delayed by three seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
 
-`&endDwell=5` is a parameter that will pause the timeline at the last time interval for a certain period of time (formatted in seconds). In this example, the value `5` indicates that the timeline will pause at the end for five seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
+* `&endDwell=5` is a parameter that will pause the timeline at the last time interval for a certain period of time (formatted in seconds). In this example, the value `5` indicates that the timeline will pause at the end for five seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
 
-`&forceLegend=true` is a parameter that is generally added when you want to add the data layer’s key when viewers are looking at your story on a mobile device as legends are generally off by default. This is because screen real estate is generally smaller on mobile devices and—while having a key is useful—it can obstruct a decent portion of the visualization. In such cases instead of relying on the key, we recommend address the colors and symbols of the waypoint in the `Annotation Title` parameter.
+* `&forceLegend=true` is a parameter that is generally added when you want to add the data layer’s key when viewers are looking at your story on a mobile device as legends are generally off by default. This is because screen real estate is generally smaller on mobile devices and—while having a key is useful—it can obstruct a decent portion of the visualization. In such cases instead of relying on the key, we recommend address the colors and symbols of the waypoint in the `Annotation Title` parameter.
 
 ### `Author` {-}
 
