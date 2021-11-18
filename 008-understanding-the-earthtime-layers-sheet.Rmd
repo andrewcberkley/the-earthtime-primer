@@ -4,7 +4,143 @@ The EarthTime layers sheet, often titled `https://[earthtime-instance-name].eart
 
 ## The CSV Layers Sheet
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+Drawing on the data layers that were created using the methods in Section \@ref(data-ingestion) on “Data Ingestion”, the CSV Layers Sheet is where you breathe life into your data by providing parameters and instructions to EarthTime on how it should be represented on the platform. The following are the major parameters of the CSV Layers Sheet. If you see parameters listed in your CSV Layers Sheet but are not found in this section of the document, please reach out to the CREATE Lab for further clarification and guidance.
+
+### `Enabled` {-}
+
+Determines whether the data layer is visible and accessible within your specific EarthTime instance. Can be set to either `TRUE` or `FALSE`.
+
+### `Share_Link_Identifier` {-}
+
+This is the unique identifier that will be issued to the data layer. Please ensure that there are no other data layers with the same `Share_Link_Identifier`; otherwise, it will cause conflicts and normal functioning and operation of the EarthTime will be impacted. Please refrain from using spaces when constructing your `Share_Link_Identifier`as they will not be converted to the standard `%20` encoding often found in URLs with spaces. The current codebase does not safely support hyphens, so we recommend using underscores if you need to convert a space within your `Share_Link_Identifier`.
+
+### `Category` {-}
+
+Name of the data layer's category that will be rendered to the end user on the EarthTime platform. Please group similar data layers within the same category if possible. Please also feel free to use spaces or special characters.
+
+### `Name` {-}
+
+This is the name of the data layer that will be rendered to the end user on the EarthTime platform. Please feel free to use spaces or special characters.
+
+### `Credits` {-}
+
+This is the main citation for the data layer within the EarthTime platform. Please keep it relatively short—such as the name of an individual or an institution—as this will be rendered as part of the data’s legend. For more extensive citation, please use the opening waypoint in the Waypoint Layers Sheet to do so.
+
+### `Base_Layer` {-}
+
+If in use, this parameter will override the ability for users to select their own base layer for the data layer by locking in a specific base layer to be visualized with the data layer. Please use the `Share_Link_Identifier` of the base layer when filling out this parameter.
+
+### `Start_Date` {-}
+
+Represents the date that the data layer starts. The time intervals for EarthTime data layers are generally in years (`YYYY`), months (`YYYYMM`), or days (`YYYYMMDD`). Regardless of the time interval assigned do the data layer, please ensure that the `Start_Date`and `End_Date` parameters use a consistent format. That is, if the `Start_Date` parameter is in months (`YYYYMM`) then the `End_Date` parameter also needs to be in months (`YYYYMM`).
+
+### `End_Date` {-}
+
+Represents the date that the data layer ends. The time intervals for EarthTime data layers are generally in years (`YYYY`), months (`YYYYMM`), or days (`YYYYMMDD`). Regardless of the time interval assigned do the data layer, please ensure that the `End_Date`and `Start_Date` parameters use a consistent format. That is, if the `End_Date` parameter is in months (`YYYYMM`) then the `Start_Date` parameter also needs to be in months (`YYYYMM`).
+
+### `Step` {-}
+
+Represents how many “steps” are taken on the timeline while it plays the data visualization. For example, if you have a data layer that starts in 2000 and ends is 2015 and assign a step of `1`, then all 15 years will be displayed for the full duration of the timeline. If the same 2000-2015 data layer has a step of `5`, then only four years will be displayer: 2000, 2005, 2010, and 2015.
+
+### `URL` {-}
+
+The `URL` parameter with the CSV Layers Sheet points to the where your data will be read from. What you use for the `URL` will depend on the type of data layer you’re trying to visualize—we touched on this briefly in Section \@ref(data-ingestion) on “Data Ingestion”.
+
+If you’re visualizing bubble maps and choropleth maps, you’ll need to create a proxy URL based on your unique ` spreadsheetId ` value as well as your unique `sheetId ` value discussed in in Section \@ref(data-ingestion) on “Data Ingestion”. The proxy URL follows the following format: 
+
+`https://docs-proxy.cmucreatelab.org/spreadsheets/d/xxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxx/export?format=csv&gid=0123456789`
+
+There’s a number of reasons that you’ll need to use this proxy serve to point to your bubble map or choropleth data layer that are beyond the scope of this document, but in short it helps save bandwidth and improve speeds and increases privacy and security.
+
+If you’re visualizing dot maps, line-string maps, point maps, and point flow maps, you’ll direct the `URL` parameter directly to the .bin file within your EarthTime instance. For example:
+
+`https://tiles.earthtime.org/://[earthtime-instance-name]/data/[directory_name]/[file_name].bin`
+
+It’s important to note that after your .bin file has been updated to your EarthTime instance, the specific sub-directory that the file is in needs to be readable, writable, and executable by all users in order to be visualized correctly on EarthTime. This can be done by using the Linux command `chmod -R 777 *` while in the specific sub-directory. 
+
+### `Scaling` {-}
+
+This parameter draws on what was covered in the “Choosing the appropriate d3-scale” part within Section 7 on “Statistics, Data Visualizations, & Map Types”. Remember what you set this parameter as will be change how the data is visualized within your selected color scale and should ultimately be determined by the underlying distribution of your data.  As a quick refresher, the distributions will generally be “Linear”, “Logarithmic”, “Power”, or “Square-Root” in nature, which corresponds to the following base inputs for this parameter:
+
+* `d3.scaleLinear().domain([minValue, maxValue]).range([0,1]) `
+* `d3.scaleLog().domain([minValue, maxValue]).range([0,1]) `
+* `d3.scalePow().domain([minValue, maxValue]).range([0,1]) `
+* `d3.scaleSqrt().domain([minValue, maxValue]).range([0,1]) `
+
+### `Map_Type` {-}
+
+Used to specify the type of map to visualize. Acceptable inputs include:
+* `Choropleth`
+* `Bubble`
+* `Bivalent Bubble`
+* `Point`
+* `Point Flow`
+
+### `Color` {-}
+
+This parameter is used to specify the RGB value for “Bubble” and “Bivalent Bubble” maps. The acceptable input format is either the RGB percentage value (`[0.0, 0.0, 0.]`) or the RGB decimal value (`[255, 255, 255]`). For example, if you wanted the bubble map to appear as the color “red”, you’d use the `[1.0, 0.0, 0.]` input for the RGB percentage value or `[255, 0, 0]`, which both correspond to the RGB value for the color “red”.
+
+### `External_GeoJSON` {-}
+
+This parameter overrides the default .geojson file and allows you to use custom shapes and boundaries for choropleth maps. To do this, you’ll need to direct the `External_GeoJSON` parameter directly to the .geojson file within your EarthTime instance. For example:
+
+`https://tiles.earthtime.org/://[earthtime-instance-name]/data/[directory_name]/[file_name].geojson`
+
+It’s important to note that after your .geojson file has been updated to your EarthTime instance, the specific sub-directory that the file is in needs to be readable, writable, and executable by all users in order to be visualized correctly on EarthTime. This can be done by using the Linux command `chmod -R 777 *` while in the specific sub-directory. 
+
+### `Name_Key` {-}
+
+This parameter specifies that name of the .geojson field that provides the geometry for the shapes and boundaries for your custom geography. It should be identical to your data column in your choropleth data layer residing in the respective Google Sheet.
+
+### `Legend_Content` {-}
+
+This parameter sets the content that will be displayed in the legend of the explore view. It can be set to `auto`, which will render legend content based on the aforementioned parameters. Legend content can also be constructed using custom HTML tags. For example:
+
+`<div style="background-color:rgb(255,160,122); border-radius: 50%; width:13px; height: 13px;"></div><div style="margin-left: 29px; margin-top: -15px; font-size: 15px">Data Point Meaning</div>`
+
+Please note that if you use custom HTML tags, you will not use the `Legend_Key` parameter below.
+
+### `Legend_Key` {-}
+
+Used when the `Legend_Content` is set to `auto`. This parameter is an opportunity to add more context and detail explaining the data layer than is possible through the `Name` parameter alone.
+
+### `Load_Data_Function` {-}
+
+Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input function should usually be `WebGLVectorTile2.prototype._loadData`.
+
+### `Set_Data_Function` {-}
+
+Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input function should usually be ` WebGLVectorTile2.prototype._setBufferData`.
+
+### `Number_of_Attributes` {-}
+
+Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input number should reflect the number of attributes such as `5`.
+
+### `Vertex_Shader` {-}
+
+Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input for the vertex shader should usually be `WebGLVectorTile2.PointSizeColorEpochVertexShader`.
+
+### `Fragment_Shader` {-}
+
+Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input for the fragment shader should usually be `WebGLVectorTile2.PointColorFragmentShader`.
+
+### `Draw_Function` {-}
+
+Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input for the draw function should usually be `WebGLVectorTile2.prototype._drawPointSizeColorEpoch`.
+
+### `Playback_Rate` {-}
+
+This parameter is used to set the natural speed for the data layer’s timeline. It is generally set to `1`.
+
+### `Master_Playback_Rate` {-}
+
+This parameter is used to set the override speed for the data layer’s timeline. It is generally set to `1`.
+
+### `Colormap_Src` {-}
+
+Points to the of the color spectrum for choropleths found at https://tiles.earthtime.org/colormaps/black-background.html. You’ll invoke your chosen color spectrum within this parameter like the following example:
+
+`https://tiles.earthtime.org/colormaps/white_aliceblue_cornflowerblue_royalblue_blue.png`
 
 ## The Waypoints Points Sheet
 
