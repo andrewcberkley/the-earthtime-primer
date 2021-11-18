@@ -20,7 +20,7 @@ As Google Maps provide a number of base layers in EarthTime, it is only natural 
 
 ### [Spreadsheet](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets) {-}
 
-The primary object in Google Sheets that can contain multiple sheets, each with structured information contained in cells. Every spreadsheet is represented by a Spreadsheet resource and has a unique [spreadsheetId](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets) value, containing letters, numbers, hyphens, or underscores. You can find the spreadsheet ID in a Google Sheets URL:
+The primary object in Google Sheets that can contain multiple sheets, each with structured information contained in cells. Every spreadsheet is represented by a Spreadsheet resource and has a unique [`spreadsheetId`](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets) value, containing letters, numbers, hyphens, or underscores. You can find the spreadsheet ID in a Google Sheets URL:
 
 `https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0`
 
@@ -28,7 +28,7 @@ Please keep the unique spreadsheet identifier in mind when we get to Section \@r
 
 ### [Sheet](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets) {-}
 
-A page or tab within a spreadsheet. Each sheet is represented by a Sheet resource and has a unique title and numeric [sheetId](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets) value. You can find the sheet ID in a Google Sheets URL: 
+A page or tab within a spreadsheet. Each sheet is represented by a Sheet resource and has a unique title and numeric [`sheetId`](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets) value. You can find the sheet ID in a Google Sheets URL: 
 
 `https://docs.google.com/spreadsheets/d/aBC-123_xYz/edit#gid=sheetId`
 
