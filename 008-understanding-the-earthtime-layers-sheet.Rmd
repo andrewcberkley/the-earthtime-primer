@@ -46,11 +46,15 @@ Represents how many “steps” are taken on the timeline while it plays the dat
 
 The `URL` parameter with the CSV Layers Sheet points to the where your data will be read from. What you use for the `URL` will depend on the type of data layer you’re trying to visualize—we touched on this briefly in Section \@ref(data-ingestion) on “Data Ingestion”.
 
+###### CREATE LAB Proxy URL {-}
+
 If you’re visualizing bubble maps and choropleth maps, you’ll need to create a proxy URL based on your unique ` spreadsheetId ` value as well as your unique `sheetId ` value discussed in in Section \@ref(data-ingestion) on “Data Ingestion”. The proxy URL follows the following format: 
 
 `https://docs-proxy.cmucreatelab.org/spreadsheets/d/xxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxx/export?format=csv&gid=0123456789`
 
 There’s a number of reasons that you’ll need to use this proxy serve to point to your bubble map or choropleth data layer that are beyond the scope of this document, but in short it helps save bandwidth and improve speeds and increases privacy and security.
+
+###### .bin File on an EarthTime Instance {-}
 
 If you’re visualizing dot maps, line-string maps, point maps, and point flow maps, you’ll direct the `URL` parameter directly to the .bin file within your EarthTime instance. For example:
 
@@ -70,6 +74,7 @@ This parameter draws on what was covered in the “Choosing the appropriate d3-s
 ### `Map_Type` {-}
 
 Used to specify the type of map to visualize. Acceptable inputs include:
+
 * `Choropleth`
 * `Bubble`
 * `Bivalent Bubble`
@@ -138,7 +143,7 @@ This parameter is used to set the override speed for the data layer’s timeline
 
 ### `Colormap_Src` {-}
 
-Points to the of the color spectrum for choropleths found at https://tiles.earthtime.org/colormaps/black-background.html. You’ll invoke your chosen color spectrum within this parameter like the following example:
+Points to the of the color spectrum for choropleths found at [https://tiles.earthtime.org/colormaps/](https://tiles.earthtime.org/colormaps/). You’ll invoke your chosen color spectrum within this parameter like the following example:
 
 `https://tiles.earthtime.org/colormaps/white_aliceblue_cornflowerblue_royalblue_blue.png`
 
@@ -222,4 +227,10 @@ This parameter is where you’ll put the authors of the EarthTime story as well 
 
 ## Generating Thumnails
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+Before sharing your EarthTime story to the wider world, it’s best practice to generate the thumbnails for the story waypoints in advance so they do need to load for the viewer. To initiate a thumbnail generation sequence for your story, go the URL of your EarthTime story and go through each waypoint in the story within the Explore view and scroll through the entire story on a mobile device. The thumbnails might take some time to generate when the story is first accessed, but after they have generated successfully, they will usually display for all subsequent viewers without needing to load.
+
+If you ever encounter an issue with your thumbnails, you can always check the status using the following link:
+
+[https://thumbnails-earthtime.cmucreatelab.org/status](https://thumbnails-earthtime.cmucreatelab.org/status)
+
+Now that you’ve successfully created an EarthTime story on the backend of the EarthTime platform, the next—and final—part of this document will cover the finer points of editing these stories as well as suggestions for disseminating them to the wider public.
