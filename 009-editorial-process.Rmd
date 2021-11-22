@@ -1,17 +1,81 @@
 # (PART) Publishing EarthTime Stories {-} 
 
+"It is a historical irony that one of the most advanced visualization systems we have developed, EarthTime, lends itself powerfully to the creation of graphic imagery for a traditional hardcover book" - Illah Nourbakhsh
+
 # Editorial Process {#editorial-process}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+There are several reasons EarthTime stories are consider powerful communication tools when the appropriate dataset is visualized in conjunction with an expert narrative, in this section we’ve tried to synthesize three editorial values that should be the guiding principles taken into consideration to help lay the foundations for choosing which data to visualize as well as crafting text for powerful EarthTime stories: common ground, inclusion, and empowerment. 
 
-## JOHL
+## The Three Editorial Principles of EarthTime
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+### Common Ground {-}
 
-## EarthTime Author Story Template
+EarthTime is able to move us beyond debates about competing summarized analyses of data by showing comprehensive, peer-reviewed data in a manner that directly accesses our visual cortex and our intellectual and emotional centers. This helps us all achieve the common ground needed to move beyond asking “Is this happening?” to solution-oriented discussions focused on “What do we do about it?”
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+### Inclusion {-}
 
-## Berkley's Triangles
+Images are universal, and our techniques for using moving images and multiple layers enables members of all cultures, ages and stations in life to make sense of our Earth changes at the same time. This universality, driven by a compelling visual technique, powers our ability to have relevance and transparency for all.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus.
+### Empowerment {-}
+
+By showing not only complex, layered changes that we have all witnessed in the past, but also the possible futures that we all face together, this tool becomes a global common key to understanding the sensitivity of the future to the decisions of our present. By showing the results of our past decisions with incontrovertible visual evidence through time, we create the scaffolding that supports positive future decision-making. We can empower all to make more informed forward-facing choices.
+
+## The Process for Building an Expert Narrative
+
+### Guidance {-}
+
+* Draw in your audience: provide a hook that will capture the attention of an online audience 
+* The words: use is language that is accessible to a lay audience
+* Set the Scene: start by describing the situation in the world today and where your issue fits within global developments
+* Provide examples: choose 2-3 examples that illustrate the larger issue at hand
+* End on a high note: illustrate a few policy examples or business initiatives that can be scaled up to provide a call to action
+
+### Recommended Outline Structure {-}
+
+Traditionally, EarthTime stories have been composed of 8-12 waypoints with approximately 40-45 words of text per waypoint; however, this might change and can be adapted based on your own specific use case or audience. For example, the Strategic Intelligence team at the World Economic Forum generally crafts EarthTime stories with experts that are between 3-5 waypoints with 40-50 words of text waypoint for integration into their Transformation Maps. Find what works best for you, but we recommend always using a minimal amount of text for waypoints as longer texts will start to obstruct the view of the data being visualized in the waypoint.
+
+#### Example of an 11-Waypoint Outline for an EarthTime Story {-}
+
+##### Waypoint 1: Synopsis {-}
+
+The synopsis is displayed on the title page of your story and provides context to the reader. The aim is to find a hook that draws in an online audience, data points work well here.  ‘This is a story about a global development, which is driven by several factors and this is why it matters to our audience.’
+
+##### Waypoint 2: Setting the Scene {-}
+	
+Start by contextualizing your issue on a global scale. What do we see today? What has happened over time? Where did this development originate? What are we expecting to see if this trend continues?
+
+##### Waypoint 3: Example 1 {-}
+	
+Zoom into a place where we can see this issue in action and unpack what is visible in the data visualization. Give additional context. Help the reader understand the evolution over time, maybe there is a specific year or timeframe to highlight. 
+
+##### Waypoint 4: Cause 1 {-}
+	
+Describe which factors are driving this issue how they are be interlinked with other developments.  
+
+##### Waypoint 5: Consequence 1 {-}
+
+What are the socio-economic consequences? Who is affected by this? Who needs to act on this?
+
+##### Waypoint 6: Example 2 {-}
+	
+Give another example in a different location and unpack the visualization. 
+
+##### Waypoint 7: Cause 2 {-}
+	
+Describe the causes. Highlight differences and commonalities.
+
+##### Waypoint 8: Consequence 2 {-}
+	
+Explain the consequences. What does this mean for the audience?
+
+##### Waypoint 9: Response 1 {-}
+	
+Highlight an example of a positive policy response or business initiative that changed the dynamic. 
+
+##### Waypoint 10: Response 2 {-}
+	
+Mention a second solution that has been tried and tested elsewhere. 
+
+##### Waypoint 11: Call to action {-}
+	
+What kind of intervention do we need to see more of in the world? What is the ask for policymakers, business leaders and individuals?
