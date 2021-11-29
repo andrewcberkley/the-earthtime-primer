@@ -5,6 +5,7 @@ date: "`r format(Sys.Date(), '%B %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: references.bib
+nocite: '@*'
 url: https://andrewcberkley.github.io/the_earthtime_primer/
 cover-image: img/himawari-8.gif
 description: |
