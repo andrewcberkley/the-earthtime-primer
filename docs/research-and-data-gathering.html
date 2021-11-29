@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 4 Research &amp; Data Gathering | The EarthTime Primer</title>
+  <meta name="description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 4 Research &amp; Data Gathering | The EarthTime Primer" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://andrewcberkley.github.io/the_earthtime_primer/" />
+  <meta property="og:image" content="https://andrewcberkley.github.io/the_earthtime_primer/img/himawari-8.gif" />
+  <meta property="og:description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="github-repo" content="andrewcberkley/EarthTimeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 4 Research &amp; Data Gathering | The EarthTime Primer" />
+  
+  <meta name="twitter:description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="twitter:image" content="https://andrewcberkley.github.io/the_earthtime_primer/img/himawari-8.gif" />
+
+<meta name="author" content="Andrew C. Berkley" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="reaching-out-for-ideas.html"/>
+<link rel="next" href="data-wrangling.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-00000000-0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-00000000-0');
+</script>
+<meta property="og:title" content="Section 4 Research &amp; Data Gathering | The EarthTime Primer">
+<meta property="og:description" content="A beginner's guide for EarthTime users.">
+<meta property="og:image" content="https://andrewcberkley.github.io/the-earthtime-primer/images/social.png">
+<meta property="og:url" content="https://andrewcberkley.github.io/the-earthtime-primer/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="Section 4 Research &amp; Data Gathering | The EarthTime Primer">
+<meta name="twitter:image:alt" content="A beginner's guide for EarthTime users.">
+<meta name="twitter:site" content="@jdatap">
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 2em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The EarthTime Primer</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#premise"><i class="fa fa-check"></i>Premise</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#documentation-structure"><i class="fa fa-check"></i>Documentation Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="part"><span><b>I From Pittsburgh to Davos</b></span></li>
+<li class="chapter" data-level="1" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html"><i class="fa fa-check"></i><b>1</b> The History of EarthTime</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#cmu-create-lab"><i class="fa fa-check"></i><b>1.1</b> CMU CREATE LAB</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#gigapan-gigapan-time-machine"><i class="fa fa-check"></i>GigaPan &amp; GigaPan Time Machine</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#earth-time-lapse"><i class="fa fa-check"></i>Earth-Time Lapse</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#the-beginning-of-a-wider-reach-for-the-explorables-project"><i class="fa fa-check"></i>The Beginning of a Wider Reach for the Explorables Project</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#world-economic-forum-partnership"><i class="fa fa-check"></i><b>1.2</b> World Economic Forum Partnership</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#global-situation-space"><i class="fa fa-check"></i>Global Situation Space</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#strategic-intelligence"><i class="fa fa-check"></i>Strategic Intelligence</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#agenda-blogs"><i class="fa fa-check"></i>Agenda Blogs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#earthtime-today"><i class="fa fa-check"></i><b>1.3</b> EarthTime Today</a></li>
+</ul></li>
+<li class="part"><span><b>II Ideas, Data, &amp; Philosophies</b></span></li>
+<li class="chapter" data-level="2" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>2</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-basics.html"><a href="the-basics.html#hardware-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Hardware Prerequisites</a></li>
+<li class="chapter" data-level="2.2" data-path="the-basics.html"><a href="the-basics.html#introduction-to-the-earthtime-platform"><i class="fa fa-check"></i><b>2.2</b> Introduction to the EarthTime Platform</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#stories"><i class="fa fa-check"></i>Stories</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#data-layers"><i class="fa fa-check"></i>Data Layers</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#share"><i class="fa fa-check"></i>Share</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#story-editor"><i class="fa fa-check"></i>Story Editor</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#settings"><i class="fa fa-check"></i>Settings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html"><i class="fa fa-check"></i><b>3</b> Reaching Out for Ideas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#experts-forum-expert-network-academic-peer-review"><i class="fa fa-check"></i><b>3.1</b> Experts – Forum Expert Network &amp; Academic Peer Review</a></li>
+<li class="chapter" data-level="3.2" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#privileged-industry-and-proprietary-data"><i class="fa fa-check"></i><b>3.2</b> Privileged, Industry, and Proprietary Data</a></li>
+<li class="chapter" data-level="3.3" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#journalists-and-primary-data-collection"><i class="fa fa-check"></i><b>3.3</b> Journalists and Primary Data Collection</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html"><i class="fa fa-check"></i><b>4</b> Research &amp; Data Gathering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#open-source-data"><i class="fa fa-check"></i><b>4.1</b> Open-Source Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#what-is-open-data"><i class="fa fa-check"></i>What is Open Data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#why-is-open-data-important"><i class="fa fa-check"></i>Why Is Open Data Important?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#a-note-on-data-in-the-wild-data-scrapping"><i class="fa fa-check"></i><b>4.2</b> A Note on Data in the Wild (Data Scrapping)</a>
+<ul>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-personal-data"><i class="fa fa-check"></i>Are you scraping personal data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-non-public-data"><i class="fa fa-check"></i>Are you scraping non-public data</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-copyrighted-data"><i class="fa fa-check"></i>Are you scraping copyrighted data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-abiding-by-the-websites-terms-of-service-agreement"><i class="fa fa-check"></i>Are you abiding by the website’s terms of service agreement?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#is-your-crawling-rate-tolerable"><i class="fa fa-check"></i>Is your crawling rate tolerable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#a-quick-note-on-recent-and-dynamic-data"><i class="fa fa-check"></i><b>4.3</b> A quick note on “recent” and “dynamic” data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> The Data Wrangling Process</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#code-first-not-click-first"><i class="fa fa-check"></i><b>5.1</b> Code first; not click first</a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#five-principles-for-a-reproducible-workflow"><i class="fa fa-check"></i><b>5.2</b> Five principles for a reproducible workflow</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#structure-your-files"><i class="fa fa-check"></i>Structure your files</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#dont-save-your-data"><i class="fa fa-check"></i>Don’t save your data</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#collate-your-results-as-earthtime-data-layers-under-a-single-data-category-for-use-in-earthtime-story-waypoints"><i class="fa fa-check"></i>Collate your results as EarthTime data layers under a single data category for use in EarthTime story waypoints</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#use-version-control"><i class="fa fa-check"></i>Use version control</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#use-virtual-environments"><i class="fa fa-check"></i>Use virtual environments</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#earthtimer"><i class="fa fa-check"></i><b>5.3</b> EarthTimeR</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-ingestion.html"><a href="data-ingestion.html"><i class="fa fa-check"></i><b>6</b> Data Ingestion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-ingestion.html"><a href="data-ingestion.html#long-data"><i class="fa fa-check"></i><b>6.1</b> Long Data</a></li>
+<li class="chapter" data-level="6.2" data-path="data-ingestion.html"><a href="data-ingestion.html#wide-data"><i class="fa fa-check"></i><b>6.2</b> Wide Data</a></li>
+<li class="chapter" data-level="6.3" data-path="data-ingestion.html"><a href="data-ingestion.html#google-sheets"><i class="fa fa-check"></i><b>6.3</b> Google Sheets</a>
+<ul>
+<li><a href="data-ingestion.html#spreadsheet"><span>Spreadsheet</span></a></li>
+<li><a href="data-ingestion.html#sheet"><span>Sheet</span></a></li>
+<li class="chapter" data-level="" data-path="data-ingestion.html"><a href="data-ingestion.html#sharing-permissions"><i class="fa fa-check"></i>Sharing Permissions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html"><i class="fa fa-check"></i><b>7</b> Statistics, Data Visualizations, &amp; Map Types</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#understanding-distributions-in-the-data-and-the-assumption-of-normality"><i class="fa fa-check"></i><b>7.1</b> Understanding Distributions in the Data and the Assumption of Normality</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#gaussian-normal"><i class="fa fa-check"></i>Gaussian (Normal)</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#power-box-cox"><i class="fa fa-check"></i>Power (Box-Cox)</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#log"><i class="fa fa-check"></i>Log</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#square-root"><i class="fa fa-check"></i>Square Root</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#choosing-the-appropriate-d3-scale"><i class="fa fa-check"></i><b>7.2</b> Choosing the appropriate d3-scale</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#linear-scales"><i class="fa fa-check"></i>Linear Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#logarithmic-scales"><i class="fa fa-check"></i>Logarithmic Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#power-scales"><i class="fa fa-check"></i>Power Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#square-root-scales"><i class="fa fa-check"></i>Square Root Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#map-types"><i class="fa fa-check"></i><b>7.3</b> Map Types</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#dynamic-maps"><i class="fa fa-check"></i>Dynamic Maps</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#static-maps"><i class="fa fa-check"></i>Static Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#the-use-of-colors"><i class="fa fa-check"></i><b>7.4</b> The Use of Colors</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#color-theory"><i class="fa fa-check"></i>Color Theory</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#human-psychology-perception"><i class="fa fa-check"></i>Human Psychology &amp; Perception</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#borders-base-layers-geopolitical-sensitivities"><i class="fa fa-check"></i><b>7.5</b> Borders, Base Layers, &amp; Geopolitical Sensitivities</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html"><i class="fa fa-check"></i><b>8</b> Understanding the EarthTime Layers Sheet</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#the-csv-layers-sheet"><i class="fa fa-check"></i><b>8.1</b> The CSV Layers Sheet</a>
+<ul>
+<li><a href="earthtime-layers-sheet.html#enabled"><code>Enabled</code></a></li>
+<li><a href="earthtime-layers-sheet.html#share_link_identifier"><code>Share_Link_Identifier</code></a></li>
+<li><a href="earthtime-layers-sheet.html#category"><code>Category</code></a></li>
+<li><a href="earthtime-layers-sheet.html#name"><code>Name</code></a></li>
+<li><a href="earthtime-layers-sheet.html#credits"><code>Credits</code></a></li>
+<li><a href="earthtime-layers-sheet.html#base_layer"><code>Base_Layer</code></a></li>
+<li><a href="earthtime-layers-sheet.html#start_date"><code>Start_Date</code></a></li>
+<li><a href="earthtime-layers-sheet.html#end_date"><code>End_Date</code></a></li>
+<li><a href="earthtime-layers-sheet.html#step"><code>Step</code></a></li>
+<li><a href="earthtime-layers-sheet.html#url"><code>URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#scaling"><code>Scaling</code></a></li>
+<li><a href="earthtime-layers-sheet.html#map_type"><code>Map_Type</code></a></li>
+<li><a href="earthtime-layers-sheet.html#color"><code>Color</code></a></li>
+<li><a href="earthtime-layers-sheet.html#external_geojson"><code>External_GeoJSON</code></a></li>
+<li><a href="earthtime-layers-sheet.html#name_key"><code>Name_Key</code></a></li>
+<li><a href="earthtime-layers-sheet.html#legend_content"><code>Legend_Content</code></a></li>
+<li><a href="earthtime-layers-sheet.html#legend_key"><code>Legend_Key</code></a></li>
+<li><a href="earthtime-layers-sheet.html#load_data_function"><code>Load_Data_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#set_data_function"><code>Set_Data_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#number_of_attributes"><code>Number_of_Attributes</code></a></li>
+<li><a href="earthtime-layers-sheet.html#vertex_shader"><code>Vertex_Shader</code></a></li>
+<li><a href="earthtime-layers-sheet.html#fragment_shader"><code>Fragment_Shader</code></a></li>
+<li><a href="earthtime-layers-sheet.html#draw_function"><code>Draw_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#playback_rate"><code>Playback_Rate</code></a></li>
+<li><a href="earthtime-layers-sheet.html#master_playback_rate"><code>Master_Playback_Rate</code></a></li>
+<li><a href="earthtime-layers-sheet.html#colormap_src"><code>Colormap_Src</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#the-waypoints-points-sheet"><i class="fa fa-check"></i><b>8.2</b> The Waypoints Points Sheet</a>
+<ul>
+<li><a href="earthtime-layers-sheet.html#enabled-1"><code>Enabled</code></a></li>
+<li><a href="earthtime-layers-sheet.html#url-1"><code>URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#mobile-url"><code>Mobile URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#waypoint-title"><code>Waypoint Title</code></a></li>
+<li><a href="earthtime-layers-sheet.html#annotation-title"><code>Annotation Title</code></a></li>
+<li><a href="earthtime-layers-sheet.html#annotation-text"><code>Annotation Text</code></a></li>
+<li><a href="earthtime-layers-sheet.html#share-view"><code>Share View</code></a></li>
+<li><a href="earthtime-layers-sheet.html#author"><code>Author</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#generating-thumnails"><i class="fa fa-check"></i><b>8.3</b> Generating Thumnails</a></li>
+</ul></li>
+<li class="part"><span><b>III Publishing EarthTime Stories</b></span></li>
+<li class="chapter" data-level="9" data-path="editorial-process.html"><a href="editorial-process.html"><i class="fa fa-check"></i><b>9</b> Editorial Process</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="editorial-process.html"><a href="editorial-process.html#the-three-editorial-principles-of-earthtime"><i class="fa fa-check"></i><b>9.1</b> The Three Editorial Principles of EarthTime</a>
+<ul>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#common-ground"><i class="fa fa-check"></i>Common Ground</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#inclusion"><i class="fa fa-check"></i>Inclusion</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#empowerment"><i class="fa fa-check"></i>Empowerment</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="editorial-process.html"><a href="editorial-process.html#the-process-for-building-an-expert-narrative"><i class="fa fa-check"></i><b>9.2</b> The Process for Building an Expert Narrative</a>
+<ul>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#guidance"><i class="fa fa-check"></i>Guidance</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#recommended-outline-structure"><i class="fa fa-check"></i>Recommended Outline Structure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wider-dissemination.html"><a href="wider-dissemination.html"><i class="fa fa-check"></i><b>10</b> Wider Dissemination</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="wider-dissemination.html"><a href="wider-dissemination.html#best-practices-for-embedding"><i class="fa fa-check"></i><b>10.1</b> Best Practices for Embedding</a>
+<ul>
+<li class="chapter" data-level="" data-path="wider-dissemination.html"><a href="wider-dissemination.html#embedding-using-javascript"><i class="fa fa-check"></i>Embedding Using Javascript</a></li>
+<li class="chapter" data-level="" data-path="wider-dissemination.html"><a href="wider-dissemination.html#embedding-using-iframes"><i class="fa fa-check"></i>Embedding using iFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="wider-dissemination.html"><a href="wider-dissemination.html#best-practices-for-utilizing-gifs"><i class="fa fa-check"></i><b>10.2</b> Best Practices for Utilizing GIFs</a></li>
+</ul></li>
+<li class="part"><span><b>IV Inspiring Meaningful Dialogue</b></span></li>
+<li class="chapter" data-level="11" data-path="closing-remarks.html"><a href="closing-remarks.html"><i class="fa fa-check"></i><b>11</b> Closing Remarks</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The EarthTime Primer</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="research-and-data-gathering" class="section level1" number="4">
+<h1><span class="header-section-number">Section 4</span> Research &amp; Data Gathering</h1>
+<div id="open-source-data" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Open-Source Data</h2>
+<p>For a variety of reasons, sometimes the preferred groups detailed in the previous section—and by extension their datasets as well as the opportunity to co-author an EarthTime story—might not be available to you. In such cases, the next best option is to try and source open datasets. There are a variety of benefits in using open-source data, but please keep in mind that there are two crucial elements when embarking on open-datasets if you’re not associated with the dataset that you’re exploring. The first element is ensuring that the data is accurate and verifiable. Methods for determining if a dataset is accurate and verified are beyond the scope of this document; however, please ensure to the best of your ability that the open-source dataset is something that you’re willing to defend and stand behind should questions arise. Along similar lines, accessing and using an open-source dataset is only the start. While it is easy and tempting to convert any dataset you find into an EarthTime data layer as EarthTime is primarily a storytelling tool, you’ll need to also analyze the open-source dataset to derive meaning from it so that you’re able to tell a compelling story. There are a number of disagreements about what constitute a “good” analysis, which are also beyond the scope of this document; however, we encourage users that wish to analyze data have a decent grasp of statistics and various statistical techniques such as descriptive statistics, distributions, correlation, regression, group mean differences, hypothesis testing, and an understanding of categorical data are what we would consider to be the minimum, with an additional understanding of statistical features, probability distributions, dimensionality reduction, over and under sampling, and Bayesian statistics being preferred. Having an understanding of these concepts and applying them correctly is another reason why it’s crucial that you create and document reproducible code, which we’ll be diving into in greater depth in Section <a href="data-wrangling.html#data-wrangling">5</a> on the subject. If you’re comfortable with what has been mentioned above, the below dives a bit deeper into open-source data (just please remember to cite appropriately).</p>
+<div id="what-is-open-data" class="section level3 unnumbered">
+<h3>What is Open Data?</h3>
+<p>Open-source datasets are open for any individual to access, modify, reuse, and share. The term “open data” derives from various “open movements” such as open hardware, open government, and open science to name a few. Governments, independent organizations, and other agencies have come forward opening the floodgates of data to enable free and easy access for those interested.</p>
+</div>
+<div id="why-is-open-data-important" class="section level3 unnumbered">
+<h3>Why Is Open Data Important?</h3>
+<p>Open data is important because the world has grown increasingly data-driven. But if there are restrictions on the access and use of data, the idea of data-driven business and governance will not be materialized; therefore, open data has its own unique place. It can allow a fuller understanding of the global problems and universal issues, which is the foundational idea behind the CREATE Lab and the ethos behind EarthTime covered in Section <a href="the-history-of-earthtime.html#the-history-of-earthtime">1</a> on the history of EarthTime. In short, like EarthTime, open data has the ability to empower citizens, strengthen democracy, and streamline the processes and systems that the society and governments have built to transform the way we understand and engage with the world.</p>
+</div>
+</div>
+<div id="a-note-on-data-in-the-wild-data-scrapping" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> A Note on Data in the Wild (Data Scrapping)</h2>
+<p>If you’ve tried searching for an open-source dataset and you’ve also tried reaching out to the groups in the last section and have still come up empty handed but are still committed to telling a particular story—and are trained and comfortable to do your own data analysis—there is always the option to create your own datasets through data scrapping. If you choose to go down this route, we advise that you proceed with caution. What follows for the remainder of this section are certain things to keep in mind when scrapping data from the web based on our experience from the rare instances we’ve had to scrape data and perform original analysis for a particular EarthTime story. This section does not constitute legal advice.</p>
+<p>Data scraping is a practice that, while technically legal, does raise a number of questions that you need to ask before doing so. That is, there are boundaries that you want to respect to ensure that you are not violating any laws. If you scrape data by following some generally accepted best practices, you should be considered safe under the law. What follows is a list of questions that we’ve come up with in our experience to determine if data scrapping is considered permissible:</p>
+<div id="are-you-scraping-personal-data" class="section level3 unnumbered">
+<h3>Are you scraping personal data?</h3>
+<p>Different geographies and jurisdictions have different laws governing access and use of personal data. For example, while it is okay to scrape personal data in some states within the United States, you may get into trouble for doing so in California. Wherever you are in the world, please check your local regulations before you scrape personal data.</p>
+</div>
+<div id="are-you-scraping-non-public-data" class="section level3 unnumbered">
+<h3>Are you scraping non-public data</h3>
+<p>As long as you are scraping only the publicly available content, you should generally be safe.</p>
+</div>
+<div id="are-you-scraping-copyrighted-data" class="section level3 unnumbered">
+<h3>Are you scraping copyrighted data?</h3>
+<p>Scraping and using copyrighted material irresponsibly has a high likelihood of falling under copyright infringement; however, not all information on the internet can is copyrightable. A website simply declaring something copyrighted may not make it legally copyrightable.</p>
+</div>
+<div id="are-you-abiding-by-the-websites-terms-of-service-agreement" class="section level3 unnumbered">
+<h3>Are you abiding by the website’s terms of service agreement?</h3>
+<p>Terms of service agreements may or may not be contractually binding for data scraping, depending on how the terms appear and enforced on the website.</p>
+<p>Terms of service agreements can be either “browsewrapped” or “clickwrapped.”</p>
+<p>Browsewrap agreements are concluded upon visiting the website; however, in many cases they appear discreetly at the bottom of the page or within a drop-down menu. In these cases, such term of service agreements are generally not law binding. There’s a lot of legal theory behind Browsewrap agreements and while it goes beyond the scope of this document, you can learn more by reading about a number of court cases <a href="https://en.wikipedia.org/wiki/Browse_wrap">here</a>.</p>
+<p>Clickwrap agreements are considered as such if the term of service agreement appears as a pop-up window or the website provides a link to the term of service position in a reasonable and clear position on the webpage, it is generally legally binding as they require a user to tick a checkbox or click a button. Below the button or checkbox, something along the lines of, “by clicking, you agree to our Terms and Conditions” will be written. After a user takes the required action, the Terms and Conditions are legally binding on you and the court may enforce them.</p>
+</div>
+<div id="is-your-crawling-rate-tolerable" class="section level3 unnumbered">
+<h3>Is your crawling rate tolerable?</h3>
+<p>Scraping data from websites too aggressively can overload a website’s servers and may even crash them if the website doesn’t have rate-limiting in place. In this case, you damage a website’s functionality and may be held liable under the “Trespass to Chattels” law, which you can learn more about <a href="https://ilt.eff.org/Trespass_to_Chattels.html">here</a>.</p>
+</div>
+</div>
+<div id="a-quick-note-on-recent-and-dynamic-data" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> A quick note on “recent” and “dynamic” data</h2>
+<p>There is always a temptation to have the latest breaking and up-to-date data within EarthTime and a question we get a lot is why some data ends a year or two prior to the current date. We’d like to use this opportunity to reiterate that the preferred data sources for EarthTime and by extension EarthTime stories are academic and subject to peer-review, which by the very nature of that methodological process means the data in most EarthTime stories is as up-to-date as it can possibly be and represents the best understanding of the specific issues covered in the stories; furthermore, having this kind of data allows authors and co-authors to digest and deliberate on what is truly important and relevant from the data instead of trying to rush out conclusions with the latest trends.</p>
+<p>We do recognize, however, that there are times when an EarthTime story needs to be updated frequently (like during the COVID-19 global pandemic, for example) by scrapping data, setting up a CRON job, or hitting an API regularly. For the stories that need to be updated more frequently, we recommend that the EarthTime story is framed in such a way that presents it as “relaying facts” rather than a deeper analysis. We’ll be covering story framing in greater detail in Section <a href="editorial-process.html#editorial-process">9</a> on the editorial process for EarthTime stories.</p>
+<p>With that being said, it is of even more importance when updating EarthTime stories more frequently because of evolving events that we recommend double checking the accuracy of the data and verifying that it comes from reputable sources. If you insist on doing this, we generally recommend drawing from news organizations with robust data journalism operations (such as the New York Times, Washington Post, etc.) that allow for updates as they occur in near real-time and generally have a fairly generous approach to open data.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reaching-out-for-ideas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-wrangling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/andrewcberkley/the-earthtime-primer/edit/master/004-research-and-the-data-gathering-process.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["the-earthtime-primer.pdf", "the-earthtime-primer.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

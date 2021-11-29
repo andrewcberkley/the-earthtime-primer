@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 8 Understanding the EarthTime Layers Sheet | The EarthTime Primer</title>
+  <meta name="description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 8 Understanding the EarthTime Layers Sheet | The EarthTime Primer" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://andrewcberkley.github.io/the_earthtime_primer/" />
+  <meta property="og:image" content="https://andrewcberkley.github.io/the_earthtime_primer/img/himawari-8.gif" />
+  <meta property="og:description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="github-repo" content="andrewcberkley/EarthTimeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 8 Understanding the EarthTime Layers Sheet | The EarthTime Primer" />
+  
+  <meta name="twitter:description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="twitter:image" content="https://andrewcberkley.github.io/the_earthtime_primer/img/himawari-8.gif" />
+
+<meta name="author" content="Andrew C. Berkley" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="statistics-data-visualizations-map-types.html"/>
+<link rel="next" href="editorial-process.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-00000000-0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-00000000-0');
+</script>
+<meta property="og:title" content="Section 8 Understanding the EarthTime Layers Sheet | The EarthTime Primer">
+<meta property="og:description" content="A beginner's guide for EarthTime users.">
+<meta property="og:image" content="https://andrewcberkley.github.io/the-earthtime-primer/images/social.png">
+<meta property="og:url" content="https://andrewcberkley.github.io/the-earthtime-primer/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="Section 8 Understanding the EarthTime Layers Sheet | The EarthTime Primer">
+<meta name="twitter:image:alt" content="A beginner's guide for EarthTime users.">
+<meta name="twitter:site" content="@jdatap">
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 2em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The EarthTime Primer</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#premise"><i class="fa fa-check"></i>Premise</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#documentation-structure"><i class="fa fa-check"></i>Documentation Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="part"><span><b>I From Pittsburgh to Davos</b></span></li>
+<li class="chapter" data-level="1" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html"><i class="fa fa-check"></i><b>1</b> The History of EarthTime</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#cmu-create-lab"><i class="fa fa-check"></i><b>1.1</b> CMU CREATE LAB</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#gigapan-gigapan-time-machine"><i class="fa fa-check"></i>GigaPan &amp; GigaPan Time Machine</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#earth-time-lapse"><i class="fa fa-check"></i>Earth-Time Lapse</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#the-beginning-of-a-wider-reach-for-the-explorables-project"><i class="fa fa-check"></i>The Beginning of a Wider Reach for the Explorables Project</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#world-economic-forum-partnership"><i class="fa fa-check"></i><b>1.2</b> World Economic Forum Partnership</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#global-situation-space"><i class="fa fa-check"></i>Global Situation Space</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#strategic-intelligence"><i class="fa fa-check"></i>Strategic Intelligence</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#agenda-blogs"><i class="fa fa-check"></i>Agenda Blogs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#earthtime-today"><i class="fa fa-check"></i><b>1.3</b> EarthTime Today</a></li>
+</ul></li>
+<li class="part"><span><b>II Ideas, Data, &amp; Philosophies</b></span></li>
+<li class="chapter" data-level="2" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>2</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-basics.html"><a href="the-basics.html#hardware-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Hardware Prerequisites</a></li>
+<li class="chapter" data-level="2.2" data-path="the-basics.html"><a href="the-basics.html#introduction-to-the-earthtime-platform"><i class="fa fa-check"></i><b>2.2</b> Introduction to the EarthTime Platform</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#stories"><i class="fa fa-check"></i>Stories</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#data-layers"><i class="fa fa-check"></i>Data Layers</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#share"><i class="fa fa-check"></i>Share</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#story-editor"><i class="fa fa-check"></i>Story Editor</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#settings"><i class="fa fa-check"></i>Settings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html"><i class="fa fa-check"></i><b>3</b> Reaching Out for Ideas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#experts-forum-expert-network-academic-peer-review"><i class="fa fa-check"></i><b>3.1</b> Experts – Forum Expert Network &amp; Academic Peer Review</a></li>
+<li class="chapter" data-level="3.2" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#privileged-industry-and-proprietary-data"><i class="fa fa-check"></i><b>3.2</b> Privileged, Industry, and Proprietary Data</a></li>
+<li class="chapter" data-level="3.3" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#journalists-and-primary-data-collection"><i class="fa fa-check"></i><b>3.3</b> Journalists and Primary Data Collection</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html"><i class="fa fa-check"></i><b>4</b> Research &amp; Data Gathering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#open-source-data"><i class="fa fa-check"></i><b>4.1</b> Open-Source Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#what-is-open-data"><i class="fa fa-check"></i>What is Open Data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#why-is-open-data-important"><i class="fa fa-check"></i>Why Is Open Data Important?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#a-note-on-data-in-the-wild-data-scrapping"><i class="fa fa-check"></i><b>4.2</b> A Note on Data in the Wild (Data Scrapping)</a>
+<ul>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-personal-data"><i class="fa fa-check"></i>Are you scraping personal data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-non-public-data"><i class="fa fa-check"></i>Are you scraping non-public data</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-copyrighted-data"><i class="fa fa-check"></i>Are you scraping copyrighted data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-abiding-by-the-websites-terms-of-service-agreement"><i class="fa fa-check"></i>Are you abiding by the website’s terms of service agreement?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#is-your-crawling-rate-tolerable"><i class="fa fa-check"></i>Is your crawling rate tolerable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#a-quick-note-on-recent-and-dynamic-data"><i class="fa fa-check"></i><b>4.3</b> A quick note on “recent” and “dynamic” data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> The Data Wrangling Process</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#code-first-not-click-first"><i class="fa fa-check"></i><b>5.1</b> Code first; not click first</a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#five-principles-for-a-reproducible-workflow"><i class="fa fa-check"></i><b>5.2</b> Five principles for a reproducible workflow</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#structure-your-files"><i class="fa fa-check"></i>Structure your files</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#dont-save-your-data"><i class="fa fa-check"></i>Don’t save your data</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#collate-your-results-as-earthtime-data-layers-under-a-single-data-category-for-use-in-earthtime-story-waypoints"><i class="fa fa-check"></i>Collate your results as EarthTime data layers under a single data category for use in EarthTime story waypoints</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#use-version-control"><i class="fa fa-check"></i>Use version control</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#use-virtual-environments"><i class="fa fa-check"></i>Use virtual environments</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#earthtimer"><i class="fa fa-check"></i><b>5.3</b> EarthTimeR</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-ingestion.html"><a href="data-ingestion.html"><i class="fa fa-check"></i><b>6</b> Data Ingestion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-ingestion.html"><a href="data-ingestion.html#long-data"><i class="fa fa-check"></i><b>6.1</b> Long Data</a></li>
+<li class="chapter" data-level="6.2" data-path="data-ingestion.html"><a href="data-ingestion.html#wide-data"><i class="fa fa-check"></i><b>6.2</b> Wide Data</a></li>
+<li class="chapter" data-level="6.3" data-path="data-ingestion.html"><a href="data-ingestion.html#google-sheets"><i class="fa fa-check"></i><b>6.3</b> Google Sheets</a>
+<ul>
+<li><a href="data-ingestion.html#spreadsheet"><span>Spreadsheet</span></a></li>
+<li><a href="data-ingestion.html#sheet"><span>Sheet</span></a></li>
+<li class="chapter" data-level="" data-path="data-ingestion.html"><a href="data-ingestion.html#sharing-permissions"><i class="fa fa-check"></i>Sharing Permissions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html"><i class="fa fa-check"></i><b>7</b> Statistics, Data Visualizations, &amp; Map Types</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#understanding-distributions-in-the-data-and-the-assumption-of-normality"><i class="fa fa-check"></i><b>7.1</b> Understanding Distributions in the Data and the Assumption of Normality</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#gaussian-normal"><i class="fa fa-check"></i>Gaussian (Normal)</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#power-box-cox"><i class="fa fa-check"></i>Power (Box-Cox)</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#log"><i class="fa fa-check"></i>Log</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#square-root"><i class="fa fa-check"></i>Square Root</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#choosing-the-appropriate-d3-scale"><i class="fa fa-check"></i><b>7.2</b> Choosing the appropriate d3-scale</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#linear-scales"><i class="fa fa-check"></i>Linear Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#logarithmic-scales"><i class="fa fa-check"></i>Logarithmic Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#power-scales"><i class="fa fa-check"></i>Power Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#square-root-scales"><i class="fa fa-check"></i>Square Root Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#map-types"><i class="fa fa-check"></i><b>7.3</b> Map Types</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#dynamic-maps"><i class="fa fa-check"></i>Dynamic Maps</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#static-maps"><i class="fa fa-check"></i>Static Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#the-use-of-colors"><i class="fa fa-check"></i><b>7.4</b> The Use of Colors</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#color-theory"><i class="fa fa-check"></i>Color Theory</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#human-psychology-perception"><i class="fa fa-check"></i>Human Psychology &amp; Perception</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#borders-base-layers-geopolitical-sensitivities"><i class="fa fa-check"></i><b>7.5</b> Borders, Base Layers, &amp; Geopolitical Sensitivities</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html"><i class="fa fa-check"></i><b>8</b> Understanding the EarthTime Layers Sheet</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#the-csv-layers-sheet"><i class="fa fa-check"></i><b>8.1</b> The CSV Layers Sheet</a>
+<ul>
+<li><a href="earthtime-layers-sheet.html#enabled"><code>Enabled</code></a></li>
+<li><a href="earthtime-layers-sheet.html#share_link_identifier"><code>Share_Link_Identifier</code></a></li>
+<li><a href="earthtime-layers-sheet.html#category"><code>Category</code></a></li>
+<li><a href="earthtime-layers-sheet.html#name"><code>Name</code></a></li>
+<li><a href="earthtime-layers-sheet.html#credits"><code>Credits</code></a></li>
+<li><a href="earthtime-layers-sheet.html#base_layer"><code>Base_Layer</code></a></li>
+<li><a href="earthtime-layers-sheet.html#start_date"><code>Start_Date</code></a></li>
+<li><a href="earthtime-layers-sheet.html#end_date"><code>End_Date</code></a></li>
+<li><a href="earthtime-layers-sheet.html#step"><code>Step</code></a></li>
+<li><a href="earthtime-layers-sheet.html#url"><code>URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#scaling"><code>Scaling</code></a></li>
+<li><a href="earthtime-layers-sheet.html#map_type"><code>Map_Type</code></a></li>
+<li><a href="earthtime-layers-sheet.html#color"><code>Color</code></a></li>
+<li><a href="earthtime-layers-sheet.html#external_geojson"><code>External_GeoJSON</code></a></li>
+<li><a href="earthtime-layers-sheet.html#name_key"><code>Name_Key</code></a></li>
+<li><a href="earthtime-layers-sheet.html#legend_content"><code>Legend_Content</code></a></li>
+<li><a href="earthtime-layers-sheet.html#legend_key"><code>Legend_Key</code></a></li>
+<li><a href="earthtime-layers-sheet.html#load_data_function"><code>Load_Data_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#set_data_function"><code>Set_Data_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#number_of_attributes"><code>Number_of_Attributes</code></a></li>
+<li><a href="earthtime-layers-sheet.html#vertex_shader"><code>Vertex_Shader</code></a></li>
+<li><a href="earthtime-layers-sheet.html#fragment_shader"><code>Fragment_Shader</code></a></li>
+<li><a href="earthtime-layers-sheet.html#draw_function"><code>Draw_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#playback_rate"><code>Playback_Rate</code></a></li>
+<li><a href="earthtime-layers-sheet.html#master_playback_rate"><code>Master_Playback_Rate</code></a></li>
+<li><a href="earthtime-layers-sheet.html#colormap_src"><code>Colormap_Src</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#the-waypoints-points-sheet"><i class="fa fa-check"></i><b>8.2</b> The Waypoints Points Sheet</a>
+<ul>
+<li><a href="earthtime-layers-sheet.html#enabled-1"><code>Enabled</code></a></li>
+<li><a href="earthtime-layers-sheet.html#url-1"><code>URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#mobile-url"><code>Mobile URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#waypoint-title"><code>Waypoint Title</code></a></li>
+<li><a href="earthtime-layers-sheet.html#annotation-title"><code>Annotation Title</code></a></li>
+<li><a href="earthtime-layers-sheet.html#annotation-text"><code>Annotation Text</code></a></li>
+<li><a href="earthtime-layers-sheet.html#share-view"><code>Share View</code></a></li>
+<li><a href="earthtime-layers-sheet.html#author"><code>Author</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#generating-thumnails"><i class="fa fa-check"></i><b>8.3</b> Generating Thumnails</a></li>
+</ul></li>
+<li class="part"><span><b>III Publishing EarthTime Stories</b></span></li>
+<li class="chapter" data-level="9" data-path="editorial-process.html"><a href="editorial-process.html"><i class="fa fa-check"></i><b>9</b> Editorial Process</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="editorial-process.html"><a href="editorial-process.html#the-three-editorial-principles-of-earthtime"><i class="fa fa-check"></i><b>9.1</b> The Three Editorial Principles of EarthTime</a>
+<ul>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#common-ground"><i class="fa fa-check"></i>Common Ground</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#inclusion"><i class="fa fa-check"></i>Inclusion</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#empowerment"><i class="fa fa-check"></i>Empowerment</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="editorial-process.html"><a href="editorial-process.html#the-process-for-building-an-expert-narrative"><i class="fa fa-check"></i><b>9.2</b> The Process for Building an Expert Narrative</a>
+<ul>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#guidance"><i class="fa fa-check"></i>Guidance</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#recommended-outline-structure"><i class="fa fa-check"></i>Recommended Outline Structure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wider-dissemination.html"><a href="wider-dissemination.html"><i class="fa fa-check"></i><b>10</b> Wider Dissemination</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="wider-dissemination.html"><a href="wider-dissemination.html#best-practices-for-embedding"><i class="fa fa-check"></i><b>10.1</b> Best Practices for Embedding</a>
+<ul>
+<li class="chapter" data-level="" data-path="wider-dissemination.html"><a href="wider-dissemination.html#embedding-using-javascript"><i class="fa fa-check"></i>Embedding Using Javascript</a></li>
+<li class="chapter" data-level="" data-path="wider-dissemination.html"><a href="wider-dissemination.html#embedding-using-iframes"><i class="fa fa-check"></i>Embedding using iFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="wider-dissemination.html"><a href="wider-dissemination.html#best-practices-for-utilizing-gifs"><i class="fa fa-check"></i><b>10.2</b> Best Practices for Utilizing GIFs</a></li>
+</ul></li>
+<li class="part"><span><b>IV Inspiring Meaningful Dialogue</b></span></li>
+<li class="chapter" data-level="11" data-path="closing-remarks.html"><a href="closing-remarks.html"><i class="fa fa-check"></i><b>11</b> Closing Remarks</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The EarthTime Primer</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="earthtime-layers-sheet" class="section level1" number="8">
+<h1><span class="header-section-number">Section 8</span> Understanding the EarthTime Layers Sheet</h1>
+<p>The EarthTime layers sheet, often titled <code>https://[earthtime-instance-name].earthtime.org EarthTime Waypoints, Dotmap layers, and Bubble Layers</code> is arguably the most important element for the functioning of the EarthTime platform. This is the place where you’ll be housing the text and views for EarthTime stories (i.e.- the “Waypoints” sheet), but also where you’ll be adjusting parameters for the visualizations of datasets (i.e.-the “CSV Layers” sheet). Both sheets have multiple parameters represented as column headers in each respective sheet. We’ll only be covering the most relevant parameters in this document as certain parameters are reserved for special use cases by the CREATE Lab. If you don’t yet have access to an EarthTime Layers Sheet—or if you want more guidance on parameters in your sheet that aren’t covered here—please reach out to the CREATE Lab for further guidance.</p>
+<div id="the-csv-layers-sheet" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> The CSV Layers Sheet</h2>
+<p>Drawing on the data layers that were created using the methods in Section <a href="data-ingestion.html#data-ingestion">6</a> on “Data Ingestion,” the CSV Layers Sheet is where you breathe life into your data by providing parameters and instructions to EarthTime on how it should be represented on the platform. The following are the major parameters of the CSV Layers Sheet. If you see parameters listed in your CSV Layers Sheet but are not found in this section of the document, please reach out to the CREATE Lab for further clarification and guidance.</p>
+<div id="enabled" class="section level3 unnumbered">
+<h3><code>Enabled</code></h3>
+<p>Determines whether the data layer is visible and accessible within your specific EarthTime instance. Can be set to either <code>TRUE</code> or <code>FALSE</code>.</p>
+</div>
+<div id="share_link_identifier" class="section level3 unnumbered">
+<h3><code>Share_Link_Identifier</code></h3>
+<p>This is the unique identifier that will be issued to the data layer. Please ensure that there are no other data layers with the same <code>Share_Link_Identifier</code>; otherwise, it will cause conflicts and normal functioning and operation of the EarthTime will be impacted. Please refrain from using spaces when constructing your <code>Share_Link_Identifier</code>as they will not be converted to the standard <code>%20</code> encoding often found in URLs with spaces. The current codebase does not safely support hyphens, so we recommend using underscores if you need to convert a space within your <code>Share_Link_Identifier</code>.</p>
+</div>
+<div id="category" class="section level3 unnumbered">
+<h3><code>Category</code></h3>
+<p>Name of the data layer’s category that will be rendered to the end user on the EarthTime platform. Please group similar data layers within the same category if possible. Please also feel free to use spaces or special characters.</p>
+</div>
+<div id="name" class="section level3 unnumbered">
+<h3><code>Name</code></h3>
+<p>This is the name of the data layer that will be rendered to the end user on the EarthTime platform. Please feel free to use spaces or special characters.</p>
+</div>
+<div id="credits" class="section level3 unnumbered">
+<h3><code>Credits</code></h3>
+<p>This is the main citation for the data layer within the EarthTime platform. Please keep it relatively short—such as the name of an individual or an institution—as this will be rendered as part of the data’s legend. For more extensive citation, please use the opening waypoint in the Waypoint Layers Sheet to do so.</p>
+</div>
+<div id="base_layer" class="section level3 unnumbered">
+<h3><code>Base_Layer</code></h3>
+<p>If in use, this parameter will override the ability for users to select their own base layer for the data layer by locking in a specific base layer to be visualized with the data layer. Please use the <code>Share_Link_Identifier</code> of the base layer when filling out this parameter.</p>
+</div>
+<div id="start_date" class="section level3 unnumbered">
+<h3><code>Start_Date</code></h3>
+<p>Represents the date that the data layer starts. The time intervals for EarthTime data layers are generally in years (<code>YYYY</code>), months (<code>YYYYMM</code>), or days (<code>YYYYMMDD</code>). Regardless of the time interval assigned do the data layer, please ensure that the <code>Start_Date</code>and <code>End_Date</code> parameters use a consistent format. That is, if the <code>Start_Date</code> parameter is in months (<code>YYYYMM</code>) then the <code>End_Date</code> parameter also needs to be in months (<code>YYYYMM</code>).</p>
+</div>
+<div id="end_date" class="section level3 unnumbered">
+<h3><code>End_Date</code></h3>
+<p>Represents the date that the data layer ends. The time intervals for EarthTime data layers are generally in years (<code>YYYY</code>), months (<code>YYYYMM</code>), or days (<code>YYYYMMDD</code>). Regardless of the time interval assigned do the data layer, please ensure that the <code>End_Date</code>and <code>Start_Date</code> parameters use a consistent format. That is, if the <code>End_Date</code> parameter is in months (<code>YYYYMM</code>) then the <code>Start_Date</code> parameter also needs to be in months (<code>YYYYMM</code>).</p>
+</div>
+<div id="step" class="section level3 unnumbered">
+<h3><code>Step</code></h3>
+<p>Represents how many “steps” are taken on the timeline while it plays the data visualization. For example, if you have a data layer that starts in 2000 and ends is 2015 and assign a step of <code>1</code>, then all 15 years will be displayed for the full duration of the timeline. If the same 2000-2015 data layer has a step of <code>5</code>, then only four years will be displayer: 2000, 2005, 2010, and 2015.</p>
+</div>
+<div id="url" class="section level3 unnumbered">
+<h3><code>URL</code></h3>
+<p>The <code>URL</code> parameter with the CSV Layers Sheet points to the where your data will be read from. What you use for the <code>URL</code> will depend on the type of data layer you’re trying to visualize—we touched on this briefly in Section <a href="data-ingestion.html#data-ingestion">6</a> on “Data Ingestion.”</p>
+<div id="create-lab-proxy-url" class="section level6 unnumbered">
+<h6>CREATE LAB Proxy URL</h6>
+<p>If you’re visualizing bubble maps and choropleth maps, you’ll need to create a proxy URL based on your unique <code>spreadsheetId</code> value as well as your unique <code>sheetId</code> value discussed in in Section <a href="data-ingestion.html#data-ingestion">6</a> on “Data Ingestion.” The proxy URL follows the following format:</p>
+<p><code>https://docs-proxy.cmucreatelab.org/spreadsheets/d/xxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxx/export?format=csv&amp;gid=0123456789</code></p>
+<p>There’s a number of reasons that you’ll need to use this proxy serve to point to your bubble map or choropleth data layer that are beyond the scope of this document, but in short it helps save bandwidth and improve speeds and increases privacy and security.</p>
+</div>
+<div id="bin-file-on-an-earthtime-instance" class="section level6 unnumbered">
+<h6>.bin File on an EarthTime Instance</h6>
+<p>If you’re visualizing dot maps, line-string maps, point maps, and point flow maps, you’ll direct the <code>URL</code> parameter directly to the .bin file within your EarthTime instance. For example:</p>
+<p><code>https://tiles.earthtime.org/://[earthtime-instance-name]/data/[directory_name]/[file_name].bin</code></p>
+<p>It’s important to note that after your .bin file has been updated to your EarthTime instance, the specific sub-directory that the file is in needs to be readable, writable, and executable by all users in order to be visualized correctly on EarthTime. This can be done by using the Linux command <code>chmod -R 777 *</code> while in the specific sub-directory.</p>
+</div>
+</div>
+<div id="scaling" class="section level3 unnumbered">
+<h3><code>Scaling</code></h3>
+<p>This parameter draws on what was covered in the “Choosing the appropriate d3-scale” part within Section 7 on “Statistics, Data Visualizations, &amp; Map Types.” Remember what you set this parameter as will be change how the data is visualized within your selected color scale and should ultimately be determined by the underlying distribution of your data. As a quick refresher, the distributions will generally be “Linear,” “Logarithmic,” “Power,” or “Square-Root” in nature, which corresponds to the following base inputs for this parameter:</p>
+<ul>
+<li><code>d3.scaleLinear().domain([minValue, maxValue]).range([0,1])</code></li>
+<li><code>d3.scaleLog().domain([minValue, maxValue]).range([0,1])</code></li>
+<li><code>d3.scalePow().domain([minValue, maxValue]).range([0,1])</code></li>
+<li><code>d3.scaleSqrt().domain([minValue, maxValue]).range([0,1])</code></li>
+</ul>
+</div>
+<div id="map_type" class="section level3 unnumbered">
+<h3><code>Map_Type</code></h3>
+<p>Used to specify the type of map to visualize. Acceptable inputs include:</p>
+<ul>
+<li><code>Choropleth</code></li>
+<li><code>Bubble</code></li>
+<li><code>Bivalent Bubble</code></li>
+<li><code>Point</code></li>
+<li><code>Point Flow</code></li>
+</ul>
+</div>
+<div id="color" class="section level3 unnumbered">
+<h3><code>Color</code></h3>
+<p>This parameter is used to specify the RGB value for “Bubble” and “Bivalent Bubble” maps. The acceptable input format is either the RGB percentage value (<code>[0.0, 0.0, 0.]</code>) or the RGB decimal value (<code>[255, 255, 255]</code>). For example, if you wanted the bubble map to appear as the color “red,” you’d use the <code>[1.0, 0.0, 0.]</code> input for the RGB percentage value or <code>[255, 0, 0]</code>, which both correspond to the RGB value for the color “red.”</p>
+</div>
+<div id="external_geojson" class="section level3 unnumbered">
+<h3><code>External_GeoJSON</code></h3>
+<p>This parameter overrides the default .geojson file and allows you to use custom shapes and boundaries for choropleth maps. To do this, you’ll need to direct the <code>External_GeoJSON</code> parameter directly to the .geojson file within your EarthTime instance. For example:</p>
+<p><code>https://tiles.earthtime.org/://[earthtime-instance-name]/data/[directory_name]/[file_name].geojson</code></p>
+<p>It’s important to note that after your .geojson file has been updated to your EarthTime instance, the specific sub-directory that the file is in needs to be readable, writable, and executable by all users in order to be visualized correctly on EarthTime. This can be done by using the Linux command <code>chmod -R 777 *</code> while in the specific sub-directory.</p>
+</div>
+<div id="name_key" class="section level3 unnumbered">
+<h3><code>Name_Key</code></h3>
+<p>This parameter specifies that name of the .geojson field that provides the geometry for the shapes and boundaries for your custom geography. It should be identical to your data column in your choropleth data layer residing in the respective Google Sheet.</p>
+</div>
+<div id="legend_content" class="section level3 unnumbered">
+<h3><code>Legend_Content</code></h3>
+<p>This parameter sets the content that will be displayed in the legend of the explore view. It can be set to <code>auto</code>, which will render legend content based on the aforementioned parameters. Legend content can also be constructed using custom HTML tags. For example:</p>
+<p><code>&lt;div style="background-color:rgb(255,160,122); border-radius: 50%; width:13px; height: 13px;"&gt;&lt;/div&gt;&lt;div style="margin-left: 29px; margin-top: -15px; font-size: 15px"&gt;Data Point Meaning&lt;/div&gt;</code></p>
+<p>Please note that if you use custom HTML tags, you will not use the <code>Legend_Key</code> parameter below.</p>
+</div>
+<div id="legend_key" class="section level3 unnumbered">
+<h3><code>Legend_Key</code></h3>
+<p>Used when the <code>Legend_Content</code> is set to <code>auto</code>. This parameter is an opportunity to add more context and detail explaining the data layer than is possible through the <code>Name</code> parameter alone.</p>
+</div>
+<div id="load_data_function" class="section level3 unnumbered">
+<h3><code>Load_Data_Function</code></h3>
+<p>Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input function should usually be <code>WebGLVectorTile2.prototype._loadData</code>.</p>
+</div>
+<div id="set_data_function" class="section level3 unnumbered">
+<h3><code>Set_Data_Function</code></h3>
+<p>Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input function should usually be <code>WebGLVectorTile2.prototype._setBufferData</code>.</p>
+</div>
+<div id="number_of_attributes" class="section level3 unnumbered">
+<h3><code>Number_of_Attributes</code></h3>
+<p>Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input number should reflect the number of attributes such as <code>5</code>.</p>
+</div>
+<div id="vertex_shader" class="section level3 unnumbered">
+<h3><code>Vertex_Shader</code></h3>
+<p>Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input for the vertex shader should usually be <code>WebGLVectorTile2.PointSizeColorEpochVertexShader</code>.</p>
+</div>
+<div id="fragment_shader" class="section level3 unnumbered">
+<h3><code>Fragment_Shader</code></h3>
+<p>Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input for the fragment shader should usually be <code>WebGLVectorTile2.PointColorFragmentShader</code>.</p>
+</div>
+<div id="draw_function" class="section level3 unnumbered">
+<h3><code>Draw_Function</code></h3>
+<p>Left blank unless the data layer is meant to visualize a “point map”; otherwise, the input for the draw function should usually be <code>WebGLVectorTile2.prototype._drawPointSizeColorEpoch</code>.</p>
+</div>
+<div id="playback_rate" class="section level3 unnumbered">
+<h3><code>Playback_Rate</code></h3>
+<p>This parameter is used to set the natural speed for the data layer’s timeline. It is generally set to <code>1</code>.</p>
+</div>
+<div id="master_playback_rate" class="section level3 unnumbered">
+<h3><code>Master_Playback_Rate</code></h3>
+<p>This parameter is used to set the override speed for the data layer’s timeline. It is generally set to <code>1</code>.</p>
+</div>
+<div id="colormap_src" class="section level3 unnumbered">
+<h3><code>Colormap_Src</code></h3>
+<p>Points to the of the color spectrum for choropleths found at <a href="https://tiles.earthtime.org/colormaps/">https://tiles.earthtime.org/colormaps/</a>. You’ll invoke your chosen color spectrum within this parameter like the following example:</p>
+<p><code>https://tiles.earthtime.org/colormaps/white_aliceblue_cornflowerblue_royalblue_blue.png</code></p>
+</div>
+</div>
+<div id="the-waypoints-points-sheet" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> The Waypoints Points Sheet</h2>
+<p>Each EarthTime story is constructed from multiple “waypoints,” which are different views of data layers accompanied by short text to tell a cohesive narrative about the highlighted phenomenon. The following are the major parameters of the Waypoints sheet.</p>
+<div id="enabled-1" class="section level3 unnumbered">
+<h3><code>Enabled</code></h3>
+<p>Determines whether the story is visible and accessible within your specific EarthTime instance. Can be set to either <code>TRUE</code> or <code>FALSE</code>.</p>
+</div>
+<div id="url-1" class="section level3 unnumbered">
+<h3><code>URL</code></h3>
+<p>This is the unique hyperlink that will be assigned to your story that the wider world will use to access your story directly. It often takes the form of <code>https://[earthtime-instance-name].earthtime.org/stories/name_of_the_story</code>. The name of the story in your URL needs to exactly math the title of your story in the <code>Waypoint Title</code> parameter. While you can use spaces to title your story in the <code>Waypoint Title</code> parameter, please do not use spaces when constructing your URL as they will not be converted to the standard <code>%20</code> encoding often found in URLs with spaces. The current codebase does not safely support hyphens, so we recommend using underscores if you need to convert a space within your URL.</p>
+</div>
+<div id="mobile-url" class="section level3 unnumbered">
+<h3><code>Mobile URL</code></h3>
+<p>This is the unique hyperlink that will be assigned to your story that the wider world will use to access your story directly from a mobile device. It often takes the form of <code>https://[earthtime-instance-name].earthtime.org/m/stories/name_of_the_story</code>. It is similar to the <code>URL</code> parameter except that there is a <code>/m/</code> before the word “stories” in the URL to indicate the “mobile” version. Other than <code>/m/</code> in the URL, please make it identical to the <code>URL</code> parameter.</p>
+</div>
+<div id="waypoint-title" class="section level3 unnumbered">
+<h3><code>Waypoint Title</code></h3>
+<p>This parameter has a number of functions. In addition to establishing the title of your story, it also serves as a way to sort your stories into categories as well as the titles of all the waypoints in a story.</p>
+<div id="establishing-categories" class="section level6 unnumbered">
+<h6>Establishing Categories</h6>
+<p>To set a new category for stories in your EarthTime instance, use the <code>#</code> symbol, followed by the name of the category. For example, if you wanted to have a number of EarthTime stories for special events, you would set the category with something such as <code>#World Refugee Day</code>. All subsequent stories will fall within that category until a new single <code>#</code> symbol is detected.</p>
+</div>
+<div id="establishing-story-titles" class="section level6 unnumbered">
+<h6>Establishing Story Titles</h6>
+<p>Setting a new story requires the use of two <code>##</code> symbols, followed by the name of the story. For example, if you wanted to have an EarthTime focus on the flow of refugees, you would set the new story with something such as <code>#Global Refugee Crisis The Big Picture</code>. All subsequent waypoint titles will fall under that story until the double <code>##</code> symbol is detected. Please feel free to use spaces when constructing this parameter, but please don’t use special characters as they won’t be able to be converted into a URL for the <code>URL</code> or <code>Mobile URL</code> parameters.</p>
+</div>
+<div id="establishing-waypoint-titles" class="section level6 unnumbered">
+<h6>Establishing Waypoint Titles</h6>
+<p>For each of the following views in the story, you’ll want to set appropriate waypoints that allows you to setup a natural and logical flow for your story. Please refrain from using any <code>#</code> symbols for waypoint titles as that would create a new category or story within the waypoint sheet.</p>
+</div>
+</div>
+<div id="annotation-title" class="section level3 unnumbered">
+<h3><code>Annotation Title</code></h3>
+<p>This parameter is similar to the <code>Waypoint Title</code> parameter with the exception that you can use special characters like a colon. For example, whereas in the <code>Waypoint Title</code> parameter, our example story was set as <code>#Global Refugee Crisis The Big Picture</code>, in the <code>Annotation Title</code> parameter we can use a “:” to construct a more grammatically appropriate title such as <code>#Global Refugee Crisis: The Big Picture</code>. The <code>Annotation Title</code> parameter is the actual title that will be rendered and displayed to those viewing your story title and waypoint titles.</p>
+</div>
+<div id="annotation-text" class="section level3 unnumbered">
+<h3><code>Annotation Text</code></h3>
+<p>This parameter is where you’ll put the body of your text for each waypoint. For more information on how to write engaging waypoint text, please refer to Section <a href="editorial-process.html#editorial-process">9</a> focused on the “editorial process.” This parameter accepts and will render standard HTML tags.</p>
+</div>
+<div id="share-view" class="section level3 unnumbered">
+<h3><code>Share View</code></h3>
+<p>This parameter is where the view of the EarthTime story is will be established. You’ll want to keep a number of considerations in mind when setting the share view. You might want to ask yourself questions such as:</p>
+<ul>
+<li>Will individuals primarily be viewing this on a computer screen or a mobile device?</li>
+<li>How big do you anticipate those devices to be—the size of a phone screen or a larger-than-life screen like the Global Situation Space (detailed in Section <a href="the-history-of-earthtime.html#the-history-of-earthtime">1</a>)?</li>
+<li>What will the resolution of the data layer and the base layers look like at certain zoom levels?</li>
+<li>Will the speed of the data layer be appropriate enough for viewers to make sense of the phenomenon being represented in the data layer?</li>
+</ul>
+<p>Once you’ve had a think about the above considerations—and possibly others as well—the easiest way to generate the view you’d like for your story is to go to your EarthTime instance’s “Explore” view and add the data layer(s) you wish to have displayed in your waypoint. Additionally, you’ll want to set the speed (“Slow,” “Medium,” or “Fast”) of the timeline as well as the appropriate zoom level for the area of interest. Once you are satisfied, click on “Share” at the top of the screen. On the sidebar under “Share as link” click “Copy,” which will generate copy the unique URL of the view that you want to share to your clipboard and paste that in the <code>Share View</code> parameter cell. For those wishing to learn more about how the URL is structured, please see the below.</p>
+<div id="anatomy-of-an-earthtime-url" class="section level4 unnumbered">
+<h4>Anatomy of an EarthTime URL</h4>
+<p>Let’s take the following URL as an example (you can copy and paste it into your browser if it helps contextualizing what we’re about to go over in real-time): <code>https://earthtime.org/explore#v=34.53836,38.27958,4.506,latLng&amp;t=1.29&amp;ps=50&amp;l=bdrk,ar,uf&amp;bt=20000101&amp;et=20151231</code></p>
+<p><code>https://earthtime.org/explore</code> is the name of the EarthTime instance as well as the mode that was active when the unique URL was generated (i.e.- the “Explore” mode).</p>
+<ul>
+<li><p><code>#v=34.53836,38.27958,4.506,latLng</code> represent the zoom level and the coordinates of the view that you want to share for your area of interest.</p></li>
+<li><p><code>&amp;t=1.29</code> represents a time multiplier function that generally corresponds with the playback rate of the data layer. A value of <code>1</code> would leave the playback rate unchanged.</p></li>
+<li><p><code>&amp;ps=50</code> represents the natural playback rate of the data layer. A value of <code>25</code> corresponds to the “Slow” speed in the timeline. A value of <code>50</code> corresponds to the “Medium” speed in the timeline. A value of <code>100</code> corresponds to the “Fast” speed in the timeline. For time intervals in years across a span of 15 or 20 years, these values are usually sufficient. If the data layer’s time interval is in days or months, you might want to consider using a value greater than <code>100</code> depending on the total time span of the data layer.</p></li>
+<li><p><code>&amp;l=bdrk,ar,uf</code> represents the data layers that are currently active. In this example, <code>bdrk</code> represents the “Dark Map” base layer, <code>ar</code> represents the “Annual Refugees” data layer using a point flow map, and <code>uf</code> represents the “Urban Fragility” data layer using a bubble map. Each data layer is tied to a unique <code>Share link identifier</code> in the “CSV Layers” sheet, which was covered in the preceding part. While not strictly necessary (as seen in this example), a good practice is to nevertheless make the <code>Share link identifier</code> as natural and intuitive as possible if you’re working on a EarthTime instance and a layer sheet that has multiple contributors.</p></li>
+<li><p><code>&amp;bt=20000101</code>represents the date that the data layer starts. Keep in mind that the date will always need to be in a <code>YYYYMMDD</code> format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (<code>YYYYMM</code>), within the <code>Share View</code> URL, the format still needs to remain <code>YYYYMMDD</code> to properly initiate the start sequence.</p></li>
+<li><p><code>&amp;et=20151231</code> represents the date that the data layer ends. Keep in mind that the date will always need to be in a <code>YYYYMMDD</code> format (a “year, month, day” format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (<code>YYYYMM</code>), within the <code>Share View</code> URL, the format still needs to remain <code>YYYYMMDD</code> to properly initiate the end sequence.</p></li>
+</ul>
+<p>There are a few other additional parameters that you can add to the end of the URL which—while not used in the example above—is useful to know nonetheless.</p>
+<ul>
+<li><p><code>&amp;startDwell=3</code> is a parameter that will delay the start of the timeline for a certain period of time (formatted in seconds). In this example, the value <code>3</code> indicates that the start of playback will be delayed by three seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.</p></li>
+<li><p><code>&amp;endDwell=5</code> is a parameter that will pause the timeline at the last time interval for a certain period of time (formatted in seconds). In this example, the value <code>5</code> indicates that the timeline will pause at the end for five seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.</p></li>
+<li><p><code>&amp;forceLegend=true</code> is a parameter that is generally added when you want to add the data layer’s key when viewers are looking at your story on a mobile device as legends are generally off by default. This is because screen real estate is generally smaller on mobile devices and—while having a key is useful—it can obstruct a decent portion of the visualization. In such cases instead of relying on the key, we recommend address the colors and symbols of the waypoint in the <code>Annotation Title</code> parameter.</p></li>
+</ul>
+</div>
+</div>
+<div id="author" class="section level3 unnumbered">
+<h3><code>Author</code></h3>
+<p>This parameter is where you’ll put the authors of the EarthTime story as well any additional information that might be useful to highlight, such a data citation. This parameter accepts and will render standard HTML tags. For example, in our example story, this section when used with HTML would appear as follows: <code>Story by: UNHCR &lt;br&gt;Data from: UNHCR, Igarapé Institute</code>.</p>
+</div>
+</div>
+<div id="generating-thumnails" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Generating Thumnails</h2>
+<p>Before sharing your EarthTime story to the wider world, it’s best practice to generate the thumbnails for the story waypoints in advance so they do need to load for the viewer. To initiate a thumbnail generation sequence for your story, go the URL of your EarthTime story and go through each waypoint in the story within the Explore view and scroll through the entire story on a mobile device. The thumbnails might take some time to generate when the story is first accessed, but after they have generated successfully, they will usually display for all subsequent viewers without needing to load.</p>
+<p>If you ever encounter an issue with your thumbnails, you can always check the status using the following link:</p>
+<p><a href="https://thumbnails-earthtime.cmucreatelab.org/status">https://thumbnails-earthtime.cmucreatelab.org/status</a></p>
+<p>Now that you’ve successfully created an EarthTime story on the backend of the EarthTime platform, the next—and final—part of this document will cover the finer points of editing these stories as well as suggestions for disseminating them to the wider public.</p>
+
+</div>
+</div>
+
+
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="statistics-data-visualizations-map-types.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="editorial-process.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/andrewcberkley/the-earthtime-primer/edit/master/008-understanding-the-earthtime-layers-sheet.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["the-earthtime-primer.pdf", "the-earthtime-primer.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

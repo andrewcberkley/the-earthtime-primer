@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 7 Statistics, Data Visualizations, &amp; Map Types | The EarthTime Primer</title>
+  <meta name="description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 7 Statistics, Data Visualizations, &amp; Map Types | The EarthTime Primer" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://andrewcberkley.github.io/the_earthtime_primer/" />
+  <meta property="og:image" content="https://andrewcberkley.github.io/the_earthtime_primer/img/himawari-8.gif" />
+  <meta property="og:description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="github-repo" content="andrewcberkley/EarthTimeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 7 Statistics, Data Visualizations, &amp; Map Types | The EarthTime Primer" />
+  
+  <meta name="twitter:description" content="This is a brief in-depth primer for those wishing to dive deeper into the EarthTime project—a collaboration between the CREATE Lab at Carnegie Mellon University and the World Economic Forum—that allows individuals to examine major environmental, social, and political phenomenon across time, across space, and between each other." />
+  <meta name="twitter:image" content="https://andrewcberkley.github.io/the_earthtime_primer/img/himawari-8.gif" />
+
+<meta name="author" content="Andrew C. Berkley" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-ingestion.html"/>
+<link rel="next" href="earthtime-layers-sheet.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-00000000-0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-00000000-0');
+</script>
+<meta property="og:title" content="Section 7 Statistics, Data Visualizations, &amp; Map Types | The EarthTime Primer">
+<meta property="og:description" content="A beginner's guide for EarthTime users.">
+<meta property="og:image" content="https://andrewcberkley.github.io/the-earthtime-primer/images/social.png">
+<meta property="og:url" content="https://andrewcberkley.github.io/the-earthtime-primer/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="Section 7 Statistics, Data Visualizations, &amp; Map Types | The EarthTime Primer">
+<meta name="twitter:image:alt" content="A beginner's guide for EarthTime users.">
+<meta name="twitter:site" content="@jdatap">
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 2em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The EarthTime Primer</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#premise"><i class="fa fa-check"></i>Premise</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#documentation-structure"><i class="fa fa-check"></i>Documentation Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="part"><span><b>I From Pittsburgh to Davos</b></span></li>
+<li class="chapter" data-level="1" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html"><i class="fa fa-check"></i><b>1</b> The History of EarthTime</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#cmu-create-lab"><i class="fa fa-check"></i><b>1.1</b> CMU CREATE LAB</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#gigapan-gigapan-time-machine"><i class="fa fa-check"></i>GigaPan &amp; GigaPan Time Machine</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#earth-time-lapse"><i class="fa fa-check"></i>Earth-Time Lapse</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#the-beginning-of-a-wider-reach-for-the-explorables-project"><i class="fa fa-check"></i>The Beginning of a Wider Reach for the Explorables Project</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#world-economic-forum-partnership"><i class="fa fa-check"></i><b>1.2</b> World Economic Forum Partnership</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#global-situation-space"><i class="fa fa-check"></i>Global Situation Space</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#strategic-intelligence"><i class="fa fa-check"></i>Strategic Intelligence</a></li>
+<li class="chapter" data-level="" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#agenda-blogs"><i class="fa fa-check"></i>Agenda Blogs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="the-history-of-earthtime.html"><a href="the-history-of-earthtime.html#earthtime-today"><i class="fa fa-check"></i><b>1.3</b> EarthTime Today</a></li>
+</ul></li>
+<li class="part"><span><b>II Ideas, Data, &amp; Philosophies</b></span></li>
+<li class="chapter" data-level="2" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>2</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-basics.html"><a href="the-basics.html#hardware-prerequisites"><i class="fa fa-check"></i><b>2.1</b> Hardware Prerequisites</a></li>
+<li class="chapter" data-level="2.2" data-path="the-basics.html"><a href="the-basics.html#introduction-to-the-earthtime-platform"><i class="fa fa-check"></i><b>2.2</b> Introduction to the EarthTime Platform</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#stories"><i class="fa fa-check"></i>Stories</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#data-layers"><i class="fa fa-check"></i>Data Layers</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#share"><i class="fa fa-check"></i>Share</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#story-editor"><i class="fa fa-check"></i>Story Editor</a></li>
+<li class="chapter" data-level="" data-path="the-basics.html"><a href="the-basics.html#settings"><i class="fa fa-check"></i>Settings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html"><i class="fa fa-check"></i><b>3</b> Reaching Out for Ideas</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#experts-forum-expert-network-academic-peer-review"><i class="fa fa-check"></i><b>3.1</b> Experts – Forum Expert Network &amp; Academic Peer Review</a></li>
+<li class="chapter" data-level="3.2" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#privileged-industry-and-proprietary-data"><i class="fa fa-check"></i><b>3.2</b> Privileged, Industry, and Proprietary Data</a></li>
+<li class="chapter" data-level="3.3" data-path="reaching-out-for-ideas.html"><a href="reaching-out-for-ideas.html#journalists-and-primary-data-collection"><i class="fa fa-check"></i><b>3.3</b> Journalists and Primary Data Collection</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html"><i class="fa fa-check"></i><b>4</b> Research &amp; Data Gathering</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#open-source-data"><i class="fa fa-check"></i><b>4.1</b> Open-Source Data</a>
+<ul>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#what-is-open-data"><i class="fa fa-check"></i>What is Open Data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#why-is-open-data-important"><i class="fa fa-check"></i>Why Is Open Data Important?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#a-note-on-data-in-the-wild-data-scrapping"><i class="fa fa-check"></i><b>4.2</b> A Note on Data in the Wild (Data Scrapping)</a>
+<ul>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-personal-data"><i class="fa fa-check"></i>Are you scraping personal data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-non-public-data"><i class="fa fa-check"></i>Are you scraping non-public data</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-scraping-copyrighted-data"><i class="fa fa-check"></i>Are you scraping copyrighted data?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#are-you-abiding-by-the-websites-terms-of-service-agreement"><i class="fa fa-check"></i>Are you abiding by the website’s terms of service agreement?</a></li>
+<li class="chapter" data-level="" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#is-your-crawling-rate-tolerable"><i class="fa fa-check"></i>Is your crawling rate tolerable?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="research-and-data-gathering.html"><a href="research-and-data-gathering.html#a-quick-note-on-recent-and-dynamic-data"><i class="fa fa-check"></i><b>4.3</b> A quick note on “recent” and “dynamic” data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>5</b> The Data Wrangling Process</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-wrangling.html"><a href="data-wrangling.html#code-first-not-click-first"><i class="fa fa-check"></i><b>5.1</b> Code first; not click first</a></li>
+<li class="chapter" data-level="5.2" data-path="data-wrangling.html"><a href="data-wrangling.html#five-principles-for-a-reproducible-workflow"><i class="fa fa-check"></i><b>5.2</b> Five principles for a reproducible workflow</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#structure-your-files"><i class="fa fa-check"></i>Structure your files</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#dont-save-your-data"><i class="fa fa-check"></i>Don’t save your data</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#collate-your-results-as-earthtime-data-layers-under-a-single-data-category-for-use-in-earthtime-story-waypoints"><i class="fa fa-check"></i>Collate your results as EarthTime data layers under a single data category for use in EarthTime story waypoints</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#use-version-control"><i class="fa fa-check"></i>Use version control</a></li>
+<li class="chapter" data-level="" data-path="data-wrangling.html"><a href="data-wrangling.html#use-virtual-environments"><i class="fa fa-check"></i>Use virtual environments</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-wrangling.html"><a href="data-wrangling.html#earthtimer"><i class="fa fa-check"></i><b>5.3</b> EarthTimeR</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-ingestion.html"><a href="data-ingestion.html"><i class="fa fa-check"></i><b>6</b> Data Ingestion</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-ingestion.html"><a href="data-ingestion.html#long-data"><i class="fa fa-check"></i><b>6.1</b> Long Data</a></li>
+<li class="chapter" data-level="6.2" data-path="data-ingestion.html"><a href="data-ingestion.html#wide-data"><i class="fa fa-check"></i><b>6.2</b> Wide Data</a></li>
+<li class="chapter" data-level="6.3" data-path="data-ingestion.html"><a href="data-ingestion.html#google-sheets"><i class="fa fa-check"></i><b>6.3</b> Google Sheets</a>
+<ul>
+<li><a href="data-ingestion.html#spreadsheet"><span>Spreadsheet</span></a></li>
+<li><a href="data-ingestion.html#sheet"><span>Sheet</span></a></li>
+<li class="chapter" data-level="" data-path="data-ingestion.html"><a href="data-ingestion.html#sharing-permissions"><i class="fa fa-check"></i>Sharing Permissions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html"><i class="fa fa-check"></i><b>7</b> Statistics, Data Visualizations, &amp; Map Types</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#understanding-distributions-in-the-data-and-the-assumption-of-normality"><i class="fa fa-check"></i><b>7.1</b> Understanding Distributions in the Data and the Assumption of Normality</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#gaussian-normal"><i class="fa fa-check"></i>Gaussian (Normal)</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#power-box-cox"><i class="fa fa-check"></i>Power (Box-Cox)</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#log"><i class="fa fa-check"></i>Log</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#square-root"><i class="fa fa-check"></i>Square Root</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#choosing-the-appropriate-d3-scale"><i class="fa fa-check"></i><b>7.2</b> Choosing the appropriate d3-scale</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#linear-scales"><i class="fa fa-check"></i>Linear Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#logarithmic-scales"><i class="fa fa-check"></i>Logarithmic Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#power-scales"><i class="fa fa-check"></i>Power Scales</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#square-root-scales"><i class="fa fa-check"></i>Square Root Scales</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#map-types"><i class="fa fa-check"></i><b>7.3</b> Map Types</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#dynamic-maps"><i class="fa fa-check"></i>Dynamic Maps</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#static-maps"><i class="fa fa-check"></i>Static Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#the-use-of-colors"><i class="fa fa-check"></i><b>7.4</b> The Use of Colors</a>
+<ul>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#color-theory"><i class="fa fa-check"></i>Color Theory</a></li>
+<li class="chapter" data-level="" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#human-psychology-perception"><i class="fa fa-check"></i>Human Psychology &amp; Perception</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="statistics-data-visualizations-map-types.html"><a href="statistics-data-visualizations-map-types.html#borders-base-layers-geopolitical-sensitivities"><i class="fa fa-check"></i><b>7.5</b> Borders, Base Layers, &amp; Geopolitical Sensitivities</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html"><i class="fa fa-check"></i><b>8</b> Understanding the EarthTime Layers Sheet</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#the-csv-layers-sheet"><i class="fa fa-check"></i><b>8.1</b> The CSV Layers Sheet</a>
+<ul>
+<li><a href="earthtime-layers-sheet.html#enabled"><code>Enabled</code></a></li>
+<li><a href="earthtime-layers-sheet.html#share_link_identifier"><code>Share_Link_Identifier</code></a></li>
+<li><a href="earthtime-layers-sheet.html#category"><code>Category</code></a></li>
+<li><a href="earthtime-layers-sheet.html#name"><code>Name</code></a></li>
+<li><a href="earthtime-layers-sheet.html#credits"><code>Credits</code></a></li>
+<li><a href="earthtime-layers-sheet.html#base_layer"><code>Base_Layer</code></a></li>
+<li><a href="earthtime-layers-sheet.html#start_date"><code>Start_Date</code></a></li>
+<li><a href="earthtime-layers-sheet.html#end_date"><code>End_Date</code></a></li>
+<li><a href="earthtime-layers-sheet.html#step"><code>Step</code></a></li>
+<li><a href="earthtime-layers-sheet.html#url"><code>URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#scaling"><code>Scaling</code></a></li>
+<li><a href="earthtime-layers-sheet.html#map_type"><code>Map_Type</code></a></li>
+<li><a href="earthtime-layers-sheet.html#color"><code>Color</code></a></li>
+<li><a href="earthtime-layers-sheet.html#external_geojson"><code>External_GeoJSON</code></a></li>
+<li><a href="earthtime-layers-sheet.html#name_key"><code>Name_Key</code></a></li>
+<li><a href="earthtime-layers-sheet.html#legend_content"><code>Legend_Content</code></a></li>
+<li><a href="earthtime-layers-sheet.html#legend_key"><code>Legend_Key</code></a></li>
+<li><a href="earthtime-layers-sheet.html#load_data_function"><code>Load_Data_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#set_data_function"><code>Set_Data_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#number_of_attributes"><code>Number_of_Attributes</code></a></li>
+<li><a href="earthtime-layers-sheet.html#vertex_shader"><code>Vertex_Shader</code></a></li>
+<li><a href="earthtime-layers-sheet.html#fragment_shader"><code>Fragment_Shader</code></a></li>
+<li><a href="earthtime-layers-sheet.html#draw_function"><code>Draw_Function</code></a></li>
+<li><a href="earthtime-layers-sheet.html#playback_rate"><code>Playback_Rate</code></a></li>
+<li><a href="earthtime-layers-sheet.html#master_playback_rate"><code>Master_Playback_Rate</code></a></li>
+<li><a href="earthtime-layers-sheet.html#colormap_src"><code>Colormap_Src</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#the-waypoints-points-sheet"><i class="fa fa-check"></i><b>8.2</b> The Waypoints Points Sheet</a>
+<ul>
+<li><a href="earthtime-layers-sheet.html#enabled-1"><code>Enabled</code></a></li>
+<li><a href="earthtime-layers-sheet.html#url-1"><code>URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#mobile-url"><code>Mobile URL</code></a></li>
+<li><a href="earthtime-layers-sheet.html#waypoint-title"><code>Waypoint Title</code></a></li>
+<li><a href="earthtime-layers-sheet.html#annotation-title"><code>Annotation Title</code></a></li>
+<li><a href="earthtime-layers-sheet.html#annotation-text"><code>Annotation Text</code></a></li>
+<li><a href="earthtime-layers-sheet.html#share-view"><code>Share View</code></a></li>
+<li><a href="earthtime-layers-sheet.html#author"><code>Author</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="earthtime-layers-sheet.html"><a href="earthtime-layers-sheet.html#generating-thumnails"><i class="fa fa-check"></i><b>8.3</b> Generating Thumnails</a></li>
+</ul></li>
+<li class="part"><span><b>III Publishing EarthTime Stories</b></span></li>
+<li class="chapter" data-level="9" data-path="editorial-process.html"><a href="editorial-process.html"><i class="fa fa-check"></i><b>9</b> Editorial Process</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="editorial-process.html"><a href="editorial-process.html#the-three-editorial-principles-of-earthtime"><i class="fa fa-check"></i><b>9.1</b> The Three Editorial Principles of EarthTime</a>
+<ul>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#common-ground"><i class="fa fa-check"></i>Common Ground</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#inclusion"><i class="fa fa-check"></i>Inclusion</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#empowerment"><i class="fa fa-check"></i>Empowerment</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="editorial-process.html"><a href="editorial-process.html#the-process-for-building-an-expert-narrative"><i class="fa fa-check"></i><b>9.2</b> The Process for Building an Expert Narrative</a>
+<ul>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#guidance"><i class="fa fa-check"></i>Guidance</a></li>
+<li class="chapter" data-level="" data-path="editorial-process.html"><a href="editorial-process.html#recommended-outline-structure"><i class="fa fa-check"></i>Recommended Outline Structure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="wider-dissemination.html"><a href="wider-dissemination.html"><i class="fa fa-check"></i><b>10</b> Wider Dissemination</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="wider-dissemination.html"><a href="wider-dissemination.html#best-practices-for-embedding"><i class="fa fa-check"></i><b>10.1</b> Best Practices for Embedding</a>
+<ul>
+<li class="chapter" data-level="" data-path="wider-dissemination.html"><a href="wider-dissemination.html#embedding-using-javascript"><i class="fa fa-check"></i>Embedding Using Javascript</a></li>
+<li class="chapter" data-level="" data-path="wider-dissemination.html"><a href="wider-dissemination.html#embedding-using-iframes"><i class="fa fa-check"></i>Embedding using iFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="wider-dissemination.html"><a href="wider-dissemination.html#best-practices-for-utilizing-gifs"><i class="fa fa-check"></i><b>10.2</b> Best Practices for Utilizing GIFs</a></li>
+</ul></li>
+<li class="part"><span><b>IV Inspiring Meaningful Dialogue</b></span></li>
+<li class="chapter" data-level="11" data-path="closing-remarks.html"><a href="closing-remarks.html"><i class="fa fa-check"></i><b>11</b> Closing Remarks</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The EarthTime Primer</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="statistics-data-visualizations-map-types" class="section level1" number="7">
+<h1><span class="header-section-number">Section 7</span> Statistics, Data Visualizations, &amp; Map Types</h1>
+<p>Compelling visualizations coupled with expert narratives are the two combined elements that work together to drive the continued appeal and success of EarthTime as a platform. This section covers the visualization element and what needs to be taken into consideration when determining what type of visualization works best with an expert narrative. We try to emphasis in this section that while you might personally find certain types of visualizations more appealing than others, the choice of visualization should be driven by statistical foundations in your data instead of what you personally think looks best—of course, this is not a hard and fast rule, but in our experience this guidance produces the most accurate representation of data in your EarthTime story.</p>
+<div id="understanding-distributions-in-the-data-and-the-assumption-of-normality" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Understanding Distributions in the Data and the Assumption of Normality</h2>
+<p>When working with any dataset in EarthTime, from a statistical point of view we generally assume that it is normally distributed or approximately so<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. While this document isn’t meant to be a refresher on high school mathematics, in short it is mathematically convenient to use normal distributions due to its relation to Least Squares fitting and can easily be solved with pseudoinverse (computing a “best fit”); moreover, due to Central Limit Theorem, we generally assume that there are lots of underlying facts in the dataset having an impact and the sum of these individual effects will tend to behave like normal distribution.</p>
+<div id="gaussian-normal" class="section level3 unnumbered">
+<h3>Gaussian (Normal)</h3>
+<p>This will more or less take the form of bell-shaped curve and we assume that during any numerical variables will follow a normal distribution with an equal number of measurements above and below the mean value. In order to understand normal distribution, it is important to know the definitions of “mean,” “median,” and “mode.” The “mean” is the calculated average of all numerical variables, the “median” is the value at the center point (mid-point) of the distribution, while the “mode” is the value that was observed most frequently during the measurement. If the distribution is perfectly normal, then the values of the mean, median, and mode are the same. No transformation is necessary when the data is normally distributed.</p>
+</div>
+<div id="power-box-cox" class="section level3 unnumbered">
+<h3>Power (Box-Cox)</h3>
+<p>The Power transformation (<code>Y(s) = (Z(s)λ - 1)/λ</code>) works fairly well for a large number of non-normal distributions. All the values of lambda vary from -5 to 5 are considered and the best value for the data is selected. The “best” value is one that results in the best skewness of the distribution. For this transformation, values need to be strictly positive.</p>
+</div>
+<div id="log" class="section level3 unnumbered">
+<h3>Log</h3>
+<p>While technically a special case of the Power transformation (in so far that it occurs when <code>λ=0</code>), the Log transformation (<code>Y(s) = ln(Z(s))</code>) is often used where the data has a positively skewed distribution and there are a few very large outlier values. Log transformations will help make the variances more constant and normalize your data.</p>
+</div>
+<div id="square-root" class="section level3 unnumbered">
+<h3>Square Root</h3>
+<p>The Square-Root transformation will moderately impact the distribution. The main advantage of square root transformation is that it can be applied to zero values. Here the x will replace by the square root(x). It is weaker than the Log transformation. It is also a special case of the Power transformation when <code>λ=½</code>.</p>
+<p>In the next section we’ll be applying what we covered in this section to selecting visualization scales for your data.</p>
+</div>
+</div>
+<div id="choosing-the-appropriate-d3-scale" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Choosing the appropriate d3-scale</h2>
+<p>EarthTime’s bubble and choropleth maps, are underpinned by Mike Bostock’s <a href="https://d3js.org/">Data-Driven Documents</a> (d3), which is JavaScript library used for producing dynamic and interactive data visualizations has become one of the standard libraries for data visualization on the web. As discussed above, the distribution of your data will help determine the best scale to use to abstractly represent your data. The following brief explanations of each scale are taken directly from the <a href="https://github.com/d3/d3-scale">d3 documentation</a>. If the reader of this document wishes to receive a longer introduction, we’d recommend referring to Mike Bodstock’s article, <a href="https://medium.com/@mbostock/introducing-d3-scale-61980c51545f">Introducing d3-scale</a>.</p>
+<div id="linear-scales" class="section level3 unnumbered">
+<h3>Linear Scales</h3>
+<p><code>d3.scaleLinear().domain([minValue, maxValue]).range([0,1])</code></p>
+<p>Constructs a new continuous scale with the specified domain and range, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to <code>[0, 1]</code>. Linear scales are a good default choice for continuous quantitative data because they preserve proportional differences. Each range value y can be expressed as a function of the domain value <code>x: y = mx + b</code></p>
+</div>
+<div id="logarithmic-scales" class="section level3 unnumbered">
+<h3>Logarithmic Scales</h3>
+<p><code>d3.scaleLog().domain([minValue, maxValue]).range([0,1])</code></p>
+<p>Log scales are similar to linear scales, except a logarithmic transform is applied to the input domain value before the output range value is computed. The mapping to the range value y can be expressed as a function of the domain value <code>x: y = m log(x) + b. As log(0) = -∞</code>, a log scale domain must be strictly-positive or strictly-negative; the domain must not include or cross zero. A log scale with a positive domain has a well-defined behavior for positive values, and a log scale with a negative domain has a well-defined behavior for negative values. (For a negative domain, input and output values are implicitly multiplied by -1.) The behavior of the scale is undefined if you pass a negative value to a log scale with a positive domain or vice versa.</p>
+<p>Constructs a new continuous scale with the specified domain and range, the base 10, the default interpolator and clamping disabled. If domain is not specified, it defaults to <code>[1, 10]</code>. If range is not specified, it defaults to <code>[0, 1]</code>.</p>
+</div>
+<div id="power-scales" class="section level3 unnumbered">
+<h3>Power Scales</h3>
+<p><code>d3.scalePow().domain([minValue, maxValue]).range([0,1])</code></p>
+<p>Power scales are similar to linear scales, except an exponential transform is applied to the input domain value before the output range value is computed. Each range value y can be expressed as a function of the domain value <code>x: y = mx^k + b</code>, where k is the exponent value. Power scales also support negative domain values, in which case the input value and the resulting output value are multiplied by -1.</p>
+<p>Constructs a new continuous scale with the specified domain and range, the exponent 1, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to <code>[0, 1]</code>. (Note that this is effectively a linear scale until you set a different exponent.)</p>
+</div>
+<div id="square-root-scales" class="section level3 unnumbered">
+<h3>Square Root Scales</h3>
+<p><code>d3.scaleSqrt().domain([minValue, maxValue]).range([0,1])</code></p>
+<p>Constructs a new continuous power scale with the specified domain and range, the exponent 0.5, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to <code>[0, 1]</code>.</p>
+<p>Keeping these scales in mind, now we’re ready to examine the different types of maps that will represent your data in EarthTime.</p>
+</div>
+</div>
+<div id="map-types" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Map Types</h2>
+<div id="dynamic-maps" class="section level3 unnumbered">
+<h3>Dynamic Maps</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.</p>
+<div id="bubble" class="section level4 unnumbered">
+<h4>Bubble</h4>
+<p>Bubble maps use circles of a single color to represent data at a particular location increasing and decreasing in size based on the value of the data at the location. They are also proportional to all other circles on the map based on the scale and the minimum and maximum values of the dataset covered earlier in the section. There is also a variant of the bubble map called a “bivalent bubble map” that will also change color over time.</p>
+<p>Bubble maps unfortunately suffer when used with a large-scale map view, as points may overlap each other at when zoomed out to certain levels.</p>
+</div>
+<div id="choropleth" class="section level4 unnumbered">
+<h4>Choropleth</h4>
+<p>A choropleth map is one of the most common types of maps used in cartography. It’s made by separating the area being mapped, such as by geographic or political boundaries<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>, and then filling each resulting section with a different color or shade. Each color or shade represents a different value in your dataset. This makes choropleth maps useful for visualizing clusters of data across a geographic area while maintaining the context of regional boundaries.</p>
+<p>Please be careful using this style with areas where regions differ markedly in size, as the size of a region may not necessarily have any relationship to the data attributed to it. For example, on a map of the United States, states with larger land masses—like Alaska, California, or Texas—tend to draw attention; however, on a choropleth map, they may not have a high concentration of a measured variable or have traits that are important to a particular form of analysis, compared to smaller states like Maryland, Delaware, or Rhode Island. If you are trying to point out something in a smaller area that could be dwarfed by larger areas, we recommend using more granular regions such as (at least in the United States) counties, zip codes, voter precincts. Generally speaking, if you have the option and the data at a more granular level, our recommendation is to always use the most granular level possible to help capture the nuances in the data.</p>
+</div>
+<div id="point" class="section level4 unnumbered">
+<h4>Point</h4>
+<p>Also known as “firefly maps,” point maps are a powerful and elegantly simple way to visualize data in EarthTime. Its greatest strengths are its cinematic effects and glowing appeal. Place a point at any location on the map that corresponds to the variable you’re trying to represent with what some have described as “lightsaber-glowing symbology.” It’s useful for showing distribution and density patterns of things, but it requires your data to have fairly accurate latitudinal and longitudinal coordinates so that each point is precisely reflected on the map. Their radiance really stands out for earthquake events, transportation networks, and population clusters maps.</p>
+<p>While other point maps can be difficult to use on large-scale maps as points may overlap each other at certain zoom levels, EarthTime circumvents this issue using an image technique developed by the CREATE Lab and cognitive scientists at NASA called “blooming,” which originally set out to answer the question of how to show extreme dynamic range on a computer screen.</p>
+<p>When zooming into this type of map, the data layer will disaggregate points into individual dots and when zooming out, these dots merge into a bloom. Most techniques simple merge those dots together based on certain zoom levels; however, these techniques don’t take into account varying degrees of nuance in the data. Finally, with blooming technique, when taking a lumber of dots and constituting them together, it will begin to overshine the colors towards a type of white (like white hot), which gives viewers a sense of how much more density underlies that data.</p>
+</div>
+<div id="point-flow" class="section level4 unnumbered">
+<h4>Point Flow</h4>
+<p>Point flow maps, is specialized map type that represents the movement of things across the Earth. These can include migrating humans, resources and other goods for trade, or traffic. Within EarthTime, they are constructed as sets or pairs of origin and destination points within your dataset (please refer to “Long Data” in in Section <a href="data-ingestion.html#data-ingestion">6</a> on “Data Ingestion” to see how to format your data for this map type).</p>
+<p>By default, the path for a point within point flow maps follows a straight line; however, advanced users might wish for more of a parametic curve. One way this can be done is by adjusting the map’s Bézier curve parameter in the <code>create_flowMap()</code> function within the EarthTimeR—the larger the number in the parameter, the greater the degree of the path’s curve when a point travels from its origin to its destination.</p>
+</div>
+</div>
+<div id="static-maps" class="section level3 unnumbered">
+<h3>Static Maps</h3>
+<div id="dot" class="section level4 unnumbered">
+<h4>Dot</h4>
+<p>Dot maps are fairly similar to the point maps covered above. That is, they are used to illustrate geographic densities and distributions of a phenomena. The primary difference between the dot map and the point map is that with dot maps, the map is static, each dot generally has a value of one, and this type of map allows for multiple colors to represent different variables, whereas a point map only has one variable.</p>
+</div>
+<div id="line-string" class="section level4 unnumbered">
+<h4>Line String</h4>
+<p>Line string maps are used fairly infrequently as their use cases are limited to representing the distribution of routes, such as infrastructure or traffic.</p>
+</div>
+<div id="dot-1" class="section level4 unnumbered">
+<h4>Dot</h4>
+<p>Raster maps are simply an image of a map placed over the EarthTime base layer. It might be easier to think of it as a digital photograph or a paper map on a screen. All raster maps in EarthTime are georeferenced based on a specific projected coordinate system, meaning that it will open on the platform directly related to its position on the globe. By default, EarthTime sets its projected coordinate system to <code>EPSG:3857</code>, or what is more commonly referred to as the “Pseudo-Mercator/WGS 84” projection.</p>
+</div>
+</div>
+</div>
+<div id="the-use-of-colors" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> The Use of Colors</h2>
+<p>Colors are uniquely positioned among all the principles of EarthTime map design and visualization of spatial data—they are inherently part of language of the EarthTime story and carry the information value. Additionally, the colors chosen are used for creating the hierarchy of map elements by distinguishing the important from the unimportant. There are multiple academic papers focusing on the theoretical basis of color use in cartography and spatial data visualization, but unfortunately getting into that much color theory is beyond the scope of this document. What a reader of this document needs to know, in short, is this: color provides a significant contribution to the style and perception of EarthTime viewers and special consideration should be made when selected colors for the static maps detailed above, but especially for the dynamic maps detailed above due to these maps’ reliance on a sequential color scheme. If you wish to see all the color mappings that EarthTime supports by default, you can find them <a href="https://tiles.earthtime.org/colormaps/index.html">here</a>.</p>
+<div id="color-theory" class="section level3 unnumbered">
+<h3>Color Theory</h3>
+<p>Colors that look good together are called a color harmony. Color harmony is generally created by using a color wheel, which was invented by Isaac Newton in 1666. There are two types of color wheels, but for the purposes of EarthTime we suggest using the RGB (red, green, blue) color wheel by focusing on the following types of color combinations depending on the number of data layers that you’re intending to display at any given time: complementary, triadic, and tetradic.</p>
+<p>Complementary colors are two colors that are on opposite sides of the color wheel. This combination provides a high contrast and high impact color combination – together, these colors will appear brighter and more prominent.</p>
+<p><img src="img/color_wheels/complementary_colors.png" width="1920px" /></p>
+<p>Triadic colors are three colors that are evenly spaced on the color wheel. This provides a high contrast color scheme, but less so than the complementary color combination — making it more versatile. This combination creates bold, vibrant color palettes.</p>
+<p><img src="img/color_wheels/triadic_colors.png" width="1920px" /></p>
+<p>Tetradic colors are four colors that are evenly spaced on the color wheel. Tetradic color schemes are bold and work best if you let one color be dominant, and use the others as accents. The more colors you have in your palette, the more difficult it is to balance.</p>
+<p><img src="img/color_wheels/tetradic_colors.png" width="1920px" /></p>
+</div>
+<div id="human-psychology-perception" class="section level3 unnumbered">
+<h3>Human Psychology &amp; Perception</h3>
+<p>There are other factors such as human psychology and perception that a reader of this document should take into consideration when selecting colors for EarthTime data layers.</p>
+<p>For example, for most people, every color has multiple meanings &amp; feelings; therefore, you should be careful when you use a color for your data visualization. People expect to see more positive or pleasant data represented with colors like blue or green, while negative or danger types of data represented in colors like red or orange.</p>
+<p>Additionally, what you see is usually defined by what you perceive around it. The choice of colors should be as contrastable as possible, and the reader of this document should contrast the colors within their data layers—and ultimately within their EarthTime stories—appropriately. Keep in mind what makes a visualization is easier to understand is usually the good use of contrast colors &amp; borders.</p>
+</div>
+</div>
+<div id="borders-base-layers-geopolitical-sensitivities" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Borders, Base Layers, &amp; Geopolitical Sensitivities</h2>
+<p>While many people believe that the world is divided neatly into distinct nations with clearly defined borders, there are a number of locations that do not fit that model. There are certain territories that are claimed by more than one country and/or occupying forces. These territorial conflicts range from major wars whose impacts are felt around world to minor disagreements over remote, uninhabited rocks.</p>
+<p>Territorial disputes are often related to the possession of natural resources such as rivers, fertile farmland, mineral or petroleum resources although the disputes can also be driven by culture, religion, and ethnic nationalism. Territorial disputes often result from vague and unclear language in a treaty that set up the original boundary. Regardless of the origin of these disputes, these are sensitives that readers of this document need to take into consideration when creating an EarthTime story.</p>
+<p>For satellite imagery, sensitives are not as much of an issue; however, when using other base layers (which are drawn from the Google Maps corpus as briefly touched upon in Section <a href="data-ingestion.html#data-ingestion">6</a> on “Data Ingestion” above), one needs to first understand that Google previously <a href="https://www.washingtonpost.com/technology/2020/02/14/google-maps-political-borders/">released a statement</a> stating that it intends to remain, “neutral on issues of disputed regions and borders, and make every effort to objectively display the dispute in our maps using a dashed gray border line. In countries where [Google has] local versions of Google Maps, we follow local legislation when displaying names and borders.”</p>
+<p>What this means for the practical approach of creating EarthTime stories is taken directly from <a href="https://support.google.com/maps/answer/3145721?hl=en">Google documentation</a> states the following regarding borders and labels:</p>
+<ul>
+<li>International country borders: International country borders are displayed in different styles according to the political status of the border.</li>
+<li>International boundaries: Undisputed international boundaries, like the one between the United States and Canada, are shown as a solid gray line.</li>
+<li>Treaty and de facto boundaries: Treaty and provisional boundaries, which are temporary, are displayed as a dashed gray line.
++ Treaty boundary: A boundary set in a treaty or similar agreement, but not finalized by law.
++ De facto boundary: A boundary not set by a treaty or similar agreement, but used by all states involved.</li>
+<li>Disputed boundaries: Disputed boundaries are displayed as a dashed gray line. The places involved don’t agree on a boundary.</li>
+<li>Country/Region names: Country names, like Germany or Japan, are displayed directly on the map. Google Maps automatically shows place names in the same language that is set in your browser’s settings.</li>
+<li>State or province borders: State and province borders are shown as thin, light-gray dotted lines inside a country.</li>
+</ul>
+<p>Keeping the above in-mind, if you intend to show an area in an EarthTime story that could be considered sensitive from a geopolitical point of view we strongly recommend that you use one of the default EarthTime base layers such as <code>Lighter Colored Dark Base Map Without Labels</code> that retains the features mentioned in the Google documentation above. Additionally, we recommend not using choropleth maps as, by their very nature, have to contain hard boundaries. Most—but not all—data that is represented by a choropleth map can also be represented by a bubble map, which is what we would recommend in geopolitically sensitive situations. As a fallback solution, EarthTime also contain a special base layer, <code>Base Map Without Labels or Borders</code>, that should be used in conjunction with any non-choropleth map.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>While more statistically minded readers might argue that this is a myth, we recognize that although one’s data doesn’t have to be normal, it’s still a good idea to get in the habit of checking data distributions just to understand the data and determine if it looks reasonable. While one’s data might not be normal for a reason, in such cases, an individual may want to transform it or use other analysis methods (e.g., generalized linear models or nonparametric methods). So while none of one’s observed variables have to be normal in linear regression analysis, which includes t-test and ANOVA. The errors after modelling, should be normal to draw a valid conclusion by hypothesis testing.<a href="statistics-data-visualizations-map-types.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p> By default, EarthTime uses geopolitical boundaries at the country level as that is the .geojson file native to the platform. This carries several risks and sensitives which we’ll be covering in the later part of this section. For the time being, know that you always have the option of pushing a custom .geojson file to your EarthTime instance. We’ll cover more on how to point a data layer to a specific .geojson file in your instance in in Section <a href="earthtime-layers-sheet.html#earthtime-layers-sheet">8</a> on “EarthTime layers sheets.”<a href="statistics-data-visualizations-map-types.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-ingestion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="earthtime-layers-sheet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/andrewcberkley/the-earthtime-primer/edit/master/007-data-visualizations-and-map-types.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["the-earthtime-primer.pdf", "the-earthtime-primer.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
