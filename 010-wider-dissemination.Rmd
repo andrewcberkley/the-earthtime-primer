@@ -4,7 +4,7 @@ EarthTime stories are meant to be shared. In an ideal world, your audience would
 
 ## Best Practices for Embedding
 
-### Embedding Using Javascript
+### Embedding Using Javascript {-}
 
 A javascript-based inline scrolling EarthTime story can be placed in the middle of other content, with some content above the first frame of the scrolling story, and some content below the last frame of the scrolling story.  This is a common approach when combining map visuals within longer prose or other media. The following code uses HTML and a few lines of javascript to load the EarthTime library, select the story, and identify the correct div to populate.
 
@@ -28,12 +28,12 @@ A javascript-based inline scrolling EarthTime story can be placed in the middle 
   <body>
     <div class="non_story_content">
        <h1>Embedded Story</h1>
-       Lorem ipsum dolor sit amet, consectetur adipiscing eget. This is placeholder text used before the story. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis lacus nec felis fringilla hendrerit. Nullam maximus dignissim.
+       This is placeholder text used before the story. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </div>
     <div id="story_container1"></div>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sagittis ut sapien eget tempus. Proin mattis. This is placeholder text that comes after the story. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum.
+    This is placeholder text that comes after the story. Proin quis lacus nec felis fringilla hendrerit.
     <div class="non_story_content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae vestibulum purus. This placeholder text between the stories. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in.
+      This placeholder text between the stories. Nullam maximus dignissim. Nam in.
   </div>
   </body>
   <script src="https://earthtime.org/m/stories/mobile-embed.js" type="text/javascript"></script>
@@ -44,12 +44,17 @@ A javascript-based inline scrolling EarthTime story can be placed in the middle 
     // disableAutoFullscreen
     // mediaFitStyle
     var settings = {
-      "earthtimeSpreadsheet" : "https://earthtime.org/explore#waypoints=1Ua4MpiPs2A79p9SdFRBiXmiOcMVG6Oze6tMU_ReEs8k.0" // Where '.0' represents the "tab Id" of the spreadsheet. Up until this point, we've been dealing with "sheetId"; however, for this to render correctly, you need to know which order the sheets in the spreadsheet are in; therefore, a "tab Id" of '.0' represents the first sheetId, a tab Id of '.1' represents the second SheetId, '.2' represents the third, etc.
+      "earthtimeSpreadsheet" : "https://earthtime.org/explore#waypoints=1Ua4MpiPs2A79p9SdFRBiXmiOcMVG6Oze6tMU_ReEs8k.0" 
+      // Where '.0' represents the "tab Id" of the spreadsheet. Up until this point, we've been dealing with "sheetId"; 
+      // however, for this to render correctly, you need to know which order the sheets in the spreadsheet are in; 
+      // therefore, a "tab Id" of '.0' represents the first sheetId, a tab Id of '.1' represents the second SheetId, 
+      // '.2' represents the third, etc.
     }
 
-    // Register the stories. Include more registerStory calls (with different story names from the spreadsheet) to add multiple stories to this page.
-    // First parameter is the name of the story, obtained from the 'Waypoint Title' column of the waypoint spreadsheet. It is case insensitive and
-    // the leading '##' characters must be removed.
+    // Register the stories. Include more registerStory calls (with different story names from the spreadsheet) to 
+    // add multiple stories to this page.
+    // First parameter is the name of the story, obtained from the 'Waypoint Title' column of the waypoint spreadsheet. 
+    // It is case insensitive and the leading '##' characters must be removed.
     // Second parameter is the id of the HTML element (usually a div) that you want to insert the story into.
     earthtime.registerStory('Deforestation', 'story_container1');
 
@@ -62,23 +67,23 @@ A javascript-based inline scrolling EarthTime story can be placed in the middle 
 
 Note that we introduce four additional parameters in the HTML example above that can be passed in when embedding an EarthTime story using javascript: `earthtimeSpreadsheet`, `showEarthtimeAbout`, `disableAutoFullscreen`, and `mediaFitStyle`.
 
-#### `earthtimeSpreadsheet`
+#### `earthtimeSpreadsheet` {-}
 
 This parameter will default to the standard `Default EarthTime Waypoints, Dotmap layers, and Bubble Layers` found at `https://docs.google.com/spreadsheets/d/1rCiksJv4aXi1usI0_9zdl4v5vuOfiHgMRidiDPt1WfE/edit#gid=1596808134`; however, a different one can be passed in if necessary.
 
-#### `showEarthtimeAbout`
+#### `showEarthtimeAbout` {-}
 
 This parameter defaults to `FALSE`. If the parameter is set to `TRUE`, then an “About Section” will appear as the last waypoint in the story briefly describing EarthTime.
 
-#### `disableAutoFullscreen`
+#### `disableAutoFullscreen` {-}
 
 This parameter can be `TRUE`or `FALSE` with the default being set to `FALSE`. If the parameter is set to `TRUE`, the story content will only fill the width of the area the `HTML div`. Otherwise, if set to false, the story content will fill the entire screen when scrolled into view.
 
-#### `mediaFitStyle`
+#### `mediaFitStyle` {-}
 
 This parameter can be set to either `COVER` or `CONTAIN` with the default being set to `COVER`. If the parameter is set to `COVER` the content is sized to maintain its aspect ratio, whilst filling the entire content area—that is, the content will be clipped to fit; however, if the parameter is set to `CONTAIN`, the content is scaled to maintain its aspect ratio, while fitting within the element's content box, which could mean that letterboxing occurs.
 
-### Embedding using iFrames
+### Embedding using iFrames {-}
 
 An iframe-based EarthTime scrolling story is somewhat similar to the javascript fixed-position scrolling story but uses an iframe instead of javascript. This is useful if you are embedding in a CMS type environment where loading or running external javascript is limited or not allowed. For example, you could invoke an iFrame as follows:
 
