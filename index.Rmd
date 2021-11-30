@@ -3,7 +3,7 @@ title: "The EarthTime Primer"
 author: "Andrew C. Berkley"
 date: "`r format(Sys.Date(), '%B %Y')`"
 site: bookdown::bookdown_site
-documentclass: book
+documentclass: krantz
 bibliography: references.bib
 nocite: '@*'
 csl: citation-style-language/apa.csl
