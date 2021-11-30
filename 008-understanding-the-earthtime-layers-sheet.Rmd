@@ -225,7 +225,7 @@ There are a few other additional parameters that you can add to the end of the U
 
 This parameter is where you’ll put the authors of the EarthTime story as well any additional information that might be useful to highlight, such a data citation. This parameter accepts and will render standard HTML tags. For example, in our example story, this section when used with HTML would appear as follows: `Story by: UNHCR <br>Data from: UNHCR, Igarapé Institute`.
 
-## Generating Thumnails
+## Generating Thumbnails
 
 Before sharing your EarthTime story to the wider world, it’s best practice to generate the thumbnails for the story waypoints in advance so they do need to load for the viewer. To initiate a thumbnail generation sequence for your story, go the URL of your EarthTime story and go through each waypoint in the story within the Explore view and scroll through the entire story on a mobile device. The thumbnails might take some time to generate when the story is first accessed, but after they have generated successfully, they will usually display for all subsequent viewers without needing to load.
 
