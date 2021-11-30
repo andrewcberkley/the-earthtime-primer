@@ -1,0 +1,1459 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{krantz}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={The EarthTime Primer},
+  pdfauthor={Andrew C. Berkley},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.33,0.33,0.33}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.61,0.61,0.61}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.14,0.14,0.14}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.06,0.06,0.06}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.27,0.27,0.27}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.43,0.43,0.43}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0,0,0}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.5,0.5,0.5}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[bf,singlelinecheck=off]{caption}
+
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\renewenvironment{quote}{\begin{VF}}{\end{VF}}
+\let\oldhref\href
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+
+\makeatletter
+\newenvironment{kframe}{%
+\medskip{}
+\setlength{\fboxsep}{.8em}
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}
+
+\newenvironment{rmdblock}[1]
+  {
+  \begin{itemize}
+  \renewcommand{\labelitemi}{
+    \raisebox{-.7\height}[0pt][0pt]{
+      {\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{images/#1}}
+    }
+  }
+  \setlength{\fboxsep}{1em}
+  \begin{kframe}
+  \item
+  }
+  {
+  \end{kframe}
+  \end{itemize}
+  }
+\newenvironment{rmdnote}
+  {\begin{rmdblock}{note}}
+  {\end{rmdblock}}
+\newenvironment{rmdcaution}
+  {\begin{rmdblock}{caution}}
+  {\end{rmdblock}}
+\newenvironment{rmdimportant}
+  {\begin{rmdblock}{important}}
+  {\end{rmdblock}}
+\newenvironment{rmdtip}
+  {\begin{rmdblock}{tip}}
+  {\end{rmdblock}}
+\newenvironment{rmdwarning}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+
+\usepackage{makeidx}
+\makeindex
+
+\urlstyle{tt}
+
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\usepackage{float}
+
+\frontmatter
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{The EarthTime Primer}
+\author{Andrew C. Berkley}
+\date{November 2021}
+
+\begin{document}
+\maketitle
+
+% you may need to leave a few empty pages before the dedication page
+
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage\thispagestyle{empty}\null
+%\cleardoublepage\newpage
+\thispagestyle{empty}
+
+\begin{center}
+%\includegraphics{images/dedication.pdf}
+\end{center}
+
+\setlength{\abovedisplayskip}{-5pt}
+\setlength{\abovedisplayshortskip}{-5pt}
+
+\mainmatter
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+
+
+This is the online version of documentation produced for understanding and using EarthTime as a storytelling platform. This documentation is intended to be a reference tool currently under development and intended for World Economic Forum staff, members of the CMU CREATE Lab and extended community, and/or anyone else that has an interest in creating and sharing narratives that examine complex global topics through data visualization instead of traditional prose using this unique storytelling tool. I've been fortunate enough to play a small role collaborating with the CREATE Lab on EarthTime since 2018 from the World Economic Forum's side and with my pending departure from the Forum, the ultimate aim of this work is to not only formally archive the information that is stuck in my head into a form that is more widely accessible and help future users of the tool avoid mistakes that I made during my EarthTime journey, but I also hope this document is able to convey the excitement and joy that I've been lucky enough to experience whilst a collaborator on this project. It is my hope that others can find the same excitement and joy in using data to help communities across the globe---either in Davos, Pittsburgh, or somewhere in between---examine major environmental, social, and political phenomenon across time, across space, and between each other.
+
+\hypertarget{premise}{%
+\section*{Premise}\label{premise}}
+
+
+Both the CREATE Lab at Carnegie Mellon University and the World Economic Forum recognize that progress happens by bringing together people from all walks of life---ranging from government and business, to civil society and academia---who have the drive and the will to make positive change. As our world has become increasingly complex, people are increasingly seeking out ways to make sense of societal shifts at both a local and global level. While people try to make sense of new phenomenon by just using data, data alone struggles to capture and bear witness to the key issues of our time. The EarthTime project is an interface that attempts to create powerful narratives by connecting the dots, using facts, conveying a sense of empathy, and using data all at once.
+
+Using large spatial and temporal datasets, the fact-based narratives of created alongside experts within this project have successfully broken through language and culture barriers, forged common ground across diverse viewpoints, and to create the sense of unity needed to have meaningful discourse about how to best chart our future together more meaningfully.
+
+The aim of this document is to introduce readers and guide readers as they begin to explore how best to create data narratives for the interactive, web-based version of EarthTime. In doing so, we recognize that some of these stories will be ones of decline, but hopefully as a tool it can be used to demonstrate our collective power to effect change.
+
+\hypertarget{documentation-structure}{%
+\section*{Documentation Structure}\label{documentation-structure}}
+
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  This document opens with a brief history of the EarthTime project. This section starts with the history of the CREATE Lab at Carnegie Mellon University where EarthTime was first conceived and goes onto detail EarthTime's journey from the original time-lapse project proposed as a collaboration between Google's Earth Engine team, Carnegie Mellon University's CREATE Lab, and TIME Magazine all the way to its presence as the Global Situation Space at the World Economic Forum's Annual Meetings in Davos, Switzerland, as well as its continued use on the Forum's Strategic Intelligence platform.
+\item
+  The next section of this document goes onto discuss the basics of EarthTime in what is referred to as the ``Explore'' view that one would find when visiting the \href{http://earthtime.org/explore}{main EarthTime website}. It also suggests a few prerequisites for computer hardware that one is expected to have to successful run EarthTime in a browser.
+\item
+  The third section of this documents focuses on generating ideas for EarthTime stories---and by extension generating ideas for the data layers that underpin them. This section is generally focused on communication with and outreach to three major groups: academic experts, industry leaders, and journalists.
+\item
+  While not technical in nature, per se, the fourth section of the document explores the philosophy around data gathering process with a special emphasis placed on open-source data web scraping. It is predicated on the assumption that one of the three aforementioned groups has pointed you towards a data that is either messy or otherwise doesn't exist in a computer-readable format. It briefly touches on data analysis, but that subject is beyond the scope of this document.
+\item
+  The fifth section of the document provides a few lines on the art of data wrangling. It implores readers to data wrangle using a ``code first; not click first'' approach so that their process can be reproducible through code. Much of the data wrangling documentation for EarthTime can be found in the companion R package, \href{https://github.com/andrewcberkley/EarthTimeR}{``EarthTimeR''}.
+\item
+  The document's sixth section looks at getting formatted data into EarthTime with a process known as ``data ingestion''. This section covers the use of Google sheets to read data into EarthTime.
+\item
+  The document's seventh section examines a number of philosophies around data visualization in the EarthTime specific context. It provides a brief introduction to the different types of data layers, color theory, as well as geopolitical considerations that should be taken into account when attempting to visualize names and borders in regions with disputed territories.
+\item
+  The eighth section covers the EarthTime layers sheets. It covers understanding the structure of waypoints, waypoint URLs, and CSV layers. Within the CSV layers section, the most fields are covered as well as special considerations that should be taken into account when determining how to best use certain fields.
+\item
+  Rather than an editing or style guide, the ninth section of the document tries to establish a reasonable workflow when attempting to publish an EarthTime story. It also dives into arguments for an against using EarthTime for conveying certain types of data to a wide variety of audiences and what one should take into account when pushing the limits of storytelling through EarthTime.
+\item
+  The tenth section covers dissemination of EarthTime stories. It looks at the advantages of visualizing stories with mobile users in mind, how to embed stories in iFrames, and the use of GIFs (pronounced ``/ɡɪf/'', not ``/dʒɪf/'') for highlighting critical waypoints.
+\item
+  The final section covers closing thoughts and final remarks on the EarthTime project. It also includes the reference section for those wishing to explore more.
+\end{enumerate}
+
+\hypertarget{acknowledgements}{%
+\section*{Acknowledgements}\label{acknowledgements}}
+
+
+First and foremost, it has been a pleasure collaborating with Illah Nourbakhsh and the wider CREATE Lab at Carnegie Mellon University. Since our first contact, I've resonated with your vision to promote data literacy, inspire meaningful dialogue, and democratize access to data for everyone in an inclusive and transparent way. A very special thanks is reserved to those I worked most closely with on EarthTime, especially Paul Dille, Ryan Hoffman, Jared Kohler, Gabriel O'Donnell, Randy Sargent, and Anne Wright who helped create the platform that helps us look at in the mirror at the results of our past decisions in the hopes that as a society we can make more informed, forward-facing choices.
+
+To everyone at the World Economic Forum who was instrumental in establishing and shepherding the relationship with the CREATE Lab at different points in time for various programming purposes at the Global Situation Space at Forum events especially Gill Cassar, Taylor Clayton, Teresa Hartmann, and Dara Lee.
+
+My opportunities with EarthTime wouldn't have been possible without the backing and support of the Forum's Strategic Intelligence team (formerly Knowledge Networks \& Analysis), especially Stephan Mergenthaler and Jim Landale, as well as the broader support of the team's Managing Director at the time, Jeremy Jurgens, and of course and big thank you to the wider network of experts from the Forum's Global Future Councils and Expert Network that I had the pleasure of working with over the years.
+
+Finally, I'm eternally grateful to my main partner in crime, editor, and dear friend, John Letzing. Your love of words and storytelling as well as your keen eye for details allowed us to publish nearly 100 original EarthTime stories together. For better or for worse, we were determined to bear witness to some of the far-flung tragedies of the world using EarthTime and the data at our disposal and it is my hope that the couple million of people that consumed our stories will have the courage and imagination to use whatever tools they have at their disposal to deliver positive change. Please forgive me for any errors---grammatical or otherwise---present within this document. All errors in this document are my own and I've decided to leave the making of this document error-free as an exercise for the reader.
+
+\hypertarget{part-from-pittsburgh-to-davos}{%
+\part{From Pittsburgh to Davos}\label{part-from-pittsburgh-to-davos}}
+
+\hypertarget{the-history-of-earthtime}{%
+\chapter{The History of EarthTime}\label{the-history-of-earthtime}}
+
+Mapmaking and the use of maps is an ancient idea, it's an impulse we've had for thousands of years. As humans we've been drawing our whereabouts on cave walls since the dawn of our species, but we've come a long way in the last couple hundred years. There's an amazing diversity of the kinds of maps that we're seeing today. There are thousands of satellites that are circling our planet taking a pulse of our planet.
+
+\hypertarget{cmu-create-lab}{%
+\section{CMU CREATE LAB}\label{cmu-create-lab}}
+
+Founded in 2000 by Dr.~Illah Nourbakhsh, the CREATE Lab sought out a way to use science, technology, and engineering to serve the needs of people in our communities who are advocating for more perfect justice. The CREATE Lab was keen to forego the traditional route of community engagement where researchers generally setup shop in a location, decide on the community's needs, and create ``solutions'' around their own tech interests than to what actually might improve the quality of life for the people who actually live in the community. Instead, the CREATE Lab developed meaningful relationships with Pittsburgh-based community organizations and advocacy groups from the start by allowing community members to decide what might help them in their own advocacy and develop appropriate tech solutions in response.
+
+In 2009 Dr.~Nourbakhsh was joined by Randy Sargent and Anne Wright (two lead researchers he had previously collaborated with at NASA's Ames Research Center) and expanded the range of projects that have been notable for their interdisciplinarity and human-centered approach. Some projects such as the \href{https://breatheproject.org/about/}{``Breathe Cam''} used state of the art tech to quantify everyday problems. For example, when the Allegheny County Clean Air Now raised concerns that a local coke works was violating EPA regulations, a PhD student at CREATE Lab devised an algorithm that used video cameras to detect when the coke works were emitting pollutants. The visual data couples with the data collected from affordable air quality monitors inside residents' homes, as well as real-time reporting of bad odors collected on the \href{https://smellmycity.org/}{``Smell My City''} app, meant that the community's concerns would be taken seriously by the EPA leading to the eventual shut down of the coke works.
+
+\hypertarget{gigapan-gigapan-time-machine}{%
+\subsection*{GigaPan \& GigaPan Time Machine}\label{gigapan-gigapan-time-machine}}
+
+
+In 2010, the CREATE Lab in collaboration with NASA, developed a technology known as ``GigaPan'' which captured a mosaic of hundreds or thousands of digital pictures and stitch those frames into a panorama that was able to be explored interactively.
+
+In 2011, released what was known as \href{https://www.youtube.com/watch?v=Dk9WanUO_gg}{``GigaPan Time Machine''}, a system that enabled viewers to explore gigapixel-scale, high-resolution videos and image sequences by panning or zooming in and out of the images while simultaneously moving back and forth through time. For examples, were able to use the system to focus in on the details of a booth within a panorama of a carnival midway and also reverse time to see how the booth was constructed; watch a group of plants sprout, grow and flower, but also see others get eaten by caterpillars; or view computer simulations of the early universe, watching as gravity works across 600 million light-years to condense matter into filaments and finally into stars that can be seen by zooming in for a close up. Whereas GigaPan was about exploring physical space at high resolutions, GigaPan Time Machine added the critical element of time to allow viewers to explore both simultaneously. Extending GigaPan into the time dimension, image mosaics were repeatedly captured at set intervals, and then stitched across both space and time to create a video in which each frame was hundreds of millions---and sometimes billions---of pixels.
+
+\hypertarget{earth-time-lapse}{%
+\subsection*{Earth-Time Lapse}\label{earth-time-lapse}}
+
+
+In 2013 the CREATE Lab began working on its \href{https://www.cmucreatelab.org/projects/Explorables}{Explorables Project}, a platform designed to help make big data--with billions of data points, dozens of different fields of information, changing over time--easier to explore, by layering animations over maps with the hope that it would help people make sense of the data by using visual evidence that was more rhetorically compelling that traditional charts or graphs. The Explorables Project also pioneered the use of base maps instead of solely relying on satellite imagery for what would later become EarthTime's alternate basemaps. Early Explorables Project maps opted to leverage the Google Maps API instead with non-satellite data such as statistics on wealth from the World Top Incomes Database.
+
+Of note in 2013, the CREATE Lab in collaboration with Google and TIME Magazine was putting the finishing touches on ``Earth-Timelapse'', a 52-terapixel time-lapse portrait of Earth that achieved a resolution of 30-meter-per pixel (1.78 trillion pixels per tile) of the planet. This project, led by the CREATE Lab's Randy Sargent and the Earth Engine team, used 909 terabytes of data from a portion of the Landsat satellite corpus (Landsat4, 5, and 7)---with each of the million images coming in at more than 100 megapixels. While Landsat's polar orbit allows its satellites to take a full set of images of the Earth's surface every 16 days, not all those images were usable because of clouds, weather, and other factors. Creating the cloud-free, low-resolution model required 20 terabytes of data from MODIS sensors on NASA's Earth Observing System Terra and Aqua satellites as it had enough differing spectral bands that allowed the team to accurately analyze the atmosphere.
+
+A keen observer of the current version of EarthTime will notice that early years of the dataset---especially 1987---might seem a bit off. This was due to the failure of Landsat 5's Ku-band transmitter which prevented the downlink of imagery collected outside the range of US and cooperating international ground stations. As a result, this meant large chunks of Asia were not covered by Landsat's archives until 1999 and getting a complete picture for each year required interpolation between years where images were available.
+
+The initial data processing to produce the original Earth-Timelapse single shot tiles (from 1984 to 2012) took approximately 260,000 core-hours of CPU time in Google's compute cloud; however, to generate the millions of overlapping video tiles required for Earth-Timelapse's geospatial search capabilities, the CREATE Lab had to leverage Google's computing and storage infrastructure. Encoding of those tiles alone consumed 1.4 million core-hours of compute time and the total process of creating the Earth-Timelapse web application took approximately three days of total processing time and 1.8 million core-hours. At its peak, the project used 66,000 cores simultaneously in Google's cloud. The research with Google done by Sargent and the wider team can be found \href{https://ai.googleblog.com/2013/06/building-visual-planetary-time-machine.html}{here}, the subsequent paper on ``A Web-based Large-scale Timelapse Editor for Creating and Sharing Guided Video Tours and Interactive Slideshows'' by the CREATE Lab can be found \href{https://cmucreatelab.org/files/A\%20Web-based\%20Large-scale\%20Timelapse\%20Editor\%20for\%20Creating\%20and\%20Sharing\%20Guided\%20Video\%20Tours\%20and\%20Interactive\%20Slideshows.pdf}{here}, and the paper from Google on ``Google Earth Engine: Planetary-scale geospatial analysis for everyone'' can be found \href{https://www.sciencedirect.com/science/article/pii/S0034425717302900?via\%3Dihub}{here} for those interested in more details.
+
+\hypertarget{the-beginning-of-a-wider-reach-for-the-explorables-project}{%
+\subsection*{The Beginning of a Wider Reach for the Explorables Project}\label{the-beginning-of-a-wider-reach-for-the-explorables-project}}
+
+
+In 2017, the CREATE Lab released their first visualization of global refugee flows between 2000 - 2015 using data from UNHCR. By 2018, this visual was turned into a series of EarthTime stories for the year's World Refugee Day: \href{https://earthtime.org/stories/global_refugee_crisis_the_big_picture}{``Global Refugee Crisis: The Big Picture''} co-authored with UNHCR and \href{https://earthtime.org/stories/global_refugee_crisis_a_system_overburdened}{``Global Refugee Crisis: A System Overburdened''} co-authored by Dr.~Khalid Koser of GCERF.
+
+\hypertarget{world-economic-forum-partnership}{%
+\section{World Economic Forum Partnership}\label{world-economic-forum-partnership}}
+
+The CREATE Lab first began engaging with the World Economic Forum through its event programming in the Arts \& Culture portfolio. It was brought to the World Economic Forum's 2015 Annual Meeting of New Champions in Dalian, People's Republic of China as an instillation called ``The Earth Time-Lapse''. Its goal was to allow the event's participants to zoom in or out on any spot on the globe and move back and forth in time as they are reminded of humanity's impact and its place in space and time.
+
+\hypertarget{global-situation-space}{%
+\subsection*{Global Situation Space}\label{global-situation-space}}
+
+
+After its success and popularity at the 2015 Annual Meeting of New Champions, the World Economic Forum invited the CREATE Lab to return with Earth-Timelapse not only as a mainstay feature at its Annual Meetings, but also as a regular feature at its smaller, regional meetings as well in the Middle East as well. By 2017, the Forum renamed the installation to the ``Global Situation Space'' and it has continued to be a major presence at its meetings. It takes many forms depending on the meeting---from a 12-screen setup at smaller regional meetings, to a massive 90-screen setup during the marquee Annual Meeting in Davos. On Earth Day 2018, the Carnegie Mellon University CREATE Lab and World Economic Forum officially announced their partnership and released the Earth-Timelapse under a new name, ``EarthTime''.
+
+\hypertarget{strategic-intelligence}{%
+\subsection*{Strategic Intelligence}\label{strategic-intelligence}}
+
+
+The Forum wanted to continue to use EarthTime outside of its physical meetings so that its constituents could continue to engage with the global visualizations at their own convenience. In 2018, the Forum and the CREATE Lab decided to partially integrate EarthTime into its premier knowledge platform, ``Strategic Intelligence'', which helps make sense of the complex forces driving transformational change across economies, industries, and global issues. The Strategic Intelligence platform offers EarthTime stories co-authored by members of the World Economic Forum Expert Network and does not offer users the ability to interactively explore or create their own EarthTime stories. That is still done through the main EarthTime site hosted by the CREATE Lab.
+
+\hypertarget{agenda-blogs}{%
+\subsection*{Agenda Blogs}\label{agenda-blogs}}
+
+
+In addition to the Forum's Strategic Intelligence platform, the Forum also leverages EarthTime stories in its Agenda Blog pieces. The blog is visited by almost five million people every month, has nearly four million Twitter followers, and more than six million Facebook fans across several pages. Both the Forum's Strategic Intelligence platform and Agenda Blog platforms utilize the embedding methods covered in Section \ref{wider-dissemination} of this document focused on ``Wider Dissemination'' of EarthTime content.
+
+\hypertarget{earthtime-today}{%
+\section{EarthTime Today}\label{earthtime-today}}
+
+The tool is immediately recognized around the world by its stunning ``Annual Timelapse'' base layer is a 35-year annual record of the Earth's change viewed from space. To date, the platform has incorporated massive archive of data from eight satellites, including USGS's Landsat series, NASA's Terra and Aqua, and ESA's Sentinel 2 series, and continues to combine that data into annual atmospherically corrected and cloud-removed mosaics tiles. It now also includes a special data layer from Himawari 8, the geostationary weather satellite, operated by Japan Meteorological Agency.
+
+In late 2017, the Pittsburgh International Airport had installed an EarthTime display in Concourse D as part of its ``Creating a Sense of Place'' program. Still standing to this day, the display gives travelers a chance to interact with the CREATE Lab's technology and see how research conducted at Carnegie Mellon University is shaping the future of the world.
+
+Apart from the World Economic Forum's Annual Meetings, EarthTime has also been used by countless researchers, US congressional sub-committee hearings, COP14 in Sharm el-Sheikh, the TED Conference, the Prince Albert II of Monaco Foundation at the Monaco Yacht Club, the Arctic Circle Assembly in Reykjavik, as a teaching tool in classrooms teachers, by community organizations and advocacy groups, as well as journalists helping to broaden the scope of their stories both locally and globally.
+
+EarthTime continues to be underpinned by the CREATE Lab's vision to promote data literacy, inspire meaningful dialogue, and democratize access to data for everyone in an inclusive and transparent way.
+
+\hypertarget{part-ideas-data-philosophies}{%
+\part{Ideas, Data, \& Philosophies}\label{part-ideas-data-philosophies}}
+
+\hypertarget{the-basics}{%
+\chapter{The Basics}\label{the-basics}}
+
+Lorem ipsum dolor sit amet, consectetur.
+
+\hypertarget{hardware-prerequisites}{%
+\section{Hardware Prerequisites}\label{hardware-prerequisites}}
+
+A number of individuals have been introduced to EarthTime at the World Economic Forum Annual Meeting's Global Situation Space---a 7.2-meter x 2.88-meter (24 feet x 9 feet), multi-screen video hyperwall running off of custom-built computers and might be under the impression that their own computers are not powerful enough to run the platform, thankfully nothing could be further from the truth. The CREATE Lab has pre-processed massive data sets using various techniques to create animated, high-resolution EarthTime visualizations at different time scales. Relying on many of the same strategies used by video game designers, EarthTime uses your computer's GPU in to create a new capability for interactively exploring extreme-sized data.
+
+While the latest computer models would be ideal, we've found that at a minimum, people wishing to have a smooth experience with EarthTime running from their browser should have a Macbook Pro or Windows laptop from at least 2016 with an Intel i7 CPU. Also try to ensure that the screen resolution is at a minimum 1920x1080 (not 1366x768) and the computer's graphics are either at minimum Intel 630 series or dual graphics setup that includes NVIDIA/ATI cards.
+
+Many people wonder if EarthTime is compatible with mobile devices. In short, the answer is ``yes''; however, as we'll briefly touch upon in the next section, only EarthTime stories are currently available on mobile devices (we'll be be diving deeper into the mobile view in Section \ref{earthtime-layers-sheet} focused on ``Understanding the EarthTime Layers Sheet''). Users wishing to have a more interactive experience and explore various data layers should access EarthTime via a browser on a standard desktop or laptop computer.
+
+\hypertarget{introduction-to-the-earthtime-platform}{%
+\section{Introduction to the EarthTime Platform}\label{introduction-to-the-earthtime-platform}}
+
+The way that most people will interface with the EarthTime platform is what is referred to as the ``Explore'' view. This is the primary interactive, web-based system that allows users to easily traverse the large spatial and temporal datasets within EarthTime, especially flow maps, dot maps, color images, and satellite base layer renderings.
+
+Within Explore, there's a number of headings that you'll find useful: ``Stories'', ``Data Library'', ``Share'', ``Story Editor'', and ``Settings''.
+
+\hypertarget{stories}{%
+\subsection*{Stories}\label{stories}}
+
+
+It's best to think of ``Stories'' as data narratives that are organized by various themes. Generally speaking, each one of these narratives has been authored with at least one expert in the relevant area and that expert has carefully chosen not only the relevant dataset and the location on Earth where you'll view the dataset, but also a short text to accompany what the viewer will be seeing. The data, the view, and the text are the three components of what is referred to as a ``waypoint''. We'll be covering waypoints further in Section \ref{earthtime-layers-sheet} on ``EarthTime layers sheets''.
+
+\hypertarget{data-layers}{%
+\subsection*{Data Layers}\label{data-layers}}
+
+
+For examining the total depth and breadth of data that EarthTime has to offer, the ``Data Layers'' section offers the best bird's eye view. The data in this section is organized alphabetically and clicking on a given category will provide a drop-down list of individual data layers under the respective category. While most data layers will act as an overlay and a user can have multiple data layers present at a given time\footnote{We do want to caution users against having too many data layers present at once as this may unintentionally create misleading spurious correlations.}, there is a special type of data layer called a ``base layer'', of which only one can be present at a given time. The default base layer is ``Landsat Annual'', which is a massive archive of NASA's Landsat corpus that was covered in Section \ref{the-history-of-earthtime} under ``Satellites''; however, there are a number of other basemaps that can be used depending on your purpose. We cover these basemaps and use cases in greater depth in Section \ref{statistics-data-visualizations-map-types} on ``Data Visualizations \& Map Types''.
+
+\hypertarget{share}{%
+\subsection*{Share}\label{share}}
+
+
+The ``Share'' section creates an opportunity to share the current Explore View as a link with a unique URL, as a still image, or as a video. While this section is useful for novice users looking to share outputs quickly, it is our hope that by the end of this document, users will be comfortable interacting with some of the nuances of EarthTime and will not need to use this section. We'll be covering the details of EarthTime URLs in Section \ref{earthtime-layers-sheet} on ``EarthTime layers sheets'' and best practices in sharing views in Section \ref{wider-dissemination} on ``Wider Dissemination''.
+
+\hypertarget{story-editor}{%
+\subsection*{Story Editor}\label{story-editor}}
+
+
+Similar to the ``Share'' section, the ``Story Editor'' section gives novice users the opportunity to create stories directly from the Explore View. Once again, by the end of this documents, users should be able to forgo the use of the ``Story Editor'' and create and edit stories directly in their respective EarthTime layers sheet, which we'll be coving in more depth in Section \ref{statistics-data-visualizations-map-types} on ``Data Visualizations \& Map Types''.
+
+\hypertarget{settings}{%
+\subsection*{Settings}\label{settings}}
+
+
+The ``Settings'' section allows users to import their own EarthTime stories and data layers using a properly formatted Google Sheet. Generally speaking, if one is creating a large number of EarthTime stories and data layers and has a close relationship with the CREATE Lab, then a new EarthTime instance will be created for a specific person, organization, or purpose. This section is intended for users who do not have their own EarthTime instance, but still want to visualize their own EarthTime stories and data layers.
+
+\hypertarget{reaching-out-for-ideas}{%
+\chapter{Reaching Out for Ideas}\label{reaching-out-for-ideas}}
+
+Every EarthTime story starts as an idea\footnote{ While it might be self-evident or even trivial to a reader of this document---the following interaction has happened often enough that it's worth mentioning here---but generally speaking, ideas for EarthTime stories and data need to have some sort of geospatial element involved.}. Inspiration for new and original ideas is beyond the scope of this document; however, in our experience the best place to germinate new ideas is by browsing the ``Data Layers'' tab in EarthTime's Explore view, especially if you have expertise in one of the data categories listed. Are there one or two data layers related to what you've studied in the past and can shine new light on? Do you have firsthand experience in a local phenomenon that you can speak to using the appropriate data? If so, it makes sense to double-check that data already exists in EarthTime. If the platform doesn't have data related to your idea, below we will cover individuals or groups that might already have the appropriate data for your idea.
+
+\hypertarget{experts-forum-expert-network-academic-peer-review}{%
+\section{Experts -- Forum Expert Network \& Academic Peer Review}\label{experts-forum-expert-network-academic-peer-review}}
+
+Academic and peer-reviewed data has and continues to be the preferred underlying data for EarthTime stories. By its very nature, the process by which the data is collected, analysis, reviewed, and vetted follows a number of steps to ensure it's validity, accuracy, and fairness. As such, these individuals and their associated institutions and organizations are a great resource for data layers to inspire new EarthTime stories.
+
+Members of the World Economic Forum's Expert Network have generously lent their data for use in the EarthTime platform and have also authored and co-authored multiple EarthTime stories. Many times, through their own research both in an academic setting or through their work in the field, experts are able to identify hidden connections between their own data and experiences and other data layers. For example, an expert working in the Middle East was able to look at conflict and displacement data already in EarthTime and make a connection between internet usage and youth unemployment in the region to tell an \href{https://wef-prod.earthtime.org/m/stories/the_big_picture_on_peace_and_conflict_in_the_middle_east}{EarthTime story} focused on opportunities for greater peace and prosperity in the region.
+
+\hypertarget{privileged-industry-and-proprietary-data}{%
+\section{Privileged, Industry, and Proprietary Data}\label{privileged-industry-and-proprietary-data}}
+
+While EarthTime is primarily focused on academic, peer-reviewed, and open-source data, there are special agreements in place that allow for proprietary datasets to be ingested into EarthTime. This is because while EarthTime visualizations are open and accessible to the public, the underlying data is not. The only way to gain access to the underlying data is to have permission to access a specific EarthTime instance or Google Sheet where the data layer resides. We'll be covering more about underlying data layers in section \ref{earthtime-layers-sheet} on ``EarthTime layers sheets''.
+
+Story ideas using proprietary data require a clear set of questions that can only be answered by accessing such data layers. For example, \href{https://earthtime.org/stories/the_good_and_bad_of_globalisation\#waypointIdx=11}{what is Hypertext Transfer Protocol's global footprint} and is there a connection based on how the Internet's underwater sea cables are distributed? Questions such as these can really only be answered through organizations that have privileged accessed to such data. Using this type of data often requires that you have a certain amount of trust in the process by which the data was collected and analyzed, which is why we always encourage you to partner with the individual providing this kind of data at least as a co-author as they can help shed some light on the specifics, even if the overall process remains confidential.
+
+\hypertarget{journalists-and-primary-data-collection}{%
+\section{Journalists and Primary Data Collection}\label{journalists-and-primary-data-collection}}
+
+The final group that you might consider reaching out to for story ideas and interesting datasets are journalists and individuals in the media industry who generally have their finger on the pulse of up and coming as well as breaking news stories. Another advantage of partnering with this group is that they're often fairly close to the primary collection of this data---if not the primary data collectors themselves. Additionally, there's been cases in the past where this group (at least in the United States) was able to leverage their knowledge of the Freedom of Information Act and make a FOIA request to gain access to data to aid in their own stories. If stories that they're working on are geospatial as well as temporal in nature, there's a good chance that they might want to leverage EarthTime as well.
+
+Journalists and those in the media industry might be interested in jumping Section \ref{wider-dissemination} of this document focused on ``Wider Dissemination'' of EarthTime content for learning how to utilize and embed EarthTime in their own stories.
+
+\hypertarget{research-and-data-gathering}{%
+\chapter{Research \& Data Gathering}\label{research-and-data-gathering}}
+
+\hypertarget{open-source-data}{%
+\section{Open-Source Data}\label{open-source-data}}
+
+For a variety of reasons, sometimes the preferred groups detailed in the previous section---and by extension their datasets as well as the opportunity to co-author an EarthTime story---might not be available to you. In such cases, the next best option is to try and source open datasets. There are a variety of benefits in using open-source data, but please keep in mind that there are two crucial elements when embarking on open-datasets if you're not associated with the dataset that you're exploring. The first element is ensuring that the data is accurate and verifiable. Methods for determining if a dataset is accurate and verified are beyond the scope of this document; however, please ensure to the best of your ability that the open-source dataset is something that you're willing to defend and stand behind should questions arise. Along similar lines, accessing and using an open-source dataset is only the start. While it is easy and tempting to convert any dataset you find into an EarthTime data layer as EarthTime is primarily a storytelling tool, you'll need to also analyze the open-source dataset to derive meaning from it so that you're able to tell a compelling story. There are a number of disagreements about what constitute a ``good'' analysis, which are also beyond the scope of this document; however, we encourage users that wish to analyze data have a decent grasp of statistics and various statistical techniques such as descriptive statistics, distributions, correlation, regression, group mean differences, hypothesis testing, and an understanding of categorical data are what we would consider to be the minimum, with an additional understanding of statistical features, probability distributions, dimensionality reduction, over and under sampling, and Bayesian statistics being preferred. Having an understanding of these concepts and applying them correctly is another reason why it's crucial that you create and document reproducible code, which we'll be diving into in greater depth in Section \ref{data-wrangling} on the subject. If you're comfortable with what has been mentioned above, the below dives a bit deeper into open-source data (just please remember to cite appropriately).
+
+\hypertarget{what-is-open-data}{%
+\subsection*{What is Open Data?}\label{what-is-open-data}}
+
+
+Open-source datasets are open for any individual to access, modify, reuse, and share. The term ``open data'' derives from various ``open movements'' such as open hardware, open government, and open science to name a few. Governments, independent organizations, and other agencies have come forward opening the floodgates of data to enable free and easy access for those interested.
+
+\hypertarget{why-is-open-data-important}{%
+\subsection*{Why Is Open Data Important?}\label{why-is-open-data-important}}
+
+
+Open data is important because the world has grown increasingly data-driven. But if there are restrictions on the access and use of data, the idea of data-driven business and governance will not be materialized; therefore, open data has its own unique place. It can allow a fuller understanding of the global problems and universal issues, which is the foundational idea behind the CREATE Lab and the ethos behind EarthTime covered in Section \ref{the-history-of-earthtime} on the history of EarthTime. In short, like EarthTime, open data has the ability to empower citizens, strengthen democracy, and streamline the processes and systems that the society and governments have built to transform the way we understand and engage with the world.
+
+\hypertarget{a-note-on-data-in-the-wild-data-scrapping}{%
+\section{A Note on Data in the Wild (Data Scrapping)}\label{a-note-on-data-in-the-wild-data-scrapping}}
+
+If you've tried searching for an open-source dataset and you've also tried reaching out to the groups in the last section and have still come up empty handed but are still committed to telling a particular story---and are trained and comfortable to do your own data analysis---there is always the option to create your own datasets through data scrapping. If you choose to go down this route, we advise that you proceed with caution. What follows for the remainder of this section are certain things to keep in mind when scrapping data from the web based on our experience from the rare instances we've had to scrape data and perform original analysis for a particular EarthTime story. This section does not constitute legal advice.
+
+Data scraping is a practice that, while technically legal, does raise a number of questions that you need to ask before doing so. That is, there are boundaries that you want to respect to ensure that you are not violating any laws. If you scrape data by following some generally accepted best practices, you should be considered safe under the law. What follows is a list of questions that we've come up with in our experience to determine if data scrapping is considered permissible:
+
+\hypertarget{are-you-scraping-personal-data}{%
+\subsection*{Are you scraping personal data?}\label{are-you-scraping-personal-data}}
+
+
+Different geographies and jurisdictions have different laws governing access and use of personal data. For example, while it is okay to scrape personal data in some states within the United States, you may get into trouble for doing so in California. Wherever you are in the world, please check your local regulations before you scrape personal data.
+
+\hypertarget{are-you-scraping-non-public-data}{%
+\subsection*{Are you scraping non-public data}\label{are-you-scraping-non-public-data}}
+
+
+As long as you are scraping only the publicly available content, you should generally be safe.
+
+\hypertarget{are-you-scraping-copyrighted-data}{%
+\subsection*{Are you scraping copyrighted data?}\label{are-you-scraping-copyrighted-data}}
+
+
+Scraping and using copyrighted material irresponsibly has a high likelihood of falling under copyright infringement; however, not all information on the internet can is copyrightable. A website simply declaring something copyrighted may not make it legally copyrightable.
+
+\hypertarget{are-you-abiding-by-the-websites-terms-of-service-agreement}{%
+\subsection*{Are you abiding by the website's terms of service agreement?}\label{are-you-abiding-by-the-websites-terms-of-service-agreement}}
+
+
+Terms of service agreements may or may not be contractually binding for data scraping, depending on how the terms appear and enforced on the website.
+
+Terms of service agreements can be either ``browsewrapped'' or ``clickwrapped''.
+
+Browsewrap agreements are concluded upon visiting the website; however, in many cases they appear discreetly at the bottom of the page or within a drop-down menu. In these cases, such term of service agreements are generally not law binding. There's a lot of legal theory behind Browsewrap agreements and while it goes beyond the scope of this document, you can learn more by reading about a number of court cases \href{https://en.wikipedia.org/wiki/Browse_wrap}{here}.
+
+Clickwrap agreements are considered as such if the term of service agreement appears as a pop-up window or the website provides a link to the term of service position in a reasonable and clear position on the webpage, it is generally legally binding as they require a user to tick a checkbox or click a button. Below the button or checkbox, something along the lines of, ``by clicking, you agree to our Terms and Conditions'' will be written. After a user takes the required action, the Terms and Conditions are legally binding on you and the court may enforce them.
+
+\hypertarget{is-your-crawling-rate-tolerable}{%
+\subsection*{Is your crawling rate tolerable?}\label{is-your-crawling-rate-tolerable}}
+
+
+Scraping data from websites too aggressively can overload a website's servers and may even crash them if the website doesn't have rate-limiting in place. In this case, you damage a website's functionality and may be held liable under the ``Trespass to Chattels'' law, which you can learn more about \href{https://ilt.eff.org/Trespass_to_Chattels.html}{here}.
+
+\hypertarget{a-quick-note-on-recent-and-dynamic-data}{%
+\section{A quick note on ``recent'' and ``dynamic'' data}\label{a-quick-note-on-recent-and-dynamic-data}}
+
+There is always a temptation to have the latest breaking and up-to-date data within EarthTime and a question we get a lot is why some data ends a year or two prior to the current date. We'd like to use this opportunity to reiterate that the preferred data sources for EarthTime and by extension EarthTime stories are academic and subject to peer-review, which by the very nature of that methodological process means the data in most EarthTime stories is as up-to-date as it can possibly be and represents the best understanding of the specific issues covered in the stories; furthermore, having this kind of data allows authors and co-authors to digest and deliberate on what is truly important and relevant from the data instead of trying to rush out conclusions with the latest trends.
+
+We do recognize, however, that there are times when an EarthTime story needs to be updated frequently (like during the COVID-19 global pandemic, for example) by scrapping data, setting up a CRON job, or hitting an API regularly. For the stories that need to be updated more frequently, we recommend that the EarthTime story is framed in such a way that presents it as ``relaying facts'' rather than a deeper analysis. We'll be covering story framing in greater detail in Section \ref{editorial-process} on the editorial process for EarthTime stories.
+
+With that being said, it is of even more importance when updating EarthTime stories more frequently because of evolving events that we recommend double checking the accuracy of the data and verifying that it comes from reputable sources. If you insist on doing this, we generally recommend drawing from news organizations with robust data journalism operations (such as the New York Times, Washington Post, etc.) that allow for updates as they occur in near real-time and generally have a fairly generous approach to open data.
+
+\hypertarget{data-wrangling}{%
+\chapter{The Data Wrangling Process}\label{data-wrangling}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum.
+
+\hypertarget{code-first-not-click-first}{%
+\section{Code first; not click first}\label{code-first-not-click-first}}
+
+This section is purely about advocating for users to create data layers, perform analyses, and generate insight using a reproducible and auditable processes. That is, we encourage readers of this document to establish a habit of generating an output through code instead of generating an output using a click-first process using a spreadsheets program\footnote{While it is a programmable language, Microsoft Excel's Visual Basic has trouble automating heavy tasks as well as communicating with other software; moreover, Excel is not reproducible. When you receive an Excel file, with aggregated data, colors, abbreviations, and/or formulas, it is very difficult to understand how it was set up and gathered. Excel doesn't save any of the workflow states involved in building such file.}. If you analyze data and provide the underlying data layer to a friend or colleague, they should be able to re-run the analysis from start to finish and get the same result you did (reproducibility). They should also be able to see and understand all the steps in the analysis, as well as the history of how the analysis developed (auditability). Creating reproducible and auditable analyses allows both yourself and others to easily double-check and validate your work.
+
+\hypertarget{five-principles-for-a-reproducible-workflow}{%
+\section{Five principles for a reproducible workflow}\label{five-principles-for-a-reproducible-workflow}}
+
+\hypertarget{structure-your-files}{%
+\subsection*{Structure your files}\label{structure-your-files}}
+
+
+Whether as .R scripts, .ipynb files, or something in-between , every command you run should be part of your code script (and ideally be commented line by line) instead of using the command line. When commenting, don't comment what you're doing but why you're doing it as this will help the reader of your code follow your thought process.
+
+\hypertarget{dont-save-your-data}{%
+\subsection*{Don't save your data}\label{dont-save-your-data}}
+
+
+Of course, you should read in your initial dataset. Depending on your approach from the last section, this could be from a .csv file, a database or an API; however, everything else you handle ``on the fly'', with your data in memory and not saved on the disk. In using this approach, you will always know where your data comes from (what data engineers call data lineage or data provenance) in that you'll always be able to trace your data wrangling and analysis back to its source and debug your output. Once you hard-save your wrangled data you will never be sure where it came from and what it holds; furthermore, reloading a hard-saved file risks using an outdated version.
+
+Additionally, not saving your wrangled data saves space. This is not a huge deal when you only have a few hundred lines of data, but when your dataset is high dimensional and holds several million rows your data files can quickly add up to a few gigabytes.
+
+\hypertarget{collate-your-results-as-earthtime-data-layers-under-a-single-data-category-for-use-in-earthtime-story-waypoints}{%
+\subsection*{Collate your results as EarthTime data layers under a single data category for use in EarthTime story waypoints}\label{collate-your-results-as-earthtime-data-layers-under-a-single-data-category-for-use-in-earthtime-story-waypoints}}
+
+
+We'll be covering data categories more in Section \ref{earthtime-layers-sheet} on ``EarthTime layers sheets'', but taking this approach allows you to output data layers directly straight into your EarthTime layers sheet. This makes things easier when you're ready to tell your EarthTime story not as individual data layers, but as multiple data layers spread across different waypoints.
+
+\hypertarget{use-version-control}{%
+\subsection*{Use version control}\label{use-version-control}}
+
+
+Version control helps you to keep track of the changes you made to your code as its being developed. It's a way to make changes to code without having to worry that important code was deleted or placed in the wrong location. Instead of keeping different versions of your file, versioning allows you to commit different versions to a repository while working on the same file and if you want to go back to an earlier version you can simply revert to an earlier iteration of the code and check line by line what has changed; moreover, if you delete a file you can restore if from the repository.
+
+\hypertarget{use-virtual-environments}{%
+\subsection*{Use virtual environments}\label{use-virtual-environments}}
+
+
+As is natural with all software, packages evolve, libraries change, functions are modified, and output formats no longer look the same. That function that was super helpful last time you ran the analysis might no longer exist in the updated package release and when you re-run your analysis code from a few months back your code might break, and you might wonder where you went wrong with your reproducibility workflow. Virtual environments help avoid this problem.
+
+When you start a new data wrangling and analysis project a snapshot is taken of the versions of the packages you have installed on your machines and a virtual environment with these exact versions is loaded. Updating your package or library version later for a different project will not impact the version of the package or library used for your initial project. When you port your code to another machine, an environment with the exact same package versions will be built which ensures that your code works.
+
+\hypertarget{earthtimer}{%
+\section{EarthTimeR}\label{earthtimer}}
+
+While the principles above can apply to and accommodate most programming languages, as far as specific tools go, we've created a specific workflow that caters exclusively to R users: the EarthTimeR package. The package has four primary groups of functions for EarthTime users:
+
+\begin{itemize}
+\tightlist
+\item
+  Convenience functions for pushing data Google Sheets;
+\item
+  Data wrangling functions for creating and formatting EarthTime data layers;
+\item
+  Functions for invoking statistical techniques for handling missing values;
+\item
+  Python wrapper functions to aid in the generation of special map types.
+\end{itemize}
+
+For users wishing to dive deeper into the R package, please visit the GitHub repository \href{https://github.com/andrewcberkley/EarthTimeR}{here}.
+
+\hypertarget{data-ingestion}{%
+\chapter{Data Ingestion}\label{data-ingestion}}
+
+Once you've gathered your data, wrangled it, analyzed it, the next step in the process is putting it into a format that EarthTime can understand so it can be read and visualized by the platform. For most cases, you'll want to format your data into one of two types: ``long'' data or ``wide'' data depending on the map type that you want to create. We'll be covering the different map types in more depth in Section \ref{statistics-data-visualizations-map-types} on ``Data visualizations and map types''.
+
+\hypertarget{long-data}{%
+\section{Long Data}\label{long-data}}
+
+Sometimes also referred to as ``narrow'' or ``stacked'' data, long data is used when creating dot maps, line-string maps, point maps, and point flow maps. These map types require your data to be formatted as a pre-processing step before transforming the data into a .bin file, which you'll later upload to your EarthTime instance. The main advantage of using long data formats is that it can be processed in a faster and more efficient manner using vectorized operations.
+
+For long data formats, each row is one time point per subject. This means that each subject (usually the country name or its respective ISO 3166-1 alpha-3 code) will have data in multiple rows. That is, you'll usually have three columns for the purposes of EarthTime: one column with the countries, one column with the dates, and one column with the values. On occasion, you might have two columns for the location if your data draws on coordinates (one column for latitude and one column for longitude).
+
+\hypertarget{wide-data}{%
+\section{Wide Data}\label{wide-data}}
+
+Also sometimes referred to as ``unstacked data'', wide data is used for bubble maps and choropleth maps. Most data we physically see on a daily basis is in this format since wide data is very intuitive and easier to understand. In the wide data format, a subject's (once again, usually the country name or its respective ISO 3166-1 alpha-3 code) repeated responses will be in a single row, and each response is in a separate column. For the purposes of EarthTime, this usually means that the first column is the location (or two columns if you're using latitude and longitude) and the first row in each subsequent column is a new date.
+
+Once formatted, the data for these maps will need to go into a Google Sheet that will later be read by your EarthTime Layers sheet from the URL field. We'll be covering the URL field in more depth in Section \ref{earthtime-layers-sheet} on ``EarthTime layers sheets''; however, we'll briefly cover what also needs to be understood about your Google Sheet that houses a specific dataset even before getting to your EarthTime Layers sheets.
+
+\hypertarget{google-sheets}{%
+\section{Google Sheets}\label{google-sheets}}
+
+As Google Maps provide a number of base layers in EarthTime, it is only natural that some of the data layers are read from another Google service: Google Drive. There are a number of advantages to storing data in Google Drive---and ultimately for EarthTime purposes in Google Sheets---but in short it allows individuals to have a low-maintenance, flexible, and intuitive way to access a spreadsheet service with the added benefit of cloud storage and global access. There are also a few risks in using Google Sheets to read data into EarthTime, primarily that entering data directly in the sheet can be error-prone, which is why we strongly encourage readers of this document to consider adopting the principles and packages in Section \ref{data-wrangling} on ``the data wrangling process'' to reduce the likelihood of errors when interacting with Google Sheets. Nevertheless, there are three critical elements that you need to know about to successfully setup a Google Sheet to interact with EarthTime: the ``spreadsheet'', the individual ``sheet'', and the sharing permissions settings. The following two items on ``Spreadsheet'' and ``Sheet'' are taken directly from Google documentation.
+
+\hypertarget{spreadsheet}{%
+\subsection*{\texorpdfstring{\href{https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets}{Spreadsheet}}{Spreadsheet}}\label{spreadsheet}}
+
+
+The primary object in Google Sheets that can contain multiple sheets, each with structured information contained in cells. Every spreadsheet is represented by a Spreadsheet resource and has a unique \href{https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets}{\texttt{spreadsheetId}} value, containing letters, numbers, hyphens, or underscores. You can find the spreadsheet ID in a Google Sheets URL:
+
+\texttt{https://docs.google.com/spreadsheets/d/spreadsheetId/edit\#gid=0}
+
+Please keep the unique spreadsheet identifier in mind when we get to Section \ref{earthtime-layers-sheet} on ``EarthTime layers sheets'' so you'll be ready to have your data read by EarthTime.
+
+\hypertarget{sheet}{%
+\subsection*{\texorpdfstring{\href{https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets}{Sheet}}{Sheet}}\label{sheet}}
+
+
+A page or tab within a spreadsheet. Each sheet is represented by a Sheet resource and has a unique title and numeric \href{https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets}{\texttt{sheetId}} value. You can find the sheet ID in a Google Sheets URL:
+
+\texttt{https://docs.google.com/spreadsheets/d/aBC-123\_xYz/edit\#gid=sheetId}
+
+Please keep the unique sheet identifier in mind when we get to Section 8 on ``EarthTime layers sheets'' so you'll be ready to have your data read by EarthTime. While it is possible to setup the spreadsheet as a single data category to house your data and treat the sheets within the spreadsheet as multiple data layers within the category, we recommend only having one spreadsheet per data layer and to house multiple data layers in a category within a single directory within your Google Drive. This not only reduces the likelihood of introducing errors, but also helps when sharing data layers with others who do not approach EarthTime programmatically.
+
+\hypertarget{sharing-permissions}{%
+\subsection*{Sharing Permissions}\label{sharing-permissions}}
+
+
+After you have both the unique spread identifier as well as the unique sheet identifier, the last step---and arguably the most important step---is to change the sharing permissions for the link. To do this click ``Share'' and then ``Get Link''. Under ``Get Link'', click on ``Change to anyone with link'' and select ``Viewer'' or ``View'' to decide what people can do with the link.
+
+While you are technically creating the ability to share the link with the wider public, we encourage you to not do so. The permissions need to be set as such for the ability to read the data into the EarthTime platform. While this link will later be slightly obfuscated in your EarthTime layers sheet, we do not recommend sharing the link to the sheet outside of trusted circles. This is especially true if you've gone down the route of securing industry or any type of propriety data that was discussed in Section \ref{research-and-data-gathering} on ``Research \& Data Gathering'' as this could jeopardize the agreement you have with whomever you secured the data from. As a rule of thumb, we strongly encourage when dealing with any type of proprietary data in EarthTime that you create a dot map, line-string map, point map, or point flow map as the data for these map types will be transformed into a .bin file, which will obfuscate the underlying data and only be able to be read by the EarthTime platform, thus not leading any underlying data to be exposed.
+
+\hypertarget{statistics-data-visualizations-map-types}{%
+\chapter{Statistics, Data Visualizations, \& Map Types}\label{statistics-data-visualizations-map-types}}
+
+Compelling visualizations coupled with expert narratives are the two combined elements that work together to drive the continued appeal and success of EarthTime as a platform. This section covers the visualization element and what needs to be taken into consideration when determining what type of visualization works best with an expert narrative. We try to emphasis in this section that while you might personally find certain types of visualizations more appealing than others, the choice of visualization should be driven by statistical foundations in your data instead of what you personally think looks best---of course, this is not a hard and fast rule, but in our experience this guidance produces the most accurate representation of data in your EarthTime story.
+
+\hypertarget{understanding-distributions-in-the-data-and-the-assumption-of-normality}{%
+\section{Understanding Distributions in the Data and the Assumption of Normality}\label{understanding-distributions-in-the-data-and-the-assumption-of-normality}}
+
+When working with any dataset in EarthTime, from a statistical point of view we generally assume that it is normally distributed or approximately so\footnote{While more statistically minded readers might argue that this is a myth, we recognize that although one's data doesn't have to be normal, it's still a good idea to get in the habit of checking data distributions just to understand the data and determine if it looks reasonable. While one's data might not be normal for a reason, in such cases, an individual may want to transform it or use other analysis methods (e.g., generalized linear models or nonparametric methods). So while none of one's observed variables have to be normal in linear regression analysis, which includes t-test and ANOVA. The errors after modelling, should be normal to draw a valid conclusion by hypothesis testing.}. While this document isn't meant to be a refresher on high school mathematics, in short it is mathematically convenient to use normal distributions due to its relation to Least Squares fitting and can easily be solved with pseudoinverse (computing a ``best fit''); moreover, due to Central Limit Theorem, we generally assume that there are lots of underlying facts in the dataset having an impact and the sum of these individual effects will tend to behave like normal distribution.
+
+\hypertarget{gaussian-normal}{%
+\subsection*{Gaussian (Normal)}\label{gaussian-normal}}
+
+
+This will more or less take the form of bell-shaped curve and we assume that during any numerical variables will follow a normal distribution with an equal number of measurements above and below the mean value. In order to understand normal distribution, it is important to know the definitions of ``mean,'' ``median,'' and ``mode.'' The ``mean'' is the calculated average of all numerical variables, the ``median'' is the value at the center point (mid-point) of the distribution, while the ``mode'' is the value that was observed most frequently during the measurement. If the distribution is perfectly normal, then the values of the mean, median, and mode are the same. No transformation is necessary when the data is normally distributed.
+
+\hypertarget{power-box-cox}{%
+\subsection*{Power (Box-Cox)}\label{power-box-cox}}
+
+
+The Power transformation (\texttt{Y(s)\ =\ (Z(s)λ\ -\ 1)/λ}) works fairly well for a large number of non-normal distributions. All the values of lambda vary from -5 to 5 are considered and the best value for the data is selected. The ``best'' value is one that results in the best skewness of the distribution. For this transformation, values need to be strictly positive.
+
+\hypertarget{log}{%
+\subsection*{Log}\label{log}}
+
+
+While technically a special case of the Power transformation (in so far that it occurs when \texttt{λ=0}), the Log transformation (\texttt{Y(s)\ =\ ln(Z(s))}) is often used where the data has a positively skewed distribution and there are a few very large outlier values. Log transformations will help make the variances more constant and normalize your data.
+
+\hypertarget{square-root}{%
+\subsection*{Square Root}\label{square-root}}
+
+
+The Square-Root transformation will moderately impact the distribution. The main advantage of square root transformation is that it can be applied to zero values. Here the x will replace by the square root(x). It is weaker than the Log transformation. It is also a special case of the Power transformation when \texttt{λ=½}.
+
+In the next section we'll be applying what we covered in this section to selecting visualization scales for your data.
+
+\hypertarget{choosing-the-appropriate-d3-scale}{%
+\section{Choosing the appropriate d3-scale}\label{choosing-the-appropriate-d3-scale}}
+
+EarthTime's bubble and choropleth maps, are underpinned by Mike Bostock's \href{https://d3js.org/}{Data-Driven Documents} (d3), which is JavaScript library used for producing dynamic and interactive data visualizations has become one of the standard libraries for data visualization on the web. As discussed above, the distribution of your data will help determine the best scale to use to abstractly represent your data. The following brief explanations of each scale are taken directly from the \href{https://github.com/d3/d3-scale}{d3 documentation}. If the reader of this document wishes to receive a longer introduction, we'd recommend referring to Mike Bodstock's article, \href{https://medium.com/@mbostock/introducing-d3-scale-61980c51545f}{Introducing d3-scale}.
+
+\hypertarget{linear-scales}{%
+\subsection*{Linear Scales}\label{linear-scales}}
+
+
+\texttt{d3.scaleLinear().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+
+Constructs a new continuous scale with the specified domain and range, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to \texttt{{[}0,\ 1{]}}. Linear scales are a good default choice for continuous quantitative data because they preserve proportional differences. Each range value y can be expressed as a function of the domain value \texttt{x:\ y\ =\ mx\ +\ b}
+
+\hypertarget{logarithmic-scales}{%
+\subsection*{Logarithmic Scales}\label{logarithmic-scales}}
+
+
+\texttt{d3.scaleLog().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+
+Log scales are similar to linear scales, except a logarithmic transform is applied to the input domain value before the output range value is computed. The mapping to the range value y can be expressed as a function of the domain value \texttt{x:\ y\ =\ m\ log(x)\ +\ b.\ As\ log(0)\ =\ -∞}, a log scale domain must be strictly-positive or strictly-negative; the domain must not include or cross zero. A log scale with a positive domain has a well-defined behavior for positive values, and a log scale with a negative domain has a well-defined behavior for negative values. (For a negative domain, input and output values are implicitly multiplied by -1.) The behavior of the scale is undefined if you pass a negative value to a log scale with a positive domain or vice versa.
+
+Constructs a new continuous scale with the specified domain and range, the base 10, the default interpolator and clamping disabled. If domain is not specified, it defaults to \texttt{{[}1,\ 10{]}}. If range is not specified, it defaults to \texttt{{[}0,\ 1{]}}.
+
+\hypertarget{power-scales}{%
+\subsection*{Power Scales}\label{power-scales}}
+
+
+\texttt{d3.scalePow().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+
+Power scales are similar to linear scales, except an exponential transform is applied to the input domain value before the output range value is computed. Each range value y can be expressed as a function of the domain value \texttt{x:\ y\ =\ mx\^{}k\ +\ b}, where k is the exponent value. Power scales also support negative domain values, in which case the input value and the resulting output value are multiplied by -1.
+
+Constructs a new continuous scale with the specified domain and range, the exponent 1, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to \texttt{{[}0,\ 1{]}}. (Note that this is effectively a linear scale until you set a different exponent.)
+
+\hypertarget{square-root-scales}{%
+\subsection*{Square Root Scales}\label{square-root-scales}}
+
+
+\texttt{d3.scaleSqrt().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+
+Constructs a new continuous power scale with the specified domain and range, the exponent 0.5, the default interpolator and clamping disabled. If either domain or range are not specified, each defaults to \texttt{{[}0,\ 1{]}}.
+
+Keeping these scales in mind, now we're ready to examine the different types of maps that will represent your data in EarthTime.
+
+\hypertarget{map-types}{%
+\section{Map Types}\label{map-types}}
+
+\hypertarget{dynamic-maps}{%
+\subsection*{Dynamic Maps}\label{dynamic-maps}}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis.
+
+\hypertarget{bubble}{%
+\subsubsection*{Bubble}\label{bubble}}
+
+
+Bubble maps use circles of a single color to represent data at a particular location increasing and decreasing in size based on the value of the data at the location. They are also proportional to all other circles on the map based on the scale and the minimum and maximum values of the dataset covered earlier in the section. There is also a variant of the bubble map called a ``bivalent bubble map'' that will also change color over time.
+
+Bubble maps unfortunately suffer when used with a large-scale map view, as points may overlap each other at when zoomed out to certain levels.
+
+\hypertarget{choropleth}{%
+\subsubsection*{Choropleth}\label{choropleth}}
+
+
+A choropleth map is one of the most common types of maps used in cartography. It's made by separating the area being mapped, such as by geographic or political boundaries\footnote{ By default, EarthTime uses geopolitical boundaries at the country level as that is the .geojson file native to the platform. This carries several risks and sensitives which we'll be covering in the later part of this section. For the time being, know that you always have the option of pushing a custom .geojson file to your EarthTime instance. We'll cover more on how to point a data layer to a specific .geojson file in your instance in in Section \ref{earthtime-layers-sheet} on ``EarthTime layers sheets''.}, and then filling each resulting section with a different color or shade. Each color or shade represents a different value in your dataset. This makes choropleth maps useful for visualizing clusters of data across a geographic area while maintaining the context of regional boundaries.
+
+Please be careful using this style with areas where regions differ markedly in size, as the size of a region may not necessarily have any relationship to the data attributed to it. For example, on a map of the United States, states with larger land masses---like Alaska, California, or Texas---tend to draw attention; however, on a choropleth map, they may not have a high concentration of a measured variable or have traits that are important to a particular form of analysis, compared to smaller states like Maryland, Delaware, or Rhode Island. If you are trying to point out something in a smaller area that could be dwarfed by larger areas, we recommend using more granular regions such as (at least in the United States) counties, zip codes, voter precincts. Generally speaking, if you have the option and the data at a more granular level, our recommendation is to always use the most granular level possible to help capture the nuances in the data.
+
+\hypertarget{point}{%
+\subsubsection*{Point}\label{point}}
+
+
+Also known as ``firefly maps'', point maps are a powerful and elegantly simple way to visualize data in EarthTime. Its greatest strengths are its cinematic effects and glowing appeal. Place a point at any location on the map that corresponds to the variable you're trying to represent with what some have described as ``lightsaber-glowing symbology''. It's useful for showing distribution and density patterns of things, but it requires your data to have fairly accurate latitudinal and longitudinal coordinates so that each point is precisely reflected on the map. Their radiance really stands out for earthquake events, transportation networks, and population clusters maps.
+
+While other point maps can be difficult to use on large-scale maps as points may overlap each other at certain zoom levels, EarthTime circumvents this issue using an image technique developed by the CREATE Lab and cognitive scientists at NASA called ``blooming'', which originally set out to answer the question of how to show extreme dynamic range on a computer screen.
+
+When zooming into this type of map, the data layer will disaggregate points into individual dots and when zooming out, these dots merge into a bloom. Most techniques simple merge those dots together based on certain zoom levels; however, these techniques don't take into account varying degrees of nuance in the data. Finally, with blooming technique, when taking a lumber of dots and constituting them together, it will begin to overshine the colors towards a type of white (like white hot), which gives viewers a sense of how much more density underlies that data.
+
+\hypertarget{point-flow}{%
+\subsubsection*{Point Flow}\label{point-flow}}
+
+
+Point flow maps, is specialized map type that represents the movement of things across the Earth. These can include migrating humans, resources and other goods for trade, or traffic. Within EarthTime, they are constructed as sets or pairs of origin and destination points within your dataset (please refer to ``Long Data'' in in Section \ref{data-ingestion} on ``Data Ingestion'' to see how to format your data for this map type).
+
+By default, the path for a point within point flow maps follows a straight line; however, advanced users might wish for more of a parametic curve. One way this can be done is by adjusting the map's Bézier curve parameter in the \texttt{create\_flowMap()} function within the EarthTimeR---the larger the number in the parameter, the greater the degree of the path's curve when a point travels from its origin to its destination.
+
+\hypertarget{static-maps}{%
+\subsection*{Static Maps}\label{static-maps}}
+
+
+\hypertarget{dot}{%
+\subsubsection*{Dot}\label{dot}}
+
+
+Dot maps are fairly similar to the point maps covered above. That is, they are used to illustrate geographic densities and distributions of a phenomena. The primary difference between the dot map and the point map is that with dot maps, the map is static, each dot generally has a value of one, and this type of map allows for multiple colors to represent different variables, whereas a point map only has one variable.
+
+\hypertarget{line-string}{%
+\subsubsection*{Line String}\label{line-string}}
+
+
+Line string maps are used fairly infrequently as their use cases are limited to representing the distribution of routes, such as infrastructure or traffic.
+
+\hypertarget{dot-1}{%
+\subsubsection*{Dot}\label{dot-1}}
+
+
+Raster maps are simply an image of a map placed over the EarthTime base layer. It might be easier to think of it as a digital photograph or a paper map on a screen. All raster maps in EarthTime are georeferenced based on a specific projected coordinate system, meaning that it will open on the platform directly related to its position on the globe. By default, EarthTime sets its projected coordinate system to \texttt{EPSG:3857}, or what is more commonly referred to as the ``Pseudo-Mercator/WGS 84'' projection.
+
+\hypertarget{the-use-of-colors}{%
+\section{The Use of Colors}\label{the-use-of-colors}}
+
+Colors are uniquely positioned among all the principles of EarthTime map design and visualization of spatial data---they are inherently part of language of the EarthTime story and carry the information value. Additionally, the colors chosen are used for creating the hierarchy of map elements by distinguishing the important from the unimportant. There are multiple academic papers focusing on the theoretical basis of color use in cartography and spatial data visualization, but unfortunately getting into that much color theory is beyond the scope of this document. What a reader of this document needs to know, in short, is this: color provides a significant contribution to the style and perception of EarthTime viewers and special consideration should be made when selected colors for the static maps detailed above, but especially for the dynamic maps detailed above due to these maps' reliance on a sequential color scheme. If you wish to see all the color mappings that EarthTime supports by default, you can find them \href{https://tiles.earthtime.org/colormaps/index.html}{here}.
+
+\hypertarget{color-theory}{%
+\subsection*{Color Theory}\label{color-theory}}
+
+
+Colors that look good together are called a color harmony. Color harmony is generally created by using a color wheel, which was invented by Isaac Newton in 1666. There are two types of color wheels, but for the purposes of EarthTime we suggest using the RGB (red, green, blue) color wheel by focusing on the following types of color combinations depending on the number of data layers that you're intending to display at any given time: complementary, triadic, and tetradic.
+
+Complementary colors are two colors that are on opposite sides of the color wheel. This combination provides a high contrast and high impact color combination -- together, these colors will appear brighter and more prominent.
+
+Triadic colors are three colors that are evenly spaced on the color wheel. This provides a high contrast color scheme, but less so than the complementary color combination --- making it more versatile. This combination creates bold, vibrant color palettes.
+
+Tetradic colors are four colors that are evenly spaced on the color wheel. Tetradic color schemes are bold and work best if you let one color be dominant, and use the others as accents. The more colors you have in your palette, the more difficult it is to balance.
+
+\hypertarget{human-psychology-perception}{%
+\subsection*{Human Psychology \& Perception}\label{human-psychology-perception}}
+
+
+There are other factors such as human psychology and perception that a reader of this document should take into consideration when selecting colors for EarthTime data layers.
+
+For example, for most people, every color has multiple meanings \& feelings; therefore, you should be careful when you use a color for your data visualization. People expect to see more positive or pleasant data represented with colors like blue or green, while negative or danger types of data represented in colors like red or orange.
+
+Additionally, what you see is usually defined by what you perceive around it. The choice of colors should be as contrastable as possible, and the reader of this document should contrast the colors within their data layers---and ultimately within their EarthTime stories---appropriately. Keep in mind what makes a visualization is easier to understand is usually the good use of contrast colors \& borders.
+
+\hypertarget{borders-base-layers-geopolitical-sensitivities}{%
+\section{Borders, Base Layers, \& Geopolitical Sensitivities}\label{borders-base-layers-geopolitical-sensitivities}}
+
+While many people believe that the world is divided neatly into distinct nations with clearly defined borders, there are a number of locations that do not fit that model. There are certain territories that are claimed by more than one country and/or occupying forces. These territorial conflicts range from major wars whose impacts are felt around world to minor disagreements over remote, uninhabited rocks.
+
+Territorial disputes are often related to the possession of natural resources such as rivers, fertile farmland, mineral or petroleum resources although the disputes can also be driven by culture, religion, and ethnic nationalism. Territorial disputes often result from vague and unclear language in a treaty that set up the original boundary. Regardless of the origin of these disputes, these are sensitives that readers of this document need to take into consideration when creating an EarthTime story.
+
+For satellite imagery, sensitives are not as much of an issue; however, when using other base layers (which are drawn from the Google Maps corpus as briefly touched upon in Section \ref{data-ingestion} on ``Data Ingestion'' above), one needs to first understand that Google previously \href{https://www.washingtonpost.com/technology/2020/02/14/google-maps-political-borders/}{released a statement} stating that it intends to remain, ``neutral on issues of disputed regions and borders, and make every effort to objectively display the dispute in our maps using a dashed gray border line. In countries where {[}Google has{]} local versions of Google Maps, we follow local legislation when displaying names and borders.''
+
+What this means for the practical approach of creating EarthTime stories is taken directly from \href{https://support.google.com/maps/answer/3145721?hl=en}{Google documentation} states the following regarding borders and labels:
+
+\begin{itemize}
+\tightlist
+\item
+  International country borders: International country borders are displayed in different styles according to the political status of the border.
+\item
+  International boundaries: Undisputed international boundaries, like the one between the United States and Canada, are shown as a solid gray line.
+\item
+  Treaty and de facto boundaries: Treaty and provisional boundaries, which are temporary, are displayed as a dashed gray line.
+  + Treaty boundary: A boundary set in a treaty or similar agreement, but not finalized by law.
+  + De facto boundary: A boundary not set by a treaty or similar agreement, but used by all states involved.
+\item
+  Disputed boundaries: Disputed boundaries are displayed as a dashed gray line. The places involved don't agree on a boundary.
+\item
+  Country/Region names: Country names, like Germany or Japan, are displayed directly on the map. Google Maps automatically shows place names in the same language that is set in your browser's settings.
+\item
+  State or province borders: State and province borders are shown as thin, light-gray dotted lines inside a country.
+\end{itemize}
+
+Keeping the above in-mind, if you intend to show an area in an EarthTime story that could be considered sensitive from a geopolitical point of view we strongly recommend that you use one of the default EarthTime base layers such as \texttt{Lighter\ Colored\ Dark\ Base\ Map\ Without\ Labels} that retains the features mentioned in the Google documentation above. Additionally, we recommend not using choropleth maps as, by their very nature, have to contain hard boundaries. Most---but not all---data that is represented by a choropleth map can also be represented by a bubble map, which is what we would recommend in geopolitically sensitive situations. As a fallback solution, EarthTime also contain a special base layer, \texttt{Base\ Map\ Without\ Labels\ or\ Borders}, that should be used in conjunction with any non-choropleth map.
+
+\hypertarget{earthtime-layers-sheet}{%
+\chapter{Understanding the EarthTime Layers Sheet}\label{earthtime-layers-sheet}}
+
+The EarthTime layers sheet, often titled \texttt{https://{[}earthtime-instance-name{]}.earthtime.org\ EarthTime\ Waypoints,\ Dotmap\ layers,\ and\ Bubble\ Layers} is arguably the most important element for the functioning of the EarthTime platform. This is the place where you'll be housing the text and views for EarthTime stories (i.e.- the ``Waypoints'' sheet), but also where you'll be adjusting parameters for the visualizations of datasets (i.e.-the ``CSV Layers'' sheet). Both sheets have multiple parameters represented as column headers in each respective sheet. We'll only be covering the most relevant parameters in this document as certain parameters are reserved for special use cases by the CREATE Lab. If you don't yet have access to an EarthTime Layers Sheet---or if you want more guidance on parameters in your sheet that aren't covered here---please reach out to the CREATE Lab for further guidance.
+
+\hypertarget{the-csv-layers-sheet}{%
+\section{The CSV Layers Sheet}\label{the-csv-layers-sheet}}
+
+Drawing on the data layers that were created using the methods in Section \ref{data-ingestion} on ``Data Ingestion'', the CSV Layers Sheet is where you breathe life into your data by providing parameters and instructions to EarthTime on how it should be represented on the platform. The following are the major parameters of the CSV Layers Sheet. If you see parameters listed in your CSV Layers Sheet but are not found in this section of the document, please reach out to the CREATE Lab for further clarification and guidance.
+
+\hypertarget{enabled}{%
+\subsection*{\texorpdfstring{\texttt{Enabled}}{Enabled}}\label{enabled}}
+
+
+Determines whether the data layer is visible and accessible within your specific EarthTime instance. Can be set to either \texttt{TRUE} or \texttt{FALSE}.
+
+\hypertarget{share_link_identifier}{%
+\subsection*{\texorpdfstring{\texttt{Share\_Link\_Identifier}}{Share\_Link\_Identifier}}\label{share_link_identifier}}
+
+
+This is the unique identifier that will be issued to the data layer. Please ensure that there are no other data layers with the same \texttt{Share\_Link\_Identifier}; otherwise, it will cause conflicts and normal functioning and operation of the EarthTime will be impacted. Please refrain from using spaces when constructing your \texttt{Share\_Link\_Identifier}as they will not be converted to the standard \texttt{\%20} encoding often found in URLs with spaces. The current codebase does not safely support hyphens, so we recommend using underscores if you need to convert a space within your \texttt{Share\_Link\_Identifier}.
+
+\hypertarget{category}{%
+\subsection*{\texorpdfstring{\texttt{Category}}{Category}}\label{category}}
+
+
+Name of the data layer's category that will be rendered to the end user on the EarthTime platform. Please group similar data layers within the same category if possible. Please also feel free to use spaces or special characters.
+
+\hypertarget{name}{%
+\subsection*{\texorpdfstring{\texttt{Name}}{Name}}\label{name}}
+
+
+This is the name of the data layer that will be rendered to the end user on the EarthTime platform. Please feel free to use spaces or special characters.
+
+\hypertarget{credits}{%
+\subsection*{\texorpdfstring{\texttt{Credits}}{Credits}}\label{credits}}
+
+
+This is the main citation for the data layer within the EarthTime platform. Please keep it relatively short---such as the name of an individual or an institution---as this will be rendered as part of the data's legend. For more extensive citation, please use the opening waypoint in the Waypoint Layers Sheet to do so.
+
+\hypertarget{base_layer}{%
+\subsection*{\texorpdfstring{\texttt{Base\_Layer}}{Base\_Layer}}\label{base_layer}}
+
+
+If in use, this parameter will override the ability for users to select their own base layer for the data layer by locking in a specific base layer to be visualized with the data layer. Please use the \texttt{Share\_Link\_Identifier} of the base layer when filling out this parameter.
+
+\hypertarget{start_date}{%
+\subsection*{\texorpdfstring{\texttt{Start\_Date}}{Start\_Date}}\label{start_date}}
+
+
+Represents the date that the data layer starts. The time intervals for EarthTime data layers are generally in years (\texttt{YYYY}), months (\texttt{YYYYMM}), or days (\texttt{YYYYMMDD}). Regardless of the time interval assigned do the data layer, please ensure that the \texttt{Start\_Date}and \texttt{End\_Date} parameters use a consistent format. That is, if the \texttt{Start\_Date} parameter is in months (\texttt{YYYYMM}) then the \texttt{End\_Date} parameter also needs to be in months (\texttt{YYYYMM}).
+
+\hypertarget{end_date}{%
+\subsection*{\texorpdfstring{\texttt{End\_Date}}{End\_Date}}\label{end_date}}
+
+
+Represents the date that the data layer ends. The time intervals for EarthTime data layers are generally in years (\texttt{YYYY}), months (\texttt{YYYYMM}), or days (\texttt{YYYYMMDD}). Regardless of the time interval assigned do the data layer, please ensure that the \texttt{End\_Date}and \texttt{Start\_Date} parameters use a consistent format. That is, if the \texttt{End\_Date} parameter is in months (\texttt{YYYYMM}) then the \texttt{Start\_Date} parameter also needs to be in months (\texttt{YYYYMM}).
+
+\hypertarget{step}{%
+\subsection*{\texorpdfstring{\texttt{Step}}{Step}}\label{step}}
+
+
+Represents how many ``steps'' are taken on the timeline while it plays the data visualization. For example, if you have a data layer that starts in 2000 and ends is 2015 and assign a step of \texttt{1}, then all 15 years will be displayed for the full duration of the timeline. If the same 2000-2015 data layer has a step of \texttt{5}, then only four years will be displayer: 2000, 2005, 2010, and 2015.
+
+\hypertarget{url}{%
+\subsection*{\texorpdfstring{\texttt{URL}}{URL}}\label{url}}
+
+
+The \texttt{URL} parameter with the CSV Layers Sheet points to the where your data will be read from. What you use for the \texttt{URL} will depend on the type of data layer you're trying to visualize---we touched on this briefly in Section \ref{data-ingestion} on ``Data Ingestion''.
+
+\hypertarget{create-lab-proxy-url}{%
+\subparagraph*{CREATE LAB Proxy URL}\label{create-lab-proxy-url}}
+\addcontentsline{toc}{subparagraph}{CREATE LAB Proxy URL}
+
+If you're visualizing bubble maps and choropleth maps, you'll need to create a proxy URL based on your unique \texttt{spreadsheetId} value as well as your unique \texttt{sheetId} value discussed in in Section \ref{data-ingestion} on ``Data Ingestion''. The proxy URL follows the following format:
+
+\texttt{https://docs-proxy.cmucreatelab.org/spreadsheets/d/xxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxx/export?format=csv\&gid=0123456789}
+
+There's a number of reasons that you'll need to use this proxy serve to point to your bubble map or choropleth data layer that are beyond the scope of this document, but in short it helps save bandwidth and improve speeds and increases privacy and security.
+
+\hypertarget{bin-file-on-an-earthtime-instance}{%
+\subparagraph*{.bin File on an EarthTime Instance}\label{bin-file-on-an-earthtime-instance}}
+\addcontentsline{toc}{subparagraph}{.bin File on an EarthTime Instance}
+
+If you're visualizing dot maps, line-string maps, point maps, and point flow maps, you'll direct the \texttt{URL} parameter directly to the .bin file within your EarthTime instance. For example:
+
+\texttt{https://tiles.earthtime.org/://{[}earthtime-instance-name{]}/data/{[}directory\_name{]}/{[}file\_name{]}.bin}
+
+It's important to note that after your .bin file has been updated to your EarthTime instance, the specific sub-directory that the file is in needs to be readable, writable, and executable by all users in order to be visualized correctly on EarthTime. This can be done by using the Linux command \texttt{chmod\ -R\ 777\ *} while in the specific sub-directory.
+
+\hypertarget{scaling}{%
+\subsection*{\texorpdfstring{\texttt{Scaling}}{Scaling}}\label{scaling}}
+
+
+This parameter draws on what was covered in the ``Choosing the appropriate d3-scale'' part within Section 7 on ``Statistics, Data Visualizations, \& Map Types''. Remember what you set this parameter as will be change how the data is visualized within your selected color scale and should ultimately be determined by the underlying distribution of your data. As a quick refresher, the distributions will generally be ``Linear'', ``Logarithmic'', ``Power'', or ``Square-Root'' in nature, which corresponds to the following base inputs for this parameter:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{d3.scaleLinear().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+\item
+  \texttt{d3.scaleLog().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+\item
+  \texttt{d3.scalePow().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+\item
+  \texttt{d3.scaleSqrt().domain({[}minValue,\ maxValue{]}).range({[}0,1{]})}
+\end{itemize}
+
+\hypertarget{map_type}{%
+\subsection*{\texorpdfstring{\texttt{Map\_Type}}{Map\_Type}}\label{map_type}}
+
+
+Used to specify the type of map to visualize. Acceptable inputs include:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{Choropleth}
+\item
+  \texttt{Bubble}
+\item
+  \texttt{Bivalent\ Bubble}
+\item
+  \texttt{Point}
+\item
+  \texttt{Point\ Flow}
+\end{itemize}
+
+\hypertarget{color}{%
+\subsection*{\texorpdfstring{\texttt{Color}}{Color}}\label{color}}
+
+
+This parameter is used to specify the RGB value for ``Bubble'' and ``Bivalent Bubble'' maps. The acceptable input format is either the RGB percentage value (\texttt{{[}0.0,\ 0.0,\ 0.{]}}) or the RGB decimal value (\texttt{{[}255,\ 255,\ 255{]}}). For example, if you wanted the bubble map to appear as the color ``red'', you'd use the \texttt{{[}1.0,\ 0.0,\ 0.{]}} input for the RGB percentage value or \texttt{{[}255,\ 0,\ 0{]}}, which both correspond to the RGB value for the color ``red''.
+
+\hypertarget{external_geojson}{%
+\subsection*{\texorpdfstring{\texttt{External\_GeoJSON}}{External\_GeoJSON}}\label{external_geojson}}
+
+
+This parameter overrides the default .geojson file and allows you to use custom shapes and boundaries for choropleth maps. To do this, you'll need to direct the \texttt{External\_GeoJSON} parameter directly to the .geojson file within your EarthTime instance. For example:
+
+\texttt{https://tiles.earthtime.org/://{[}earthtime-instance-name{]}/data/{[}directory\_name{]}/{[}file\_name{]}.geojson}
+
+It's important to note that after your .geojson file has been updated to your EarthTime instance, the specific sub-directory that the file is in needs to be readable, writable, and executable by all users in order to be visualized correctly on EarthTime. This can be done by using the Linux command \texttt{chmod\ -R\ 777\ *} while in the specific sub-directory.
+
+\hypertarget{name_key}{%
+\subsection*{\texorpdfstring{\texttt{Name\_Key}}{Name\_Key}}\label{name_key}}
+
+
+This parameter specifies that name of the .geojson field that provides the geometry for the shapes and boundaries for your custom geography. It should be identical to your data column in your choropleth data layer residing in the respective Google Sheet.
+
+\hypertarget{legend_content}{%
+\subsection*{\texorpdfstring{\texttt{Legend\_Content}}{Legend\_Content}}\label{legend_content}}
+
+
+This parameter sets the content that will be displayed in the legend of the explore view. It can be set to \texttt{auto}, which will render legend content based on the aforementioned parameters. Legend content can also be constructed using custom HTML tags. For example:
+
+\texttt{\textless{}div\ style="background-color:rgb(255,160,122);\ border-radius:\ 50\%;\ width:13px;\ height:\ 13px;"\textgreater{}\textless{}/div\textgreater{}\textless{}div\ style="margin-left:\ 29px;\ margin-top:\ -15px;\ font-size:\ 15px"\textgreater{}Data\ Point\ Meaning\textless{}/div\textgreater{}}
+
+Please note that if you use custom HTML tags, you will not use the \texttt{Legend\_Key} parameter below.
+
+\hypertarget{legend_key}{%
+\subsection*{\texorpdfstring{\texttt{Legend\_Key}}{Legend\_Key}}\label{legend_key}}
+
+
+Used when the \texttt{Legend\_Content} is set to \texttt{auto}. This parameter is an opportunity to add more context and detail explaining the data layer than is possible through the \texttt{Name} parameter alone.
+
+\hypertarget{load_data_function}{%
+\subsection*{\texorpdfstring{\texttt{Load\_Data\_Function}}{Load\_Data\_Function}}\label{load_data_function}}
+
+
+Left blank unless the data layer is meant to visualize a ``point map''; otherwise, the input function should usually be \texttt{WebGLVectorTile2.prototype.\_loadData}.
+
+\hypertarget{set_data_function}{%
+\subsection*{\texorpdfstring{\texttt{Set\_Data\_Function}}{Set\_Data\_Function}}\label{set_data_function}}
+
+
+Left blank unless the data layer is meant to visualize a ``point map''; otherwise, the input function should usually be \texttt{WebGLVectorTile2.prototype.\_setBufferData}.
+
+\hypertarget{number_of_attributes}{%
+\subsection*{\texorpdfstring{\texttt{Number\_of\_Attributes}}{Number\_of\_Attributes}}\label{number_of_attributes}}
+
+
+Left blank unless the data layer is meant to visualize a ``point map''; otherwise, the input number should reflect the number of attributes such as \texttt{5}.
+
+\hypertarget{vertex_shader}{%
+\subsection*{\texorpdfstring{\texttt{Vertex\_Shader}}{Vertex\_Shader}}\label{vertex_shader}}
+
+
+Left blank unless the data layer is meant to visualize a ``point map''; otherwise, the input for the vertex shader should usually be \texttt{WebGLVectorTile2.PointSizeColorEpochVertexShader}.
+
+\hypertarget{fragment_shader}{%
+\subsection*{\texorpdfstring{\texttt{Fragment\_Shader}}{Fragment\_Shader}}\label{fragment_shader}}
+
+
+Left blank unless the data layer is meant to visualize a ``point map''; otherwise, the input for the fragment shader should usually be \texttt{WebGLVectorTile2.PointColorFragmentShader}.
+
+\hypertarget{draw_function}{%
+\subsection*{\texorpdfstring{\texttt{Draw\_Function}}{Draw\_Function}}\label{draw_function}}
+
+
+Left blank unless the data layer is meant to visualize a ``point map''; otherwise, the input for the draw function should usually be \texttt{WebGLVectorTile2.prototype.\_drawPointSizeColorEpoch}.
+
+\hypertarget{playback_rate}{%
+\subsection*{\texorpdfstring{\texttt{Playback\_Rate}}{Playback\_Rate}}\label{playback_rate}}
+
+
+This parameter is used to set the natural speed for the data layer's timeline. It is generally set to \texttt{1}.
+
+\hypertarget{master_playback_rate}{%
+\subsection*{\texorpdfstring{\texttt{Master\_Playback\_Rate}}{Master\_Playback\_Rate}}\label{master_playback_rate}}
+
+
+This parameter is used to set the override speed for the data layer's timeline. It is generally set to \texttt{1}.
+
+\hypertarget{colormap_src}{%
+\subsection*{\texorpdfstring{\texttt{Colormap\_Src}}{Colormap\_Src}}\label{colormap_src}}
+
+
+Points to the of the color spectrum for choropleths found at \url{https://tiles.earthtime.org/colormaps/}. You'll invoke your chosen color spectrum within this parameter like the following example:
+
+\texttt{https://tiles.earthtime.org/colormaps/white\_aliceblue\_cornflowerblue\_royalblue\_blue.png}
+
+\hypertarget{the-waypoints-points-sheet}{%
+\section{The Waypoints Points Sheet}\label{the-waypoints-points-sheet}}
+
+Each EarthTime story is constructed from multiple ``waypoints'', which are different views of data layers accompanied by short text to tell a cohesive narrative about the highlighted phenomenon. The following are the major parameters of the Waypoints sheet.
+
+\hypertarget{enabled-1}{%
+\subsection*{\texorpdfstring{\texttt{Enabled}}{Enabled}}\label{enabled-1}}
+
+
+Determines whether the story is visible and accessible within your specific EarthTime instance. Can be set to either \texttt{TRUE} or \texttt{FALSE}.
+
+\hypertarget{url-1}{%
+\subsection*{\texorpdfstring{\texttt{URL}}{URL}}\label{url-1}}
+
+
+This is the unique hyperlink that will be assigned to your story that the wider world will use to access your story directly. It often takes the form of \texttt{https://{[}earthtime-instance-name{]}.earthtime.org/stories/name\_of\_the\_story}. The name of the story in your URL needs to exactly math the title of your story in the \texttt{Waypoint\ Title} parameter. While you can use spaces to title your story in the \texttt{Waypoint\ Title} parameter, please do not use spaces when constructing your URL as they will not be converted to the standard \texttt{\%20} encoding often found in URLs with spaces. The current codebase does not safely support hyphens, so we recommend using underscores if you need to convert a space within your URL.
+
+\hypertarget{mobile-url}{%
+\subsection*{\texorpdfstring{\texttt{Mobile\ URL}}{Mobile URL}}\label{mobile-url}}
+
+
+This is the unique hyperlink that will be assigned to your story that the wider world will use to access your story directly from a mobile device. It often takes the form of \texttt{https://{[}earthtime-instance-name{]}.earthtime.org/m/stories/name\_of\_the\_story}. It is similar to the \texttt{URL} parameter except that there is a \texttt{/m/} before the word ``stories'' in the URL to indicate the ``mobile'' version. Other than \texttt{/m/} in the URL, please make it identical to the \texttt{URL} parameter.
+
+\hypertarget{waypoint-title}{%
+\subsection*{\texorpdfstring{\texttt{Waypoint\ Title}}{Waypoint Title}}\label{waypoint-title}}
+
+
+This parameter has a number of functions. In addition to establishing the title of your story, it also serves as a way to sort your stories into categories as well as the titles of all the waypoints in a story.
+
+\hypertarget{establishing-categories}{%
+\subparagraph*{Establishing Categories}\label{establishing-categories}}
+\addcontentsline{toc}{subparagraph}{Establishing Categories}
+
+To set a new category for stories in your EarthTime instance, use the \texttt{\#} symbol, followed by the name of the category. For example, if you wanted to have a number of EarthTime stories for special events, you would set the category with something such as \texttt{\#World\ Refugee\ Day}. All subsequent stories will fall within that category until a new single \texttt{\#} symbol is detected.
+
+\hypertarget{establishing-story-titles}{%
+\subparagraph*{Establishing Story Titles}\label{establishing-story-titles}}
+\addcontentsline{toc}{subparagraph}{Establishing Story Titles}
+
+Setting a new story requires the use of two \texttt{\#\#} symbols, followed by the name of the story. For example, if you wanted to have an EarthTime focus on the flow of refugees, you would set the new story with something such as \texttt{\#Global\ Refugee\ Crisis\ The\ Big\ Picture}. All subsequent waypoint titles will fall under that story until the double \texttt{\#\#} symbol is detected. Please feel free to use spaces when constructing this parameter, but please don't use special characters as they won't be able to be converted into a URL for the \texttt{URL} or \texttt{Mobile\ URL} parameters.
+
+\hypertarget{establishing-waypoint-titles}{%
+\subparagraph*{Establishing Waypoint Titles}\label{establishing-waypoint-titles}}
+\addcontentsline{toc}{subparagraph}{Establishing Waypoint Titles}
+
+For each of the following views in the story, you'll want to set appropriate waypoints that allows you to setup a natural and logical flow for your story. Please refrain from using any \texttt{\#} symbols for waypoint titles as that would create a new category or story within the waypoint sheet.
+
+\hypertarget{annotation-title}{%
+\subsection*{\texorpdfstring{\texttt{Annotation\ Title}}{Annotation Title}}\label{annotation-title}}
+
+
+This parameter is similar to the \texttt{Waypoint\ Title} parameter with the exception that you can use special characters like a colon. For example, whereas in the \texttt{Waypoint\ Title} parameter, our example story was set as \texttt{\#Global\ Refugee\ Crisis\ The\ Big\ Picture}, in the \texttt{Annotation\ Title} parameter we can use a ``:'' to construct a more grammatically appropriate title such as \texttt{\#Global\ Refugee\ Crisis:\ The\ Big\ Picture}. The \texttt{Annotation\ Title} parameter is the actual title that will be rendered and displayed to those viewing your story title and waypoint titles.
+
+\hypertarget{annotation-text}{%
+\subsection*{\texorpdfstring{\texttt{Annotation\ Text}}{Annotation Text}}\label{annotation-text}}
+
+
+This parameter is where you'll put the body of your text for each waypoint. For more information on how to write engaging waypoint text, please refer to Section \ref{editorial-process} focused on the ``editorial process''. This parameter accepts and will render standard HTML tags.
+
+\hypertarget{share-view}{%
+\subsection*{\texorpdfstring{\texttt{Share\ View}}{Share View}}\label{share-view}}
+
+
+This parameter is where the view of the EarthTime story is will be established. You'll want to keep a number of considerations in mind when setting the share view. You might want to ask yourself questions such as:
+
+\begin{itemize}
+\tightlist
+\item
+  Will individuals primarily be viewing this on a computer screen or a mobile device?
+\item
+  How big do you anticipate those devices to be---the size of a phone screen or a larger-than-life screen like the Global Situation Space (detailed in Section \ref{the-history-of-earthtime})?
+\item
+  What will the resolution of the data layer and the base layers look like at certain zoom levels?
+\item
+  Will the speed of the data layer be appropriate enough for viewers to make sense of the phenomenon being represented in the data layer?
+\end{itemize}
+
+Once you've had a think about the above considerations---and possibly others as well---the easiest way to generate the view you'd like for your story is to go to your EarthTime instance's ``Explore'' view and add the data layer(s) you wish to have displayed in your waypoint. Additionally, you'll want to set the speed (``Slow'', ``Medium'', or ``Fast'') of the timeline as well as the appropriate zoom level for the area of interest. Once you are satisfied, click on ``Share'' at the top of the screen. On the sidebar under ``Share as link'' click ``Copy'', which will generate copy the unique URL of the view that you want to share to your clipboard and paste that in the \texttt{Share\ View} parameter cell. For those wishing to learn more about how the URL is structured, please see the below.
+
+\hypertarget{anatomy-of-an-earthtime-url}{%
+\subsubsection*{Anatomy of an EarthTime URL}\label{anatomy-of-an-earthtime-url}}
+
+
+Let's take the following URL as an example (you can copy and paste it into your browser if it helps contextualizing what we're about to go over in real-time): \texttt{https://earthtime.org/explore\#v=34.53836,38.27958,4.506,latLng\&t=1.29\&ps=50\&l=bdrk,ar,uf\&bt=20000101\&et=20151231}
+
+\texttt{https://earthtime.org/explore} is the name of the EarthTime instance as well as the mode that was active when the unique URL was generated (i.e.- the ``Explore'' mode).
+
+\begin{itemize}
+\item
+  \texttt{\#v=34.53836,38.27958,4.506,latLng} represent the zoom level and the coordinates of the view that you want to share for your area of interest.
+\item
+  \texttt{\&t=1.29} represents a time multiplier function that generally corresponds with the playback rate of the data layer. A value of \texttt{1} would leave the playback rate unchanged.
+\item
+  \texttt{\&ps=50} represents the natural playback rate of the data layer. A value of \texttt{25} corresponds to the ``Slow'' speed in the timeline. A value of \texttt{50} corresponds to the ``Medium'' speed in the timeline. A value of \texttt{100} corresponds to the ``Fast'' speed in the timeline. For time intervals in years across a span of 15 or 20 years, these values are usually sufficient. If the data layer's time interval is in days or months, you might want to consider using a value greater than \texttt{100} depending on the total time span of the data layer.
+\item
+  \texttt{\&l=bdrk,ar,uf} represents the data layers that are currently active. In this example, \texttt{bdrk} represents the ``Dark Map'' base layer, \texttt{ar} represents the ``Annual Refugees'' data layer using a point flow map, and \texttt{uf} represents the ``Urban Fragility'' data layer using a bubble map. Each data layer is tied to a unique \texttt{Share\ link\ identifier} in the ``CSV Layers'' sheet, which was covered in the preceding part. While not strictly necessary (as seen in this example), a good practice is to nevertheless make the \texttt{Share\ link\ identifier} as natural and intuitive as possible if you're working on a EarthTime instance and a layer sheet that has multiple contributors.
+\item
+  \texttt{\&bt=20000101}represents the date that the data layer starts. Keep in mind that the date will always need to be in a \texttt{YYYYMMDD} format (a ``year, month, day'' format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (\texttt{YYYYMM}), within the \texttt{Share\ View} URL, the format still needs to remain \texttt{YYYYMMDD} to properly initiate the start sequence.
+\item
+  \texttt{\&et=20151231} represents the date that the data layer ends. Keep in mind that the date will always need to be in a \texttt{YYYYMMDD} format (a ``year, month, day'' format) regardless of if the time interval of the specific data layer is in years, months, or days. For example, if the data layer time interval format is set for months (\texttt{YYYYMM}), within the \texttt{Share\ View} URL, the format still needs to remain \texttt{YYYYMMDD} to properly initiate the end sequence.
+\end{itemize}
+
+There are a few other additional parameters that you can add to the end of the URL which---while not used in the example above---is useful to know nonetheless.
+
+\begin{itemize}
+\item
+  \texttt{\&startDwell=3} is a parameter that will delay the start of the timeline for a certain period of time (formatted in seconds). In this example, the value \texttt{3} indicates that the start of playback will be delayed by three seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
+\item
+  \texttt{\&endDwell=5} is a parameter that will pause the timeline at the last time interval for a certain period of time (formatted in seconds). In this example, the value \texttt{5} indicates that the timeline will pause at the end for five seconds. This parameter is useful to give viewers time to digest the information being presented in the waypoint rather than having it on a continuous loop.
+\item
+  \texttt{\&forceLegend=true} is a parameter that is generally added when you want to add the data layer's key when viewers are looking at your story on a mobile device as legends are generally off by default. This is because screen real estate is generally smaller on mobile devices and---while having a key is useful---it can obstruct a decent portion of the visualization. In such cases instead of relying on the key, we recommend address the colors and symbols of the waypoint in the \texttt{Annotation\ Title} parameter.
+\end{itemize}
+
+\hypertarget{author}{%
+\subsection*{\texorpdfstring{\texttt{Author}}{Author}}\label{author}}
+
+
+This parameter is where you'll put the authors of the EarthTime story as well any additional information that might be useful to highlight, such a data citation. This parameter accepts and will render standard HTML tags. For example, in our example story, this section when used with HTML would appear as follows: \texttt{Story\ by:\ UNHCR\ \textless{}br\textgreater{}Data\ from:\ UNHCR,\ Igarapé\ Institute}.
+
+\hypertarget{generating-thumnails}{%
+\section{Generating Thumnails}\label{generating-thumnails}}
+
+Before sharing your EarthTime story to the wider world, it's best practice to generate the thumbnails for the story waypoints in advance so they do need to load for the viewer. To initiate a thumbnail generation sequence for your story, go the URL of your EarthTime story and go through each waypoint in the story within the Explore view and scroll through the entire story on a mobile device. The thumbnails might take some time to generate when the story is first accessed, but after they have generated successfully, they will usually display for all subsequent viewers without needing to load.
+
+If you ever encounter an issue with your thumbnails, you can always check the status using the following link:
+
+\url{https://thumbnails-earthtime.cmucreatelab.org/status}
+
+Now that you've successfully created an EarthTime story on the backend of the EarthTime platform, the next---and final---part of this document will cover the finer points of editing these stories as well as suggestions for disseminating them to the wider public.
+
+\hypertarget{part-publishing-earthtime-stories}{%
+\part{Publishing EarthTime Stories}\label{part-publishing-earthtime-stories}}
+
+``It is a historical irony that one of the most advanced visualization systems we have developed, EarthTime, lends itself powerfully to the creation of graphic imagery for a traditional hardcover book'' - Illah Nourbakhsh
+
+\hypertarget{editorial-process}{%
+\chapter{Editorial Process}\label{editorial-process}}
+
+There are several reasons EarthTime stories are consider powerful communication tools when the appropriate dataset is visualized in conjunction with an expert narrative, in this section we've tried to synthesize three editorial values that should be the guiding principles taken into consideration to help lay the foundations for choosing which data to visualize as well as crafting text for powerful EarthTime stories: common ground, inclusion, and empowerment.
+
+\hypertarget{the-three-editorial-principles-of-earthtime}{%
+\section{The Three Editorial Principles of EarthTime}\label{the-three-editorial-principles-of-earthtime}}
+
+\hypertarget{common-ground}{%
+\subsection*{Common Ground}\label{common-ground}}
+
+
+EarthTime is able to move us beyond debates about competing summarized analyses of data by showing comprehensive, peer-reviewed data in a manner that directly accesses our visual cortex and our intellectual and emotional centers. This helps us all achieve the common ground needed to move beyond asking ``Is this happening?'' to solution-oriented discussions focused on ``What do we do about it?''
+
+\hypertarget{inclusion}{%
+\subsection*{Inclusion}\label{inclusion}}
+
+
+Images are universal, and our techniques for using moving images and multiple layers enables members of all cultures, ages and stations in life to make sense of our Earth changes at the same time. This universality, driven by a compelling visual technique, powers our ability to have relevance and transparency for all.
+
+\hypertarget{empowerment}{%
+\subsection*{Empowerment}\label{empowerment}}
+
+
+By showing not only complex, layered changes that we have all witnessed in the past, but also the possible futures that we all face together, this tool becomes a global common key to understanding the sensitivity of the future to the decisions of our present. By showing the results of our past decisions with incontrovertible visual evidence through time, we create the scaffolding that supports positive future decision-making. We can empower all to make more informed forward-facing choices.
+
+\hypertarget{the-process-for-building-an-expert-narrative}{%
+\section{The Process for Building an Expert Narrative}\label{the-process-for-building-an-expert-narrative}}
+
+\hypertarget{guidance}{%
+\subsection*{Guidance}\label{guidance}}
+
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Draw in your audience:} provide a hook that will capture the attention of an online audience
+\item
+  \textbf{The words:} use is language that is accessible to a lay audience
+\item
+  \textbf{Set the Scene:} start by describing the situation in the world today and where your issue fits within global developments
+\item
+  \textbf{Provide examples:} choose 2-3 examples that illustrate the larger issue at hand
+\item
+  \textbf{End on a high note:} illustrate a few policy examples or business initiatives that can be scaled up to provide a call to action
+\end{itemize}
+
+\hypertarget{recommended-outline-structure}{%
+\subsection*{Recommended Outline Structure}\label{recommended-outline-structure}}
+
+
+Traditionally, EarthTime stories have been composed of 8-12 waypoints with approximately 40-45 words of text per waypoint; however, this might change and can be adapted based on your own specific use case or audience. For example, the Strategic Intelligence team at the World Economic Forum generally crafts EarthTime stories with experts that are between 3-5 waypoints with 40-50 words of text waypoint for integration into their Transformation Maps. Find what works best for you, but we recommend always using a minimal amount of text for waypoints as longer texts will start to obstruct the view of the data being visualized in the waypoint.
+
+\hypertarget{example-of-an-11-waypoint-outline-for-an-earthtime-story}{%
+\subsubsection*{Example of an 11-Waypoint Outline for an EarthTime Story}\label{example-of-an-11-waypoint-outline-for-an-earthtime-story}}
+
+
+\hypertarget{synopsis}{%
+\paragraph*{Synopsis}\label{synopsis}}
+\addcontentsline{toc}{paragraph}{Synopsis}
+
+\begin{quote}
+The synopsis is displayed on the title page of your story and provides context to the reader. The aim is to find a hook that draws in an online audience, data points work well here. `This is a story about a global development, which is driven by several factors and this is why it matters to our audience.'
+\end{quote}
+
+\hypertarget{setting-the-scene}{%
+\paragraph*{Setting the Scene}\label{setting-the-scene}}
+\addcontentsline{toc}{paragraph}{Setting the Scene}
+
+\begin{quote}
+Start by contextualizing your issue on a global scale. What do we see today? What has happened over time? Where did this development originate? What are we expecting to see if this trend continues?
+\end{quote}
+
+\hypertarget{example-1}{%
+\paragraph*{Example 1}\label{example-1}}
+\addcontentsline{toc}{paragraph}{Example 1}
+
+\begin{quote}
+Zoom into a place where we can see this issue in action and unpack what is visible in the data visualization. Give additional context. Help the reader understand the evolution over time, maybe there is a specific year or timeframe to highlight.
+\end{quote}
+
+\hypertarget{cause-1}{%
+\paragraph*{Cause 1}\label{cause-1}}
+\addcontentsline{toc}{paragraph}{Cause 1}
+
+\begin{quote}
+Describe which factors are driving this issue how they are be interlinked with other developments.
+\end{quote}
+
+\hypertarget{consequence-1}{%
+\paragraph*{Consequence 1}\label{consequence-1}}
+\addcontentsline{toc}{paragraph}{Consequence 1}
+
+\begin{quote}
+What are the socio-economic consequences? Who is affected by this? Who needs to act on this?
+\end{quote}
+
+\hypertarget{example-2}{%
+\paragraph*{Example 2}\label{example-2}}
+\addcontentsline{toc}{paragraph}{Example 2}
+
+\begin{quote}
+Give another example in a different location and unpack the visualization.
+\end{quote}
+
+\hypertarget{cause-2}{%
+\paragraph*{Cause 2}\label{cause-2}}
+\addcontentsline{toc}{paragraph}{Cause 2}
+
+\begin{quote}
+Describe the causes. Highlight differences and commonalities.
+\end{quote}
+
+\hypertarget{consequence-2}{%
+\paragraph*{Consequence 2}\label{consequence-2}}
+\addcontentsline{toc}{paragraph}{Consequence 2}
+
+\begin{quote}
+Explain the consequences. What does this mean for the audience?
+\end{quote}
+
+\hypertarget{response-1}{%
+\paragraph*{Response 1}\label{response-1}}
+\addcontentsline{toc}{paragraph}{Response 1}
+
+\begin{quote}
+Highlight an example of a positive policy response or business initiative that changed the dynamic.
+\end{quote}
+
+\hypertarget{response-2}{%
+\paragraph*{Response 2}\label{response-2}}
+\addcontentsline{toc}{paragraph}{Response 2}
+
+\begin{quote}
+Mention a second solution that has been tried and tested elsewhere.
+\end{quote}
+
+\hypertarget{call-to-action}{%
+\paragraph*{Call to action}\label{call-to-action}}
+\addcontentsline{toc}{paragraph}{Call to action}
+
+\begin{quote}
+What kind of intervention do we need to see more of in the world? What is the ask for policymakers, business leaders and individuals?
+\end{quote}
+
+\hypertarget{wider-dissemination}{%
+\chapter{Wider Dissemination}\label{wider-dissemination}}
+
+EarthTime stories are meant to be shared. In an ideal world, your audience would be able to attend the World Economic Forum Annual Meeting in Davos and experience EarthTime in the Global Situation on a massive screen while a world-renowned expert guides them around the globe explaining the different waypoints; however, we recognize that most of the time, your audience will be consuming EarthTime stories on a computer screen or mobile device. This section will cover things that you should take into consideration from a technical point of view when sharing your EarthTime stories with the world using simpler formats.
+
+\hypertarget{best-practices-for-embedding}{%
+\section{Best Practices for Embedding}\label{best-practices-for-embedding}}
+
+\hypertarget{embedding-using-javascript}{%
+\subsection*{Embedding Using Javascript}\label{embedding-using-javascript}}
+
+
+A javascript-based inline scrolling EarthTime story can be placed in the middle of other content, with some content above the first frame of the scrolling story, and some content below the last frame of the scrolling story. This is a common approach when combining map visuals within longer prose or other media. The following code uses HTML and a few lines of javascript to load the EarthTime library, select the story, and identify the correct div to populate.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{HTML}\DataTypeTok{\textgreater{}}
+  \KeywordTok{\textless{}html\textgreater{}}
+    \KeywordTok{\textless{}head\textgreater{}}
+      \KeywordTok{\textless{}meta}\OtherTok{ name=}\StringTok{"viewport"}\OtherTok{ content=}\StringTok{"user{-}scalable=no, initial{-}scale=1, maximum{-}scale=1, minimum{-}scale=1"}\KeywordTok{\textgreater{}}
+      \KeywordTok{\textless{}title\textgreater{}}\NormalTok{EarthTime Mobile Story Example}\KeywordTok{\textless{}/title\textgreater{}}
+      \KeywordTok{\textless{}style}\OtherTok{ type=}\StringTok{"text/css"}\KeywordTok{\textgreater{}}
+\NormalTok{      body \{}
+        \KeywordTok{margin}\NormalTok{: }\DecValTok{0}\OperatorTok{;}
+        \KeywordTok{font{-}family}\NormalTok{: }\DecValTok{sans{-}serif}\OperatorTok{;}
+\NormalTok{      \}}
+
+      \FunctionTok{.non\_story\_content}\NormalTok{ \{}
+        \KeywordTok{margin}\NormalTok{: }\DecValTok{8}\DataTypeTok{px}\OperatorTok{;}
+\NormalTok{      \}}
+      \KeywordTok{\textless{}/style\textgreater{}}
+  \KeywordTok{\textless{}/head\textgreater{}}
+  \KeywordTok{\textless{}body\textgreater{}}
+    \KeywordTok{\textless{}div}\OtherTok{ class=}\StringTok{"non\_story\_content"}\KeywordTok{\textgreater{}}
+       \KeywordTok{\textless{}h1\textgreater{}}\NormalTok{Embedded Story}\KeywordTok{\textless{}/h1\textgreater{}}
+\NormalTok{       This is placeholder text used before the story. Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+    \KeywordTok{\textless{}/div\textgreater{}}
+    \KeywordTok{\textless{}div}\OtherTok{ id=}\StringTok{"story\_container1"}\KeywordTok{\textgreater{}\textless{}/div\textgreater{}}
+\NormalTok{    This is placeholder text that comes after the story. Proin quis lacus nec felis fringilla hendrerit.}
+    \KeywordTok{\textless{}div}\OtherTok{ class=}\StringTok{"non\_story\_content"}\KeywordTok{\textgreater{}}
+\NormalTok{      This placeholder text between the stories. Nullam maximus dignissim. Nam in.}
+  \KeywordTok{\textless{}/div\textgreater{}}
+  \KeywordTok{\textless{}/body\textgreater{}}
+  \KeywordTok{\textless{}script}\OtherTok{ src=}\StringTok{"https://earthtime.org/m/stories/mobile{-}embed.js"}\OtherTok{ type=}\StringTok{"text/javascript"}\KeywordTok{\textgreater{}\textless{}/script\textgreater{}}
+  \KeywordTok{\textless{}script\textgreater{}}
+    \CommentTok{// Additional parameters include:}
+    \CommentTok{// earthtimeSpreadsheet}
+    \CommentTok{// showEarthtimeAbout}
+    \CommentTok{// disableAutoFullscreen}
+    \CommentTok{// mediaFitStyle}
+    \KeywordTok{var}\NormalTok{ settings }\OperatorTok{=}\NormalTok{ \{}
+      \StringTok{"earthtimeSpreadsheet"} \OperatorTok{:} \StringTok{"https://earthtime.org/explore\#waypoints=1Ua4MpiPs2A79p9SdFRBiXmiOcMVG6Oze6tMU\_ReEs8k.0"} 
+      \CommentTok{// Where \textquotesingle{}.0\textquotesingle{} represents the "tab Id" of the spreadsheet. Up until this point, we\textquotesingle{}ve been dealing with "sheetId"; }
+      \CommentTok{// however, for this to render correctly, you need to know which order the sheets in the spreadsheet are in; }
+      \CommentTok{// therefore, a "tab Id" of \textquotesingle{}.0\textquotesingle{} represents the first sheetId, a tab Id of \textquotesingle{}.1\textquotesingle{} represents the second SheetId, }
+      \CommentTok{// \textquotesingle{}.2\textquotesingle{} represents the third, etc.}
+\NormalTok{    \}}
+
+    \CommentTok{// Register the stories. Include more registerStory calls (with different story names from the spreadsheet) to }
+    \CommentTok{// add multiple stories to this page.}
+    \CommentTok{// First parameter is the name of the story, obtained from the \textquotesingle{}Waypoint Title\textquotesingle{} column of the waypoint spreadsheet. }
+    \CommentTok{// It is case insensitive and the leading \textquotesingle{}\#\#\textquotesingle{} characters must be removed.}
+    \CommentTok{// Second parameter is the id of the HTML element (usually a div) that you want to insert the story into.}
+\NormalTok{    earthtime}\OperatorTok{.}\FunctionTok{registerStory}\NormalTok{(}\StringTok{\textquotesingle{}Deforestation\textquotesingle{}}\OperatorTok{,} \StringTok{\textquotesingle{}story\_container1\textquotesingle{}}\NormalTok{)}\OperatorTok{;}
+
+    \CommentTok{// Embed the stories.}
+    \CommentTok{// Call this with no args to use the default settings or pass in a settings hash, like the one defined above.}
+\NormalTok{    earthtime}\OperatorTok{.}\FunctionTok{embedStories}\NormalTok{(settings)}\OperatorTok{;}
+  \KeywordTok{\textless{}/script\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+Note that we introduce four additional parameters in the HTML example above that can be passed in when embedding an EarthTime story using javascript: \texttt{earthtimeSpreadsheet}, \texttt{showEarthtimeAbout}, \texttt{disableAutoFullscreen}, and \texttt{mediaFitStyle}.
+
+\hypertarget{earthtimespreadsheet}{%
+\subsubsection*{\texorpdfstring{\texttt{earthtimeSpreadsheet}}{earthtimeSpreadsheet}}\label{earthtimespreadsheet}}
+
+
+This parameter will default to the standard \texttt{Default\ EarthTime\ Waypoints,\ Dotmap\ layers,\ and\ Bubble\ Layers} found at \texttt{https://docs.google.com/spreadsheets/d/1rCiksJv4aXi1usI0\_9zdl4v5vuOfiHgMRidiDPt1WfE/edit\#gid=1596808134}; however, a different one can be passed in if necessary.
+
+\hypertarget{showearthtimeabout}{%
+\subsubsection*{\texorpdfstring{\texttt{showEarthtimeAbout}}{showEarthtimeAbout}}\label{showearthtimeabout}}
+
+
+This parameter defaults to \texttt{FALSE}. If the parameter is set to \texttt{TRUE}, then an ``About Section'' will appear as the last waypoint in the story briefly describing EarthTime.
+
+\hypertarget{disableautofullscreen}{%
+\subsubsection*{\texorpdfstring{\texttt{disableAutoFullscreen}}{disableAutoFullscreen}}\label{disableautofullscreen}}
+
+
+This parameter can be \texttt{TRUE}or \texttt{FALSE} with the default being set to \texttt{FALSE}. If the parameter is set to \texttt{TRUE}, the story content will only fill the width of the area the \texttt{HTML\ div}. Otherwise, if set to false, the story content will fill the entire screen when scrolled into view.
+
+\hypertarget{mediafitstyle}{%
+\subsubsection*{\texorpdfstring{\texttt{mediaFitStyle}}{mediaFitStyle}}\label{mediafitstyle}}
+
+
+This parameter can be set to either \texttt{COVER} or \texttt{CONTAIN} with the default being set to \texttt{COVER}. If the parameter is set to \texttt{COVER} the content is sized to maintain its aspect ratio, whilst filling the entire content area---that is, the content will be clipped to fit; however, if the parameter is set to \texttt{CONTAIN}, the content is scaled to maintain its aspect ratio, while fitting within the element's content box, which could mean that letterboxing occurs.
+
+\hypertarget{embedding-using-iframes}{%
+\subsection*{Embedding using iFrames}\label{embedding-using-iframes}}
+
+
+An iframe-based EarthTime scrolling story is somewhat similar to the javascript fixed-position scrolling story but uses an iframe instead of javascript. This is useful if you are embedding in a CMS type environment where loading or running external javascript is limited or not allowed. For example, you could invoke an iFrame as follows:
+
+\texttt{\textless{}iframe\ src="https://earthtime.org/m/stories/Deforestation\#waypoints=1Ua4MpiPs2A79p9SdFRBiXmiOcMVG6Oze6tMU\_ReEs8k.0"\ width="900px"\ height="600px"\ frameborder="0"\ allowfullscreen\textgreater{}\textless{}/iframe\textgreater{}}
+
+Note that an individual EarthTime story is what is used as the source for iFrames, not individual waypoints. Also please keep in mind that on a mobile device, the iFrame will be nearly identical to the interactive iframe example below, except here the \texttt{src} is slightly different placing an \texttt{/m/} before sotries and no extra parameters passed in after the \texttt{\#} following the story title. Using the \texttt{/m/} as seen in this example also forces a scrolling based EarthTime story on a user, regardless of whether they visit on a computer or mobile device.
+
+\hypertarget{best-practices-for-utilizing-gifs}{%
+\section{Best Practices for Utilizing GIFs}\label{best-practices-for-utilizing-gifs}}
+
+There are a few scenarios where you might want to consider recording a GIF of a specific waypoint or series of waypoints instead of using the traditional embedding methods detailed above. The most practical scenario is when you're expecting to share your EarthTime story via social media.
+
+There's a number of methods for creating GIFs, but we recommend using screen capture software to take a video of the waypoint(s) you'd like to use for your GIF(s). Start the recording when the waypoint starts and let the waypoint run through at least two visualizations cycles---this will allow you to edit the start and end points in a way that is more seamless rather than trying to time it exactly\footnote{We recommend capturing this video while in the mobile EarthTime story view rather than the Explore view because the red portion of the timeline at the bottom will reset once the visualization has run its course and we've found in our own experience that the aspect ratio as well as the date ticker in the mobile view creates a much more user-friendly experience for social media consumption.}.
+
+\hypertarget{part-inspiring-meaningful-dialogue}{%
+\part{Inspiring Meaningful Dialogue}\label{part-inspiring-meaningful-dialogue}}
+
+\hypertarget{closing-remarks}{%
+\chapter{Closing Remarks}\label{closing-remarks}}
+
+If you've reached the end of this document, hopefully you see that EarthTime is comprehensive and powerful tool for communicating data in a way that resonates with people across the world. The developments pioneered at the CREATE Lab---mainly storing information and using graphic processes in computers to make this possible and on being very smart with using internet bandwidth cleverly---has drastically changed our relationship with data. Fundamentally, the fact that we can take now any dataset and explore it through space and time reveals to us the possibility of thinking about data very differently than we did even 10 years ago where we had to put the same data in a table and look at trends overtime. The reason this is interesting is because people who have traditionally looked at quantitative data analytically using tools like MatLab or Excel can now visually understand the data more immediately than ever before. In the case of EarthTime, with its billions of pixels of data being provided to the human body, it has shown time and again that the most efficient technique we have for understanding data is our eyes. After finishing this document, you'll now be able to take almost any dataset and create quantitative information from it that can be visually intimate to your audience, which helps create a new revolution in helping us understand the Earth itself. This gives us the ability to change the relationship we have with the data because we can ask the questions we couldn't have asked before and visualize them.
+
+While EarthTime by itself is effective in communicating data and visualizing data in a way that is more easily digestible to a wider audience. We've found that what turns it from an effective tool into affective one, is when the tool is combined with powerful narratives coming from someone who is a content expert in the area and represents the best possible way of thinking about the data. This also protects the providence and trust that we've garnered with EarthTime over the years. Remember that it is the experts who can ultimately guide the viewer how to think about the data in a way where one starts to understand some of the underlying causes without overthinking some of the correlations that they might be seeing visually. In doing so, EarthTime tries to influence the downstream understanding of the data as much as possible because those who work closely with the tool recognize that there is no substitute for guidance by remarkable individuals.
+
+There've been numerous cases of audiences viewing an EarthTime story and when an expert explains how to think about the data, the audience starts to develop a new eye for the data. This helps to create a miniature expert eye, so then when the audience encounters the data later, they usually do a better job at understanding it. Looking at today's tsunami of data without guidance from an expert narrative is a disaster. People don't know where to start and we often liken it to drinking from a fire hydrant. But once they start using EarthTime, they then start to develop a mental model for how to use the data and think about the data.
+
+And having these mental models is critical if you want to starting using data to affect change.
+
+  \bibliography{references.bib}
+
+\backmatter
+\printindex
+
+\end{document}
